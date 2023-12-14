@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    android:oneshot="true"-->
+    <!--    
+    <item
+        android:drawable="@drawable/cus_dao_gf_1"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_2"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_3"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_4"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_5"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_6"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_7"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_8"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_2"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_9"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_10"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_11"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_12"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_13"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_14"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_15"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_16"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_17"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_18"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_19"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_20"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_21"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_22"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_23"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_24"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_25"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_26"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_27"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_28"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_29"
+        android:duration="62" />
+
+    <item
+        android:drawable="@drawable/cus_dao_gf_30"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_31"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_32"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/cus_dao_gf_33"
+        android:duration="62" />
+</animation-list>

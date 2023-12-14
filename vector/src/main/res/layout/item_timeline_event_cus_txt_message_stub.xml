@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:addStatesFromChildren="true"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="true">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/cusMsgCk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/cus_msg_ck"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/messageCusTxtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:text="@string/msg_cus_join_title"
+            android:textColor="#ff03b384"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <im.vector.app.features.home.room.detail.timeline.view.MessageTimeContentLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="10dp">
+
+        <com.text.alginlib.XQJustifyTextView
+            android:id="@+id/messageCusTxtTextView"
+            style="@style/Widget.Vector.TextView.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@sample/messages.json/data/message"
+            android:textStyle="bold"
+            tools:background="@color/red"
+            android:tag="messageTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textColor="#333333" />
+
+
+        <TextView
+            android:id="@+id/messageCusTextViewTimeView"
+            style="@style/Widget.Vector.TextView.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="right"
+            android:tag="messageTimeView"
+            android:textColor="?vctr_content_secondary"
+            app:layout_constraintBottom_toBottomOf="@id/messageCusTxtTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="RtlHardcoded"
+            tools:text="@tools:sample/date/hhmm" />
+    </im.vector.app.features.home.room.detail.timeline.view.MessageTimeContentLayout>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/daib_num"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/default_top_background_color"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_15"
+        android:textColor="@color/default_text_color"
+        android:textSize="28sp"
+        tools:text="222222.00" />
+
+    <TextView
+        android:id="@+id/daib_price"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/default_top_background_color"
+        android:gravity="center"
+        android:textColor="@color/default_hint_text_color"
+        android:textSize="14sp"
+        tools:text="≈ ¥ 222222.00" />
+</LinearLayout>

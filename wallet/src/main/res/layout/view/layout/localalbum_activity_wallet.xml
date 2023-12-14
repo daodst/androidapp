@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_top_background_color"
+    android:orientation="vertical">
+    <com.wallet.ctc.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:titleText ="@string/xiangzexiangce"
+        app:righttitleText="@string/choose">
+
+    </com.wallet.ctc.view.TitleBarView>
+
+    <LinearLayout
+        android:id="@+id/itemLinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_60"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/btn_posts_camera_l"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textview"
+            android:gravity="center_vertical|left"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:textSize="@dimen/dp_16"
+            android:maxLines="1"
+            android:ellipsize="middle"
+            android:layout_height="fill_parent"
+            android:text=""/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@mipmap/icon_arrow_right"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/default_text_three_color"
+        android:visibility="gone"/>
+    <ListView
+        android:id="@+id/local_album_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:dividerHeight="@dimen/dp_1" />
+
+</LinearLayout>

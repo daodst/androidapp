@@ -1,0 +1,325 @@
+
+
+package im.vector.app.features.media
+
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
+import android.net.Uri
+import android.os.Parcelable
+import android.view.View
+import android.widget.ImageView
+import androidx.core.view.updateLayoutParams
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.Transformation
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.CustomViewTarget
+import com.bumptech.glide.request.target.Target
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView.ORIENTATION_USE_EXIF
+import com.github.piasy.biv.view.BigImageView
+import im.vector.app.R
+import im.vector.app.core.di.ActiveSessionHolder
+import im.vector.app.core.files.LocalFilesHelper
+import im.vector.app.core.glide.GlideApp
+import im.vector.app.core.glide.GlideRequest
+import im.vector.app.core.glide.GlideRequests
+import im.vector.app.core.ui.model.Size
+import im.vector.app.core.utils.DimensionConverter
+import kotlinx.parcelize.Parcelize
+import org.matrix.android.sdk.api.extensions.tryOrNull
+import org.matrix.android.sdk.api.session.content.ContentUrlResolver
+import org.matrix.android.sdk.api.session.crypto.attachments.ElementToDecrypt
+import org.matrix.android.sdk.api.session.media.PreviewUrlData
+import timber.log.Timber
+import java.io.File
+import javax.inject.Inject
+import kotlin.math.min
+
+interface AttachmentData : Parcelable {
+    val eventId: String
+    val filename: String
+    val mimeType: String?
+    val url: String?
+    val elementToDecrypt: ElementToDecrypt?
+
+    
+    val allowNonMxcUrls: Boolean
+}
+
+private const val URL_PREVIEW_IMAGE_MIN_FULL_WIDTH_PX = 600
+private const val URL_PREVIEW_IMAGE_MIN_FULL_HEIGHT_PX = 315
+
+class ImageContentRenderer @Inject constructor(private val localFilesHelper: LocalFilesHelper,
+                                               private val activeSessionHolder: ActiveSessionHolder,
+                                               private val dimensionConverter: DimensionConverter) {
+
+    @Parcelize
+    data class Data(
+            override val eventId: String,
+            override val filename: String,
+            override val mimeType: String?,
+            override val url: String?,
+            override val elementToDecrypt: ElementToDecrypt?,
+            val height: Int?,
+            val maxHeight: Int,
+            val width: Int?,
+            val maxWidth: Int,
+            
+            override val allowNonMxcUrls: Boolean = false
+    ) : AttachmentData
+
+    enum class Mode {
+        FULL_SIZE,
+        THUMBNAIL,
+        STICKER
+    }
+
+    
+    fun render(previewUrlData: PreviewUrlData, imageView: ImageView): Boolean {
+        val contentUrlResolver = activeSessionHolder.getActiveSession().contentUrlResolver()
+        val imageUrl = contentUrlResolver.resolveFullSize(previewUrlData.mxcUrl) ?: return false
+        val maxHeight = dimensionConverter.resources.getDimensionPixelSize(R.dimen.preview_url_view_image_max_height)
+        val height = previewUrlData.imageHeight ?: URL_PREVIEW_IMAGE_MIN_FULL_HEIGHT_PX
+        val width = previewUrlData.imageWidth ?: URL_PREVIEW_IMAGE_MIN_FULL_WIDTH_PX
+        if (height < URL_PREVIEW_IMAGE_MIN_FULL_HEIGHT_PX || width < URL_PREVIEW_IMAGE_MIN_FULL_WIDTH_PX) {
+            imageView.scaleType = ImageView.ScaleType.CENTER_INSIDE
+        } else {
+            imageView.scaleType = ImageView.ScaleType.CENTER_CROP
+        }
+        GlideApp.with(imageView)
+                .load(imageUrl)
+                .override(width, height.coerceAtMost(maxHeight))
+                .into(imageView)
+        return true
+    }
+
+    
+    fun render(data: Data, imageView: ImageView, size: Int) {
+        
+        imageView.contentDescription = data.filename
+
+        createGlideRequest(data, Mode.THUMBNAIL, imageView, Size(size, size))
+                .placeholder(R.drawable.ic_image)
+                .into(imageView)
+    }
+
+    fun render(data: Data, mode: Mode, imageView: ImageView, cornerTransformation: Transformation<Bitmap> = RoundedCorners(dimensionConverter.dpToPx(8))) {
+        val size = processSize(data, mode)
+        imageView.updateLayoutParams {
+            width = size.width
+            height = size.height
+        }
+        
+        imageView.contentDescription = data.filename
+
+        createGlideRequest(data, mode, imageView, size)
+                .dontAnimate()
+                .transform(cornerTransformation)
+                
+                .into(imageView)
+    }
+
+    fun clear(imageView: ImageView) {
+        
+        
+        tryOrNull {
+            GlideApp
+                    .with(imageView).clear(imageView)
+        }
+    }
+
+    
+    fun render(data: Data, contextView: View, target: CustomViewTarget<*, Drawable>) {
+        val req = if (data.elementToDecrypt != null) {
+            
+            GlideApp
+                    .with(contextView)
+                    .load(data)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+        } else {
+            
+            val resolvedUrl = resolveUrl(data)
+            GlideApp
+                    .with(contextView)
+                    .load(resolvedUrl)
+        }
+
+        req.override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .fitCenter()
+                .into(target)
+    }
+
+    fun renderFitTarget(data: Data, mode: Mode, imageView: ImageView, callback: ((Boolean) -> Unit)? = null) {
+        val size = processSize(data, mode)
+
+        
+        imageView.contentDescription = data.filename
+
+        createGlideRequest(data, mode, imageView, size)
+                .listener(object : RequestListener<Drawable> {
+                    override fun onLoadFailed(e: GlideException?,
+                                              model: Any?,
+                                              target: Target<Drawable>?,
+                                              isFirstResource: Boolean): Boolean {
+                        callback?.invoke(false)
+                        return false
+                    }
+
+                    override fun onResourceReady(resource: Drawable?,
+                                                 model: Any?,
+                                                 target: Target<Drawable>?,
+                                                 dataSource: DataSource?,
+                                                 isFirstResource: Boolean): Boolean {
+                        callback?.invoke(true)
+                        return false
+                    }
+                })
+                .fitCenter()
+                .into(imageView)
+    }
+
+    
+    fun renderForSharedElementTransition(data: Data, imageView: ImageView, callback: ((Boolean) -> Unit)? = null) {
+        
+        imageView.contentDescription = data.filename
+
+        val req = if (data.elementToDecrypt != null) {
+            
+            GlideApp
+                    .with(imageView)
+                    .load(data)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+        } else {
+            
+            val resolvedUrl = resolveUrl(data)
+            GlideApp
+                    .with(imageView)
+                    .load(resolvedUrl)
+        }
+
+        req.listener(object : RequestListener<Drawable> {
+            override fun onLoadFailed(e: GlideException?,
+                                      model: Any?,
+                                      target: Target<Drawable>?,
+                                      isFirstResource: Boolean): Boolean {
+                callback?.invoke(false)
+                return false
+            }
+
+            override fun onResourceReady(resource: Drawable?,
+                                         model: Any?,
+                                         target: Target<Drawable>?,
+                                         dataSource: DataSource?,
+                                         isFirstResource: Boolean): Boolean {
+                callback?.invoke(true)
+                return false
+            }
+        })
+                .onlyRetrieveFromCache(true)
+                .fitCenter()
+                .into(imageView)
+    }
+
+    private fun createGlideRequest(data: Data, mode: Mode, imageView: ImageView, size: Size): GlideRequest<Drawable> {
+        return createGlideRequest(data, mode, GlideApp.with(imageView), size)
+    }
+
+    fun createGlideRequest(data: Data, mode: Mode, glideRequests: GlideRequests, size: Size = processSize(data, mode)): GlideRequest<Drawable> {
+        return if (data.elementToDecrypt != null) {
+            
+            glideRequests
+                    .load(data)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+        } else {
+            
+            val contentUrlResolver = activeSessionHolder.getActiveSession().contentUrlResolver()
+            val resolvedUrl = when (mode) {
+                Mode.FULL_SIZE,
+                Mode.STICKER   -> resolveUrl(data)
+                Mode.THUMBNAIL -> contentUrlResolver.resolveThumbnail(data.url, size.width, size.height, ContentUrlResolver.ThumbnailMethod.SCALE)
+            }
+            
+                    ?: data.url.takeIf { it?.startsWith("content://") == true }
+
+            glideRequests
+                    .load(resolvedUrl)
+                    .apply {
+                        if (mode == Mode.THUMBNAIL) {
+                            error(
+                                    glideRequests.load(resolveUrl(data))
+                            )
+                        }
+                    }
+        }
+    }
+
+    fun render(data: Data, imageView: BigImageView) {
+        
+        imageView.contentDescription = data.filename
+
+        val (width, height) = processSize(data, Mode.THUMBNAIL)
+        val contentUrlResolver = activeSessionHolder.getActiveSession().contentUrlResolver()
+        val fullSize = resolveUrl(data)
+        val thumbnail = contentUrlResolver.resolveThumbnail(data.url, width, height, ContentUrlResolver.ThumbnailMethod.SCALE)
+
+        if (fullSize.isNullOrBlank() || thumbnail.isNullOrBlank()) {
+            Timber.w("Invalid urls")
+            return
+        }
+
+        imageView.setImageLoaderCallback(object : DefaultImageLoaderCallback {
+            override fun onSuccess(image: File?) {
+                imageView.ssiv?.orientation = ORIENTATION_USE_EXIF
+            }
+        })
+
+        imageView.showImage(
+                Uri.parse(thumbnail),
+                Uri.parse(fullSize)
+        )
+    }
+
+    private fun resolveUrl(data: Data) =
+            (activeSessionHolder.getActiveSession().contentUrlResolver().resolveFullSize(data.url)
+                    ?: data.url?.takeIf { localFilesHelper.isLocalFile(data.url) && data.allowNonMxcUrls })
+
+    private fun processSize(data: Data, mode: Mode): Size {
+        val maxImageWidth = data.maxWidth
+        val maxImageHeight = data.maxHeight
+        val width = data.width ?: maxImageWidth
+        val height = data.height ?: maxImageHeight
+        var finalWidth = -1
+        var finalHeight = -1
+
+        
+        
+        if (width > 0 && height > 0) {
+            when (mode) {
+                Mode.FULL_SIZE -> {
+                    finalHeight = height
+                    finalWidth = width
+                }
+                Mode.THUMBNAIL -> {
+                    finalHeight = min(maxImageWidth * height / width, maxImageHeight)
+                    finalWidth = finalHeight * width / height
+                }
+                Mode.STICKER   -> {
+                    
+                    val maxWidthDp = min(dimensionConverter.dpToPx(120), maxImageWidth / 2)
+                    finalWidth = min(dimensionConverter.dpToPx(width), maxWidthDp)
+                    finalHeight = finalWidth * height / width
+                }
+            }
+        }
+        
+        if (finalHeight < 0) {
+            finalHeight = maxImageHeight
+        }
+        if (finalWidth < 0) {
+            finalWidth = maxImageWidth
+        }
+        return Size(finalWidth, finalHeight)
+    }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+    <common.app.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rightimg="@mipmap/shanchu"
+        app:titleText ="@string/pic_detail">
+
+
+    </common.app.ui.view.TitleBarView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/default_dividing_line"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <com.app.my.zoom.ViewPagerFixed
+            android:id="@+id/gallery01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        </com.app.my.zoom.ViewPagerFixed>
+      <!--  <Button
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dp_10"
+            android:text=""
+            />
+-->
+    </RelativeLayout>
+
+
+
+</LinearLayout>

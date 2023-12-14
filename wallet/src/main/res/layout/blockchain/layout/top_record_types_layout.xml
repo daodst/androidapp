@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_lin"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:background="@color/default_top_background_color"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/top_all"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="@string/all"
+            android:textColor="@color/default_text_color" />
+
+        <View
+            android:id="@+id/top_all_bottem"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="@color/default_text_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/top_out"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="@string/zhuanchu"
+            android:textColor="@color/default_text_three_color" />
+
+        <View
+            android:id="@+id/top_out_bottem"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="@color/default_text_color"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/top_in"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="@string/zhuanru"
+            android:textColor="@color/default_text_three_color" />
+
+        <View
+            android:id="@+id/top_in_bottem"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="@color/default_text_color"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/top_fail"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:text="@string/fail"
+            android:textColor="@color/default_text_three_color" />
+
+        <View
+            android:id="@+id/top_fail_bottem"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="@color/default_text_color"
+            android:visibility="invisible" />
+    </LinearLayout>
+</LinearLayout>

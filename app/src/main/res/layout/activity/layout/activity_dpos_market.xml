@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:elevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/dpos_icon_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+                <LinearLayout
+                    android:id="@+id/vStatusBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.wallet.ctc.view.TitleBarView
+                    android:id="@+id/titleBarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:backgroundcolor="@android:color/transparent"
+                    app:hideDivider="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vStatusBar"
+                    app:titleText="@string/dpos_new_title" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleBarView">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlTop1"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/ivTop1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="13dp"
+                            app:srcCompat="@mipmap/dpos_icon_top_1" />
+
+                        <TextView
+                            android:id="@+id/yield"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/ivTop1"
+                            android:layout_toEndOf="@+id/ivTop1"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="4.5%" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivTop1"
+                            android:layout_toEndOf="@+id/ivTop1"
+                            android:text="@string/dpos_new_string_yield"
+                            android:textColor="@color/default_hint_text_color"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlTop2"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/ivTop2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="13dp"
+                            app:srcCompat="@mipmap/dpos_icon_top_2" />
+
+                        <TextView
+                            android:id="@+id/offlinePenalties"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/ivTop2"
+                            android:layout_toEndOf="@+id/ivTop2"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="1%" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivTop2"
+                            android:layout_toEndOf="@+id/ivTop2"
+                            android:text="@string/dpos_new_string_offline_penalties"
+                            android:textColor="@color/default_hint_text_color"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlTop3"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rlTop1">
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/ivTop3"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="13dp"
+                            app:srcCompat="@mipmap/dpos_icon_top_3" />
+
+                        <TextView
+                            android:id="@+id/redemptionCycle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/ivTop3"
+                            android:layout_toEndOf="@+id/ivTop3"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="1%" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivTop3"
+                            android:layout_toEndOf="@+id/ivTop3"
+                            android:text="@string/dpos_new_string_redemption_cycle"
+                            android:textColor="@color/default_hint_text_color"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlTop4"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toBottomOf="@+id/rlTop2">
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/ivTop4"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="13dp"
+                            app:srcCompat="@mipmap/dpos_icon_top_4" />
+
+                        <TextView
+                            android:id="@+id/signaturePenalty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/ivTop4"
+                            android:layout_toEndOf="@+id/ivTop4"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            tools:text="1%" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ivTop4"
+                            android:layout_toEndOf="@+id/ivTop4"
+                            android:text="@string/dpos_new_string_signature_penalty"
+                            android:textColor="@color/default_hint_text_color"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            tools:text="" />
+                    </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvTop5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:drawableStart="@mipmap/dpos_icon_top_5"
+                    android:drawablePadding="10dp"
+                    android:text="@string/dpos_new_string_vote_power"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constTop" />
+
+                <TextView
+                    android:id="@+id/tvTopValue5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/dpos_new_string_vote_rate"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvTop5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvTop5"
+                    app:layout_constraintTop_toTopOf="@+id/tvTop5"
+                    tools:text="NXN()：x" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/dpos_bg_round_top">
+
+                <TextView
+                    android:id="@+id/tvValidatorTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/dpos_new_string_validator"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvValidator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="87/100" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvValidatorTitle">
+
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/sm_bg_pledge_edit"
+                        android:drawableStart="@mipmap/dpos_icon_search"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/dpos_new_string_search_validator"
+                        android:importantForAutofill="no"
+                        android:inputType="text"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/white_r_bg"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabMode="fixed"
+                        app:tabSelectedTextColor="@color/default_theme_color"
+                        app:tabTextColor="@color/default_text_three_color"
+                        app:tabUnboundedRipple="false" />
+
+                    <!---->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvZongHe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_weight="1"
+                            android:drawableEnd="@mipmap/dpos_icon_down"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/dpos_new_string_sift_1"
+                            android:textColor="@color/default_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvWeight"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:drawableEnd="@mipmap/dpos_icon_down"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/dpos_new_string_sift_2"
+                            android:textColor="@color/default_text_three_color"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvCommission"
+                            app:layout_constraintStart_toEndOf="@+id/tvZongHe"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvCommission"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:drawableEnd="@mipmap/dpos_icon_down"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/dpos_new_item_string_3"
+                            android:textColor="@color/default_text_three_color"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvAliveQuantity"
+                            app:layout_constraintStart_toEndOf="@+id/tvWeight"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvAliveQuantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:drawableEnd="@mipmap/dpos_icon_down"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/dpos_new_string_sift_4"
+                            android:textColor="@color/default_text_three_color"
+                            android:textSize="14sp"
+                            android:textStyle="normal"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tvCommission"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:itemCount="3"
+            tools:listitem="@layout/activity_dpos_market_item" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

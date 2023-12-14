@@ -1,0 +1,28 @@
+
+
+package org.matrix.android.sdk.internal.crypto.keysbackup.tasks
+
+import org.matrix.android.sdk.internal.crypto.keysbackup.api.RoomKeysApi
+import org.matrix.android.sdk.internal.crypto.keysbackup.model.rest.KeysBackupData
+import org.matrix.android.sdk.internal.network.GlobalErrorReceiver
+import org.matrix.android.sdk.internal.network.executeRequest
+import org.matrix.android.sdk.internal.task.Task
+import javax.inject.Inject
+
+internal interface GetSessionsDataTask : Task<GetSessionsDataTask.Params, KeysBackupData> {
+    data class Params(
+            val version: String
+    )
+}
+
+internal class DefaultGetSessionsDataTask @Inject constructor(
+        private val roomKeysApi: RoomKeysApi,
+        private val globalErrorReceiver: GlobalErrorReceiver
+) : GetSessionsDataTask {
+
+    override suspend fun execute(params: GetSessionsDataTask.Params): KeysBackupData {
+        return executeRequest(globalErrorReceiver) {
+            roomKeysApi.getSessionsData(params.version)
+        }
+    }
+}

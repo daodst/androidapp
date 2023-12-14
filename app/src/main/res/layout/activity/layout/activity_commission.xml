@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.wallet.ctc.view.TitleBarView
+        android:id="@+id/commissionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="@string/commissionTitle" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/default_hint_text_color"
+        android:textSize="12sp"
+        android:text="@string/commissionTips" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/commissionRate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            tools:text="（10%）"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#E6E6E6" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/commissionRateEdTips"
+            android:paddingStart="12dp"
+            android:textColor="#111111" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/commissionRateEd"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/dialog_input_bg"
+                android:hint="@string/commissionRateEdHint"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                android:paddingStart="14dp"
+                android:paddingEnd="34dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginEnd="12dp"
+                android:text="%"
+                android:textColor="#ff0bbd8b"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/governance_pools_string_6"
+            android:textColor="@color/default_text_two_color" />
+
+        <EditText
+            android:id="@+id/commissionDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/sm_bg_pledge_edit"
+            android:gravity="start|top"
+            android:hint="@string/commissionDescHint"
+            android:lines="4"
+            android:paddingStart="12dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="16dp"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/commissionBt"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/governance_pools_string_10"
+        android:textSize="16sp"
+        android:textStyle="bold"
+       />
+</LinearLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <ImageView
+        android:id="@+id/composerTranslateClose"
+        android:layout_width="58dp"
+        android:layout_height="38dp"
+        android:layout_gravity="right"
+        android:scaleType="centerInside"
+        android:src="@drawable/composer_translate_close"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="@dimen/dimen_6dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/composerTranslateFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/composer_translate_chinese"
+            android:textColor="#ff111111"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/composerTranslateArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="64dp"
+            android:paddingRight="64dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/composer_translate_to"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/composerTranslateTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/composer_translate_english"
+            android:textColor="#ff111111"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="@dimen/dp_20">
+
+        <EditText
+            android:id="@+id/composerTranslateContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/composer_translate_text_bg"
+            android:gravity="top"
+            android:paddingStart="10dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="17dp"
+            android:paddingBottom="10dp"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText,LabelFor,TextFields"
+            tools:text="，，，，" />
+
+        <include
+            android:id="@+id/composerTranslateLoading"
+            layout="@layout/item_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/composerTranslateClear"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/composer_translate_bt_bg"
+            android:gravity="center"
+            android:text="@string/composer_translate_clear"
+            android:textColor="#ff111111"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/composerTranslateAction"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:src="@drawable/composer_translate_start"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/composerTranslateSend"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/composer_translate_bt_bg"
+            android:gravity="center"
+            android:text="@string/composer_translate_send"
+            android:textColor="#ff03b384"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/composerTranslateTips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:gravity="center"
+        android:textColor="#ff111111"
+        android:textSize="14sp"
+        tools:text="，" />
+</merge>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <common.app.ui.view.TitleBarView
+        android:id="@+id/upgrade_type2_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hideDivider="true"
+        app:titleText="@string/upgrade_title" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F6F7FB"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/upgrade_type1_title_tips"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/round_top_c5"
+                android:orientation="vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="9dp"
+                android:paddingBottom="18dp">
+
+                <TextView
+                    android:id="@+id/upgrade_type2_type_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="APP" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#E6E6E6" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/upgrade_type2_version"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/upgrade_type2_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_pay_vote_step2_ed"
+                    android:hint="@string/upgrade_type2_version_hint"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#cccccc"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/upgrade_type2_url_linux"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/upgrade_type2_url_linux"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_pay_vote_step2_ed"
+                    android:hint="@string/upgrade_type2_url_linux_hint"
+                    android:paddingLeft="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#cccccc"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/upgrade_type2_url_windows"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/upgrade_type2_url_windows"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_pay_vote_step2_ed"
+                    android:hint="@string/upgrade_type2_url_windows_hint"
+                    android:paddingLeft="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#cccccc"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/upgrade_type2_hight"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/upgrade_type2_hight"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_pay_vote_step2_ed"
+                    android:hint="@string/upgrade_type2_hight_hint"
+                    android:inputType="number"
+                    android:paddingLeft="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#cccccc"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/upgrade_type2_name"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/upgrade_type2_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_pay_vote_step2_ed"
+                    android:hint="@string/upgrade_type2_name_hint"
+                    android:paddingLeft="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#cccccc"
+                    android:textSize="15sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/upgrade_type2_sha512_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/upgrade_type1_sha512_tips_linux"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/upgrade_type2_sha512_linux"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_pay_vote_step2_ed"
+                        android:hint="@string/upgrade_type1_sha512_hint"
+                        android:paddingLeft="12dp"
+                        android:textColor="#111111"
+                        android:textColorHint="#cccccc"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/upgrade_type1_sha512_tips_windows"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/upgrade_type2_sha512_windows"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_pay_vote_step2_ed"
+                        android:hint="@string/upgrade_type1_sha512_hint"
+                        android:paddingLeft="12dp"
+                        android:textColor="#111111"
+                        android:textColorHint="#cccccc"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <Button
+            android:id="@+id/upgrade_type2_bt"
+            style="@style/common_button"
+            android:text="@string/pay_vote_bt_tips" />
+    </LinearLayout>
+</LinearLayout>

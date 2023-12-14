@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/default_titlebar_bg_color">
+        <ImageView
+            android:id="@+id/btn_titlebar_left"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/backs"
+            />
+
+        <TextView
+            android:id="@+id/tv_titlebar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:textColor="@color/default_titlebar_title_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Title"/>
+
+        <TextView
+            android:id="@+id/btn_titlebar_rights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/dimen_6dp"
+            android:textColor="@color/default_titlebar_right_color"
+            android:textSize="16sp"
+            android:padding="4dp"
+            android:visibility="gone" />
+
+        <common.app.my.localalbum.utils.FilterImageView
+            android:id="@+id/btn_titlebar_right"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_10"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/title_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:visibility="gone"
+        android:background="@color/default_dividing_line" />
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/common_topbar_parnt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_tb_h"
+                android:background="@color/default_titlebar_bg_color">
+
+    <TextView
+        android:id="@+id/common_top_bar_left_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:minWidth="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/common_bar_marginLeftt"
+        android:clickable="true"
+        android:drawablePadding="@dimen/comon_top_bar_drawablepadding"
+        android:gravity="center"
+        android:textSize="@dimen/topbar_left_tv"
+        tools:drawableLeft="@mipmap/back"
+        />
+
+    <TextView
+        android:id="@+id/common_top_bar_middle_tv"
+        android:layout_width="@dimen/common_top_bar_middle_tv_width"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/default_titlebar_title_color"
+        android:textSize="@dimen/topbar_middle_tv"
+        tools:text="@string/contact_des"/>
+
+
+    <TextView
+        android:id="@+id/common_top_bar_righter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="@dimen/dp_45"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="12dp"
+        android:textColor="@color/default_titlebar_right_color"
+        android:clickable="true"
+        android:drawablePadding="@dimen/comon_top_bar_drawablepadding"
+        android:gravity="center"
+        android:textSize="@dimen/dp_16"
+        tools:text=""/>
+</RelativeLayout>

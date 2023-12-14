@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loadmore_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/shuaxinbg_one" >
+    <!--android:paddingBottom="20dp"
+    android:paddingTop="20dp"-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_5"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+
+
+            <ImageView
+                android:id="@+id/pullup_icon"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_25"
+                android:background="@drawable/pull_icon_big" />
+
+            <ImageView
+                android:id="@+id/loading_icon"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:background="@drawable/refreshing"
+                android:visibility="gone" />
+
+
+
+            <ImageView
+                android:id="@+id/loadstate_iv"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/loadstate_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pull_to_refresh"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:textSize="@dimen/dp_14" />
+        </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/icon_private_power_bg">
+
+    <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icon_private_default_avatat" />
+
+    <TextView
+            android:id="@+id/tvName2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAvatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivAvatar"
+            app:layout_constraintTop_toTopOf="@+id/ivAvatar"
+            tools:text="Christine Chandler" />
+
+    <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="155dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName2"
+            app:srcCompat="@mipmap/icon_private_power_bg2" />
+
+    <TextView
+            android:id="@+id/tvGasName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/dvm_virtual_machine_string_1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            tools:text="GAS" />
+
+    <TextView
+            android:id="@+id/tvGas2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvGasName"
+            app:layout_constraintStart_toStartOf="@+id/tvGasName"
+            app:layout_constraintTop_toBottomOf="@+id/tvGasName"
+            tools:text="54780.158663" />
+
+    <TextView
+            android:id="@+id/tvAwardDst"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dvm_virtual_machine_string_2"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvGas2"
+            app:layout_constraintStart_toStartOf="@+id/tvGas2"
+            app:layout_constraintTop_toBottomOf="@+id/tvGas2"
+            tools:text="" />
+
+    <TextView
+            android:id="@+id/tvAwardDstValue2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvAwardDst"
+            app:layout_constraintStart_toStartOf="@+id/tvAwardDst"
+            app:layout_constraintTop_toBottomOf="@+id/tvAwardDst"
+            tools:text="1063.542154823  DST" />
+
+    <TextView
+            android:id="@+id/btnReward2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/button_green_18"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/dvm_virtual_machine_string_3"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            tools:text="" />
+
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_private_power_item"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dvm_virtual_machine_string_4"
+                    android:textColor="#6CA195"
+                    android:textSize="13sp"
+                    tools:text="GAS" />
+
+            <TextView
+                    android:id="@+id/tvGasDay2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/default_theme_color"
+                    android:textSize="13sp"
+                    tools:text="3.265" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/group_information_string_22"
+                    android:textColor="#6CA195"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dvm_virtual_machine_string_5"
+                    android:textColor="#6CA195"
+                    android:textSize="13sp"
+                    tools:text="" />
+
+            <TextView
+                    android:id="@+id/tvPowerContract2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_weight="1"
+                    android:drawableEnd="@mipmap/icon_private_copy"
+                    android:drawablePadding="7dp"
+                    android:ellipsize="middle"
+                    android:gravity="end"
+                    android:textColor="#6CA195"
+                    android:textSize="13sp"
+                    tools:text="--" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dvm_virtual_machine_string_6"
+                    android:textColor="#6CA195"
+                    android:textSize="13sp"
+                    tools:text="" />
+
+            <TextView
+                    android:id="@+id/tvBlockHeight2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="#6CA195"
+                    android:textSize="13sp"
+                    tools:text="--" />
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/btnPowerDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/dvm_virtual_machine_string_8"
+                android:textColor="@color/default_theme_color"
+                android:visibility="gone"
+                tools:text="" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

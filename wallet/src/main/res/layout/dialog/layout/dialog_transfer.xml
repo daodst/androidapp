@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/round_top_f5_c10">
+
+        <ImageView
+            android:id="@+id/close_dialog"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/close" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/pay_detail"
+            android:textColor="@color/default_text_color"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/pay_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/default_top_background_color"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/order_info"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/order_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@string/transfer"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ru_address_parent"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/ru_address"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ru_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="15sp"
+                        tools:text="dst1wjqzctc0qy5lkr5cay0dmqymw8jfw0cmvjn32w" />
+
+                    <ImageView
+                        android:id="@+id/ru_address_copy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_5"
+                        android:src="@drawable/dialog_transfer_copy" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/pay_address"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pay_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="15sp"
+                        tools:text="dst1wjqzctc0qy5lkr5cay0dmqymw8jfw0cmvjn32w" />
+
+                    <ImageView
+                        android:id="@+id/pay_address_copy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_5"
+                        android:src="@drawable/dialog_transfer_copy" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fee_lin"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/miner_costs"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/miner_costs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:textColor="@color/default_theme_color"
+                            android:textSize="15sp"
+                            tools:text="1.5 ETH" />
+
+                        <TextView
+                            android:id="@+id/miner_costs_congestion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="（）"
+                            android:textColor="#FF5500"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/miner_costs_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:textColor="@color/default_theme_color"
+                        android:textSize="14sp"
+                        tools:text="≈Gas(5200)*GasPrice(10gwei)" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/amount_lin"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/amount"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:textColor="@color/default_theme_color"
+                    android:textSize="16sp"
+                    tools:text="100" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/inputpwd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/lin_eaeaea_bg"
+                    android:hint="@string/place_edit_password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/kuanggong_gaoji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/gaojixuanxiang"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/gaoji_open"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:button="@drawable/gaoji_checkbox"
+                    android:checked="false"
+                    android:padding="0dp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/gaoji_gas_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/default_top_background_color"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/basTransfer_normalView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bql_selectot_fee">
+
+                        <TextView
+                            android:id="@+id/basTransfer_normalDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/bql_standard"
+                            android:textColor="@color/bql_fee_color"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/basTransfer_normalValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/basTransfer_normalTime"
+                            android:layout_below="@+id/basTransfer_normalDesc"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/dimen_2dp"
+                            android:paddingEnd="@dimen/dimen_2dp"
+                            android:text="0.00"
+                            android:textColor="@color/bql_fee_color"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/basTransfer_normalTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_20dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/dimen_2dp"
+                            android:paddingEnd="@dimen/dimen_2dp"
+                            android:text="@string/wallet_time_hint"
+                            android:textColor="@color/bql_fee_color"
+                            android:textSize="11sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/basTransfer_fastView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dimen_8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bql_selectot_fee">
+
+                        <TextView
+                            android:id="@+id/basTransfer_fastDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/fast"
+                            android:textColor="@color/bql_fee_color"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/basTransfer_fastValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/basTransfer_fastTime"
+                            android:layout_below="@+id/basTransfer_fastDesc"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/dimen_2dp"
+                            android:paddingEnd="@dimen/dimen_2dp"
+                            android:text="0.00"
+                            android:textColor="@color/bql_fee_color"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/basTransfer_fastTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_20dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_gravity="bottom"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/dimen_2dp"
+                            android:paddingEnd="@dimen/dimen_2dp"
+                            android:text="@string/wallet_time_hint"
+                            android:textColor="@color/bql_fee_color"
+                            android:textSize="11sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/basTransfer_custom"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dimen_8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bql_selector_line"
+                        android:gravity="center"
+                        android:text="@string/bql_custom"
+                        android:textColor="@color/bql_fee_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- gas -->
+                <LinearLayout
+                    android:id="@+id/gaoji"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:text="GAS"
+                        android:textColor="#ff666666"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/gas"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_gas_bg"
+                        android:gravity="center_vertical"
+                        android:hint="@string/gaoji_gas"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:paddingLeft="15dp"
+                        android:textColor="@color/default_hint_text_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/btn_sub"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/lin_blue_bg_wallet"
+                    android:gravity="center"
+                    android:text="@string/confirm"
+                    android:textColor="@color/default_button_text_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

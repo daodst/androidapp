@@ -1,0 +1,160 @@
+
+
+package im.vector.app.features.call.conference
+
+import im.vector.app.R
+import im.vector.app.core.network.await
+import im.vector.app.core.resources.StringProvider
+import im.vector.app.core.utils.ensureProtocol
+import im.vector.app.core.utils.toBase32String
+import im.vector.app.features.call.conference.jwt.JitsiJWTFactory
+import im.vector.app.features.displayname.getBestName
+import im.vector.app.features.raw.wellknown.getElementWellknown
+import im.vector.app.features.settings.VectorLocale
+import im.vector.app.features.themes.ThemeProvider
+import okhttp3.Request
+import org.jitsi.meet.sdk.JitsiMeetUserInfo
+import org.matrix.android.sdk.api.extensions.tryOrNull
+import org.matrix.android.sdk.api.raw.RawService
+import org.matrix.android.sdk.api.session.Session
+import org.matrix.android.sdk.api.session.widgets.model.Widget
+import org.matrix.android.sdk.api.session.widgets.model.WidgetType
+import org.matrix.android.sdk.api.util.MatrixJsonParser
+import org.matrix.android.sdk.api.util.appendParamToUrl
+import org.matrix.android.sdk.api.util.toMatrixItem
+import java.net.URL
+import java.util.UUID
+import javax.inject.Inject
+
+class JitsiService @Inject constructor(
+        private val session: Session,
+        private val rawService: RawService,
+        private val stringProvider: StringProvider,
+        private val themeProvider: ThemeProvider,
+        private val jitsiJWTFactory: JitsiJWTFactory) {
+
+    companion object {
+        const val JITSI_OPEN_ID_TOKEN_JWT_AUTH = "openidtoken-jwt"
+    }
+
+    private val jitsiWidgetDataFactory by lazy {
+        JitsiWidgetDataFactory(stringProvider.getString(R.string.preferred_jitsi_domain)) { widget ->
+            session.widgetService().getWidgetComputedUrl(widget, themeProvider.isLightTheme())
+        }
+    }
+
+    suspend fun createJitsiWidget(roomId: String, withVideo: Boolean): Widget {
+        
+        val widgetId: String = WidgetType.Jitsi.preferred + "_" + session.myUserId + "_" + System.currentTimeMillis()
+        val preferredJitsiDomain = tryOrNull {
+            rawService.getElementWellknown(session.sessionParams)
+                    ?.jitsiServer
+                    ?.preferredDomain
+        }
+        val jitsiDomain = preferredJitsiDomain ?: stringProvider.getString(R.string.preferred_jitsi_domain)
+        val jitsiAuth = getJitsiAuth(jitsiDomain)
+        val confId = createConferenceId(roomId, jitsiAuth)
+
+        
+        
+        
+        val url = buildString {
+            append("https://app.element.io/jitsi.html")
+            appendParamToUrl("confId", confId)
+            append("#conferenceDomain=\$domain")
+            append("&conferenceId=\$conferenceId")
+            append("&isAudioOnly=\$isAudioOnly")
+            append("&displayName=\$matrix_display_name")
+            append("&avatarUrl=\$matrix_avatar_url")
+            append("&userId=\$matrix_user_id")
+            append("&roomId=\$matrix_room_id")
+            append("&theme=\$theme")
+            if (jitsiAuth != null) {
+                append("&auth=$jitsiAuth")
+            }
+        }
+        val widgetEventContent = mapOf(
+                "url" to url,
+                "type" to WidgetType.Jitsi.legacy,
+                "data" to JitsiWidgetData(jitsiDomain, confId, !withVideo, jitsiAuth),
+                "creatorUserId" to session.myUserId,
+                "id" to widgetId,
+                "name" to "jitsi"
+        )
+        return session.widgetService().createRoomWidget(roomId, widgetId, widgetEventContent)
+    }
+
+    suspend fun joinConference(roomId: String, jitsiWidget: Widget, enableVideo: Boolean): JitsiCallViewEvents.JoinConference {
+        val me = session.getRoomMember(session.myUserId, roomId)?.toMatrixItem()
+        val userDisplayName = me?.getBestName()
+        val userAvatar = me?.avatarUrl?.let { session.contentUrlResolver().resolveFullSize(it) }
+        val userInfo = JitsiMeetUserInfo().apply {
+            this.displayName = userDisplayName
+            this.avatar = userAvatar?.let { URL(it) }
+        }
+        val roomName = session.getRoomSummary(roomId)?.displayName
+        val widgetData = jitsiWidgetDataFactory.create(jitsiWidget)
+        val token = if (widgetData.isOpenIdJWTAuthenticationRequired()) {
+            getOpenIdJWTToken(roomId, widgetData.domain, userDisplayName ?: session.myUserId, userAvatar ?: "")
+        } else {
+            null
+        }
+        return JitsiCallViewEvents.JoinConference(
+                enableVideo = enableVideo,
+                jitsiUrl = widgetData.domain.ensureProtocol(),
+                subject = roomName ?: "",
+                confId = widgetData.confId,
+                userInfo = userInfo,
+                token = token
+        )
+    }
+
+    fun extractJitsiWidgetData(widget: Widget): JitsiWidgetData? {
+        return tryOrNull {
+            jitsiWidgetDataFactory.create(widget)
+        }
+    }
+
+    private fun JitsiWidgetData.isOpenIdJWTAuthenticationRequired(): Boolean {
+        return auth == JITSI_OPEN_ID_TOKEN_JWT_AUTH
+    }
+
+    private suspend fun getOpenIdJWTToken(roomId: String, domain: String, userDisplayName: String, userAvatar: String): String {
+        val openIdToken = session.openIdService().getOpenIdToken()
+        return jitsiJWTFactory.create(
+                openIdToken = openIdToken,
+                jitsiServerDomain = domain,
+                roomId = roomId,
+                userAvatarUrl = userAvatar,
+                userDisplayName = userDisplayName
+        )
+    }
+
+    private fun createConferenceId(roomId: String, jitsiAuth: String?): String {
+        return if (jitsiAuth == JITSI_OPEN_ID_TOKEN_JWT_AUTH) {
+            
+            
+            
+            
+            roomId.toBase32String(padding = false)
+        } else {
+            
+            
+            
+            var widgetSessionId = UUID.randomUUID().toString()
+            if (widgetSessionId.length > 8) {
+                widgetSessionId = widgetSessionId.substring(0, 7)
+            }
+            roomId.substring(1, roomId.indexOf(":") - 1) + widgetSessionId.lowercase(VectorLocale.applicationLocale)
+        }
+    }
+
+    private suspend fun getJitsiAuth(jitsiDomain: String): String? {
+        val request = Request.Builder().url("$jitsiDomain/.well-known/element/jitsi".ensureProtocol()).build()
+        return tryOrNull {
+            val response = session.getOkHttpClient().newCall(request).await()
+            val json = response.body?.string() ?: return null
+            MatrixJsonParser.getMoshi().adapter(JitsiWellKnown::class.java).fromJson(json)?.auth
+        }
+    }
+}

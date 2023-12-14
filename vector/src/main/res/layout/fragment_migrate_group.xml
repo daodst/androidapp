@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/migrateBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/cluster_back"
+            tools:ignore="contentDescription" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#ff111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="185dp"
+                    android:padding="16dp"
+                    tools:viewBindingIgnore="true">
+
+                    <!-- I cannot do what I want using layer-list, do it manually here-->
+                    <FrameLayout
+                        android:id="@+id/migrateIvContainer"
+                        android:layout_width="113dp"
+                        android:layout_height="113dp"
+                        android:background="@drawable/placeholder_round_background"
+                        android:contentDescription="@string/a11y_change_avatar"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/migrateIv"
+                            android:layout_width="113dp"
+                            android:layout_height="113dp"
+                            android:importantForAccessibility="no"
+                            android:scaleType="center"
+                            tools:alpha="0.3" />
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/migrateIvTake"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/header_panel_round_background"
+                        android:contentDescription="@string/a11y_delete_avatar"
+                        android:scaleType="center"
+                        android:src="@drawable/cluster_take_pic"
+                        app:layout_constraintBottom_toBottomOf="@id/migrateIvContainer"
+                        app:layout_constraintEnd_toEndOf="@id/migrateIvContainer" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#F0F1F3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/cluster_create_name"
+                    android:textColor="#ff111111"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/migrateName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_cluster_input"
+                    android:hint="@string/cluster_create_name_hint"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#ff999999"
+                    android:textSize="14sp"
+                    tools:text="30" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#F0F1F3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/cluster_create_topic"
+                    android:textColor="#ff111111"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/migrateTopic"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_cluster_input"
+                    android:hint="@string/cluster_create_topic_hint"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#ff999999"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#F0F1F3" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/cluster_create_right"
+                    android:textColor="#ff111111"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#E6E6E6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="15dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/cluster_create_right_person"
+                    android:textColor="#ff111111"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:drawableRightCompat="@drawable/cluster_person_ico" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="12dp"
+                    android:includeFontPadding="false"
+                    android:text="@string/cluster_create_right_person_tips"
+                    android:textColor="#ff999999"
+                    android:textSize="12sp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#F0F1F3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="18dp"
+                    android:drawablePadding="4dp"
+                    android:text="@string/cluster_create_note"
+                    android:textColor="#ff111111"
+                    android:textSize="15sp"
+                    app:drawableLeftCompat="@drawable/cluster_person_note" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="#08FF7F00"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/migrateTips"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/migrate_tips"
+                        android:textColor="#ff111111"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#F0F1F3" />
+
+                <TextView
+                    android:id="@+id/migrateBt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bg_cluster_bt_big"
+                    android:gravity="center"
+                    android:text="@string/cluster_create_create"
+                    android:textColor="#ffffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/waiting_view"
+                layout="@layout/merge_overlay_waiting_view" />
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

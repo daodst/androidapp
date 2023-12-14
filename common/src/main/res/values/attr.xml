@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="type">
+            <enum name="circle" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="slideswitch">
+        <attr name="themeColor" format="color"/>
+        <attr name="isOpen" format="boolean"/>
+        <attr name="shape">
+            <enum name="rect" value="1"/>
+            <enum name="circle" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Title_bar">
+        <attr name="titleText" format="string"/>
+        <attr name="righttitleText" format="string"/>
+        <attr name="setleftimg" format="boolean"/>
+        <attr name="leftimg" format="reference|integer"/>
+        <attr name="rightimg" format="reference|integer"/>
+        <attr name="backgroundcolor" format="integer"/>
+        <attr name="hideDivider" format="boolean"/>
+    </declare-styleable>
+
+    <!-- StepProgressViewview -->
+    <declare-styleable name="stepProgressStyle">
+        <attr name="setp1text" format="string"/>
+        <attr name="setp2text" format="string"/>
+        <attr name="setp3text" format="string"/>
+        <attr name="setp4text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="rightindexview">
+        <attr name="index_rootBgColor" format="color|reference"/>
+        <attr name="index_rootTouchBgColor" format="color|reference"/>
+        <attr name="index_itemBgColor" format="color|reference"/>
+        <attr name="index_itemTouchBgColor" format="color|reference"/>
+        <attr name="index_itemTextColor" format="color|reference"/>
+        <attr name="index_itemTextTouchBgColor" format="color|reference"/>
+        <attr name="index_itemTextSize" format="dimension|reference"/>
+    </declare-styleable>
+    <declare-styleable name="centertipview">
+        <attr name="tips_bgColor" format="color|reference"/>
+        <attr name="tips_textColor" format="color|reference"/>
+        <attr name="tips_textSize" format="dimension|reference"/>
+        <attr name="tips_text" format="string"/>
+        <attr name="tips_type">
+            <enum name="tips_round" value="0"/>
+            <enum name="tips_circle" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="LazyViewPager">
+        <attr name="init_lazy_item_offset" format="float"/>
+    </declare-styleable>
+</resources>

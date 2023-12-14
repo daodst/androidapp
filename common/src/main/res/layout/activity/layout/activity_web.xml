@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--
+    <common.app.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </common.app.ui.view.TitleBarView>
+    -->
+    <RelativeLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/default_titlebar_bg_color">
+
+        <common.app.my.localalbum.utils.FilterImageView
+            android:id="@+id/btn_titlebar_left"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/selectorbackbg" />
+
+        <common.app.my.localalbum.utils.FilterImageView
+            android:id="@+id/btn_close"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/btn_titlebar_left"
+            android:padding="@dimen/dp_12"
+            android:src="@drawable/web_close"
+            />
+        <TextView
+            android:id="@+id/tv_titlebar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:textColor="@color/default_titlebar_title_color"
+            android:textSize="@dimen/dp_18" />
+
+        <TextView
+            android:id="@+id/btn_titlebar_rights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/dimen_6dp"
+            android:textColor="@color/default_text_three_color"
+            android:textSize="@dimen/dp_16"
+            android:padding="@dimen/dp_4"
+            android:visibility="gone"
+            android:text="Confirm"/>
+
+        <common.app.my.localalbum.utils.FilterImageView
+            android:id="@+id/btn_titlebar_right"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/to_refresh"
+            />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/default_dividing_line"/>
+    <WebView
+    android:id="@+id/web"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"/>
+</LinearLayout>

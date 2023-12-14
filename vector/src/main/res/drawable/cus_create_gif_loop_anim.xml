@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    android:oneshot="true"-->
+    <!--    
+    <item
+        android:drawable="@drawable/create_room_loop_01"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_02"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_03"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_03"
+        android:duration="62" />
+
+    <item
+        android:drawable="@drawable/create_room_loop_04"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_05"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_06"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_07"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_08"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_09"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_10"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_11"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_12"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_13"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_14"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_15"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_16"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_17"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_17"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/create_room_loop_18"
+        android:duration="62" />
+</animation-list>

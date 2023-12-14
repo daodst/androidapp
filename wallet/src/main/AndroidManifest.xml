@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wallet.ctc">
+
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!--  debug 6.0   -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.wallet.ctc.ui.realize.USDTRealizeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.issuance.rec.IssuanceCoinRecActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.issuance.IssuanceCoinActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.blockchain.did.WalletDidTransferActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.blockchain.privacy.ChatPrivacySettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.DemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.changepwd.ChangePwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.batchtransfer.BatchTransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.base.BaseWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsBTCDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.tokendetail.TokenDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsEthDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.income.IncomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferBTCActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferSolActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.dapp.DappWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.dapp.list.DappActivity" />
+        <activity android:name=".ui.dapp.search.DappSearchHistoryActivity" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.ChangeTransferEthGasPriceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferBtcDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsTRXDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferTrxDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.setfee.SettingFeeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferTrxActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.setnode.SettingNodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.addnode.AddNodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.ChooseTypeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.setting.SettingDefWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.setting.SettingDefWalletTypeActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.creattoken.CreatTokenHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.creattoken.CreatEthTokenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.shareapp.ShareAppActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferEthDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsSgbDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferSgbDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferSgbActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transactionrecord.TransactionEthRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.tokendetail.EthTokenDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.income.IncomeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.principal.PrincipalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferEthActivity"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.managewallet.ChooseCreatImportTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.protocol.ProtocolActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.about.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.notice.NoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.blockchainlogin.BlockchainLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.addassets.BaseAddAssetsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.addressbook.AddressBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.addressbook.AddressBookAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.importwallet.ImportWalletActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.wallet.ctc.ui.me.setting.CurrencyUnitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.creatwallet.CreatWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.backupwallet.BackUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.backupwallet.BackUpMnemonicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.backupwallet.BackUpCaveatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.backupwallet.BackUpMnemonicVerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transactionrecord.TransactionRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.addassets.AddAssetsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.addquotes.AddQuotesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.mywallet.MyWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.seach.SeachActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.collectmoney.CollectMoneyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.help.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.backupwallet.BackUpKeystoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.view.choosemorepic.LocalAlbum"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.view.choosemorepic.LocalAlbumDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.quotesdetail.QuotesDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transactionrecord.ChooseWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.choosenode.ChooseNodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.block.BlockActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.block.BlockDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.creattoken.CreatTokenOne"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.creattoken.CreatTokenTwo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferXrpDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.managewallet.AddWalletTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferXrpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transferdetail.TransferFilDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsXrpDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.assetsdetail.AssetsFilDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferEtcActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferFilActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferLtcActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferDotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferBchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransfeZecActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.transfer.TransferDogeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.ui.blockchain.mywallet.ManageIdentityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.nft.ui.TransferNFTActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.nft.ui.NftDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.nft.ui.NftAssetsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.ctc.nft.ui.NftAddAssetsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.me.virtualphone.SMVirtualPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.me.virtualphone.SMGetVirtualPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.me.pledge.SMPledgeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.me.chain_bridge.ChainBridgeActivity" />
+        <activity
+            android:name=".ui.me.chain_bridge2.ChainBridgeActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.me.chain_bridge2.submit_confirm.ChainBridgeConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.me.chain_bridge2.orders.ChainBridgeOrdersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.me.chain_bridge2.timeline.ChainBridgeTimeLineActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".vpn.service.SimpleVpnService"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ui.blockchain.choosewallet.ChooseManagerWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.me.chain_bridge2.detail.ChainBridgeDetailActivity" />
+        <activity android:name=".ui.blockchain.home.NewHomeActivity" />
+    </application>
+
+</manifest>

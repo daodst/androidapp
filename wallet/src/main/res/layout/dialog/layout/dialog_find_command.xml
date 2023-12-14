@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:padding="@dimen/dp_10"
+        >
+        <EditText
+            android:id="@+id/command_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/lin_huise_bg2"
+            android:padding="@dimen/dp_5"
+            android:gravity="top"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/default_text_two_color"
+            android:textColorHint="@color/default_hint_text_color"
+            android:hint="@string/say_something"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center|right"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        >
+        <TextView
+            android:id="@+id/btn_sub"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="@drawable/lin_huise_bg2"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@color/default_text_two_color"
+            android:text="@string/release"
+            />
+    </LinearLayout>
+</LinearLayout>

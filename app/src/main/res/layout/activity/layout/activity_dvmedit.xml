@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F1F3"
+    android:orientation="vertical">
+
+    <com.wallet.ctc.view.TitleBarView
+        android:id="@+id/dvmEditTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hideDivider="true"
+        app:titleText="@string/dvmEditTitle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/dvm_edit_top" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:layout_marginBottom="@dimen/dp_30">
+
+            <TextView
+                android:id="@+id/dvmEditContent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/dvm_edit_bg"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="#ff000000"
+                android:textSize="23sp"
+                tools:text="http://111.111.111.11csadsakldjsakhfjksdhfjksadjfkadshfjkdsahfk" />
+
+            <LinearLayout
+                android:id="@+id/dvmEditCopy"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center"
+                android:background="#F0F1F3"
+                android:gravity="center|right"
+                android:minWidth="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:src="@drawable/dvm_edit_copy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#ff0bbd8b"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.2"
+            android:text="，，。"
+            android:textColor="#ff374843"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

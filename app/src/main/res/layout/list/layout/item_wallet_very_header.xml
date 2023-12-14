@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:text="@string/hwallet_very_detial_tips"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_14">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_name_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text="1"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_num_tips"
+                android:textColor="#ff999999"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text="1000 FM"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_rate_tips"
+                android:textColor="#ff999999"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text="20%"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_min_tips"
+                android:textColor="#ff999999"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text="20 FM"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_id_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text=""
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_status_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/hwallet_very_detial_status_level"
+                    android:layout_width="@dimen/dimen_36sp"
+                    android:layout_height="@dimen/dp_16"
+                    android:background="@drawable/wallet_very_header_status1"
+                    android:gravity="center"
+                    android:text="@string/hwallet_very_detial_status_level"
+                    android:textColor="#ffffffff"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/hwallet_very_detial_status_active"
+                    android:layout_width="@dimen/dimen_36sp"
+                    android:layout_height="@dimen/dp_16"
+                    android:background="@drawable/wallet_very_header_status2"
+                    android:gravity="center"
+                    android:text="@string/hwallet_very_detial_status_active"
+                    android:textColor="#ffffffff"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_height_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text="1000"
+                android:textColor="#ff333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_time_tips"
+                android:textColor="#ff999999"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="2022-11-10 11:48" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_yes_no_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/hwallet_very_detial_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hwallet_very_detial_no1"
+                    android:textColor="#ff999999"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/hwallet_very_detial_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hwallet_very_detial_yes"
+                    android:textColor="#ffff5500"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_chat_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="fsv@gamil.com" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_payed_tips"
+                android:maxWidth="@dimen/dp_150"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_payed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="50 FM" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/very_header_pay"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="36dp"
+                android:background="@drawable/wallet_very_header_bt1"
+                android:gravity="center"
+                android:text="@string/wallet_very_header_bt1"
+                android:textColor="#ff0bbd8b"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/very_header_unpay"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="36dp"
+                android:background="@drawable/wallet_very_header_bt2"
+                android:gravity="center"
+                android:text="@string/wallet_very_header_bt2"
+                android:textColor="#ffffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:text="@string/hwallet_very_detial_rebate_tips"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_rebate_time_tips"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_rebate_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="2022-11-02 16:56" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_rebate_rate_tips"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_rebate_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="10%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_rebate_mrate_tips"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_rebate_mrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="10%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hwallet_very_detial_rebate_rate_day_tips"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/hwallet_very_detial_rebate_rate_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#ff333333"
+                android:textSize="13sp"
+                tools:text="10%" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:text="@string/hwallet_very_detial_list_tips"
+        android:textColor="#ff333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</LinearLayout>

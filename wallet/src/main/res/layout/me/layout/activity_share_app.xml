@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/share_ad_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        ></androidx.recyclerview.widget.RecyclerView>
+    <EditText
+        android:id="@+id/share_content"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@null"
+        android:hint=""
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_10"
+        android:textColorHint="@color/default_hint_text_color"
+        android:textColor="@color/default_text_three_color"
+        android:textSize="14sp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@color/default_dividing_line"
+        />
+    <TextView
+        android:id="@+id/share_submit"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/lin_blue_bg_wallet"
+        android:layout_margin="@dimen/dp_10"
+        android:text=""
+        android:gravity="center"
+        android:textColor="@color/default_button_text_color"
+        />
+</LinearLayout>

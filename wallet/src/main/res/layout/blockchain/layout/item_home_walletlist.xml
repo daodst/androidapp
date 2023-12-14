@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/body_bg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:gravity="center_vertical">
+
+        <common.app.my.view.CircularImage
+            android:id="@+id/wallet_logo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/userlogo1"/>
+
+        <TextView
+            android:id="@+id/wallet_name_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/default_text_two_color"
+            android:layout_marginLeft="@dimen/dp_10"
+            tools:text="121564212"
+            />
+    </LinearLayout>
+</LinearLayout>

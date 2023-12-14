@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:background="#F6F7FB"
+    tools:layout_height="match_parent"
+    tools:viewBindingIgnore="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="?android:colorBackground"
+        android:minHeight="64dp"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/layout_horizontal_margin"
+        android:paddingTop="8dp"
+        android:paddingEnd="@dimen/layout_horizontal_margin"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/p4invite_item_ico"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center_vertical"
+            android:importantForAccessibility="no"
+            android:scaleType="center"
+            tools:src="@drawable/ic_room_profile_notification"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/p4invite_item_title"
+                    style="@style/Widget.Vector.TextView.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="middle"
+                    android:includeFontPadding="false"
+                    android:paddingEnd="50dp"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="" />
+
+                <TextView
+                    android:id="@+id/p4invite_item_pay_label"
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/p4invite_item_pay_label_bg"
+                    android:paddingLeft="3dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="2dp"
+                    android:singleLine="true"
+                    android:text="@string/p4invite_item_pay_label"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    tools:ignore="RtlHardcoded"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/p4invite_item_did"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:textColor="#ff999999"
+                android:textSize="12sp"
+                tools:text="DID：17866586688" />
+
+            <TextView
+                android:id="@+id/p4invite_item_adress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="middle"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:textColor="#ff999999"
+                android:textSize="12sp"
+                tools:text="：Fmd161f2cav......g6ehx6cc600" />
+
+            <TextView
+                android:id="@+id/p4invite_item_price"
+                style="@style/Widget.Vector.TextView.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:drawablePadding="16dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="#ff999999"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/p4invite_item_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_invitate_pay_bg"
+                android:gravity="center"
+                android:minWidth="64dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/p4invite_item_pay"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/p4invite_item_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/p4invite_item_pay_ok"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/roomDividerView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?vctr_list_separator_system" />
+
+</LinearLayout>

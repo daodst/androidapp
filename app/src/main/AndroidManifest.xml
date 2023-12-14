@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app">
+    <!-- INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 8.0 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- ，，，， -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> <!--  -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!--  -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- Toast -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- <uses-permission android:tvName="android.permission.CALL_PRIVILEGED"/> -->
+    <!-- Required -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/> -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Baidu -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--  -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" /> <!-- jPush -->
+    <!-- Required -->
+    <!--
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    -->
+    <!-- Required  ， -->
+    <!-- <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" /> -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!--  debug 6.0   -->
+    <!--  -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!--  addview -->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!--  -->
+    <!--
+    <permission
+        android:name="${applicationId}.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${applicationId}.permission.MIPUSH_RECEIVE" />
+    -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+    <application
+        android:name="com.app.App"
+        android:allowBackup="false"
+        android:clearTaskOnLaunch="true"
+        android:debuggable="true"
+        android:extractNativeLibs="true"
+        android:hardwareAccelerated="true"
+        android:hasFragileUserData="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true"
+        android:stateNotNeeded="true"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme"
+        tools:ignore="HardcodedDebugMode"
+        tools:replace="android:supportsRtl,android:icon,android:theme,android:allowBackup,android:resizeableActivity">
+        <activity
+            android:name="com.app.view.privatedvm.edit.DVMEditActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.view.groupinformation.ratio.commission.CommissionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.view.groupinformation.ratio.contribution.ContributionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.home.ui.vote.create.upgrade.type1.UpgradeType1Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.home.ui.vote.create.upgrade.type2.UpgradeType2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.home.ui.vote.create.upgrade.UpgradeStep1Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.home.ui.vote.create.pay.step2.PayVoteStep2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.home.ui.vote.create.pay.setp1.PayVoteStep1Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.me.destory.DestoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.me.destory_group.DestoryGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.me.computing.ComputingActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.me.policy.PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app.home.ui.vote.list.web.VoteWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.ui.ver.list.VWalletVeryListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.ui.vote.detial.VoteDetialActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.ui.vote.list.VoteListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.ui.ver.detial.VWalletVeryActivity"
+            android:screenOrientation="portrait" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.app.base.activity.WelcomActivity"
+            android:clearTaskOnLaunch="true"
+            android:exported="true"
+            android:launchMode="standard"
+            android:theme="@style/WelAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.app.base.activity.MainActivity"
+            android:clearTaskOnLaunch="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:theme="@style/launcherLightTheme"
+            android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.app.levelranking.SMLevelRankingActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".appwidget.GatewayService"
+            android:exported="true"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity
+            android:name="common.app.base.share.qr.QrResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="common.app.my.Web"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.my.GalleryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="common.app.my.AreaSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.my.Photo"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="common.app.my.localalbum.LocalAlbum"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="common.app.my.localalbum.LocalAlbumDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.app.my.AgreementWeb"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" /> <!-- BuglyActivity -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".ApiSettingActivity" />
+        <activity
+            android:name="im.vector.app.features.call.phone.logs.SMDialHistoryActivity"
+            android:resource="@xml/file_paths" />
+        <activity
+            android:name="com.app.node.NodeUnableDialogActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity=":nodeAlertDialog"
+            android:theme="@style/activity_dialog_style2" />
+        <activity android:name="com.app.node.NodeListsActivity" />
+        <activity android:name="com.app.node.add.AddFmNodeActivity" />
+        <activity android:name="com.app.node.mod.ModFmNodeActivity" />
+        <activity android:name="com.app.white_black_list.WhiteBlackListActivity" />
+        <activity
+            android:name=".chain.ChainSyncActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name="com.app.did_guid.BuyDidGuidActivity" />
+        <activity android:name="com.app.store.DAppStoreActivity" />
+        <activity android:name="com.app.home.ui.vote.create.CreateVoteActivity" />
+        <activity android:name=".store.detail.DAppStoreDetailActivity" />
+        <activity android:name=".me.SMNewSettingActivity" />
+        <activity android:name=".home.ui.vote.create.StartCreateVoteActivity" />
+        <activity android:name=".home.ui.vote.create.params.StartParamsVoteActivity" />
+        <activity android:name=".home.ui.vote.create.params.CreateParamsVoteActivity" />
+        <activity android:name=".my.reduce.DstReduceActivity" />
+        <activity android:name=".view.groupinformation.GroupInformationActivity" />
+        <activity android:name=".view.groupinformation.GovernancePoolsActivity" />
+        <activity android:name=".view.groupinformation.OrganizationAuthorizationActivity" />
+        <activity android:name=".view.dposmarket.DPosMarketActivity" />
+        <activity android:name=".view.privatedvm.PrivateDVMActivity" />
+        <activity android:name=".view.groupinformation.introduction.IntroductionPageActivity" />
+        <activity android:name=".view.groupinformation.vote.votelist.GovernancePoolsVoteListActivity" />
+        <activity android:name=".view.groupinformation.vote.votedetail.ClusterVoteDetailActivity" />
+        <activity android:name=".note.NoteListActivity" />
+        <activity android:name=".note.edit.EditNoteActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_background_color"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/default_top_background_color">
+
+        <ImageView
+            android:id="@+id/did_transfer_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            android:src="@drawable/did_top_bar_left_black"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/room_privacy_setting_sub_title"
+            android:textColor="#ff111111"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/default_top_background_color"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingTop="35dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/room_privacy_setting_sub_title"
+                android:textColor="#ff111111"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/white_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/room_privacy_ck_white_tips"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/room_privacy_ck_white"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/room_privacy_setting_checkbox_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="30dp"
+                android:background="#E6E6E6" />
+
+            <FrameLayout
+                android:id="@+id/fee_layout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/room_privacy_ck_stranger_tips"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/room_privacy_ck_stranger"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/room_privacy_setting_checkbox_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/need_pay_tip_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/room_privacy_ck_stranger_tips2"
+                android:textColor="#ff999999"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/room_privacy_stranger_consume"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/room_privacy_stranger_consume"
+                android:hint="@string/room_privacy_stranger_consume"
+                android:inputType="numberDecimal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:textColor="#ffb3b3b3"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E6E6E6" />
+
+            <FrameLayout
+                android:id="@+id/all_layout"
+                android:layout_width="match_parent"
+                android:layout_height="82dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/room_privacy_ck_accept_all_tips"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="6dp" />
+
+                    <TextView
+                        android:id="@+id/un_pay_tip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/room_privacy_ck_accept_all_tips_sub"
+                        android:textColor="#ff999999"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/room_privacy_ck_accept_all"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@drawable/room_privacy_setting_checkbox_selector"
+                    android:button="@null"
+                    android:checked="false"
+                    tools:ignore="RtlHardcoded" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="30dp"
+                android:background="#E6E6E6" />
+
+            <Button
+                style="@style/common_button"
+                android:id="@+id/room_privacy_bt"
+                android:text="@string/room_privacy_bt" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/room_privacy_tips"
+                android:textColor="#ff0bbd8b"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

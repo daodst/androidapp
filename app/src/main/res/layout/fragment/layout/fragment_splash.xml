@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--  -->
+    <!-- android:background="@drawable/jys_splash" -->
+    <!--  -->
+    <!-- android:background="@drawable/splash" -->
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/splash_iv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:visibility="gone" />-->
+    <!--  -->
+    <com.app.view.CustomVideoView
+        android:id="@+id/splash_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splase1"
+        android:visibility="visible" />
+
+    <!--
+    <ImageView
+        android:id="@+id/splash_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splase1"
+        android:scaleType="fitXY"/>
+        -->
+</LinearLayout>

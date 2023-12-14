@@ -1,0 +1,229 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    viewBinding {
+        enabled = true
+    }
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
+        buildConfigField "String", "EVMOS_FAKE_UNINT", "\"${rootProject.ext.constant.EVMOS_FAKE_UNINT}\""
+
+        resValue "string", "default_token_name2", "\"${rootProject.ext.constant.EVMOS_FAKE_UNINT.toLowerCase()}\""
+        resValue "string", "default_token_name3", "\"${rootProject.ext.constant.EVMOS_FAKE_UNINT2.toLowerCase()}\""
+
+        buildConfigField "int", "ENABLE_ETH", "${rootProject.ext.constant.ENABLE_ETH}"
+        buildConfigField "int", "ENABLE_BTC", "${rootProject.ext.constant.ENABLE_BTC}"
+        buildConfigField "int", "ENABLE_EOS", "${rootProject.ext.constant.ENABLE_EOS}"
+        buildConfigField "int", "ENABLE_XRP", "${rootProject.ext.constant.ENABLE_XRP}"
+        buildConfigField "int", "ENABLE_TRX", "${rootProject.ext.constant.ENABLE_TRX}"
+        buildConfigField "int", "ENABLE_ETF", "${rootProject.ext.constant.ENABLE_ETF}"
+        buildConfigField "int", "ENABLE_DMF", "${rootProject.ext.constant.ENABLE_DMF}"
+        buildConfigField "int", "ENABLE_DMF_BA", "${rootProject.ext.constant.ENABLE_DMF_BA}"
+        buildConfigField "int", "ENABLE_OTHER", "${rootProject.ext.constant.ENABLE_OTHER}"
+        buildConfigField "int", "ENABLE_HT", "${rootProject.ext.constant.ENABLE_HT}"
+        buildConfigField "int", "ENABLE_BNB", "${rootProject.ext.constant.ENABLE_BNB}"
+        
+        buildConfigField "int", "ENABLE_FIL", "${rootProject.ext.constant.ENABLE_FIL}"
+        buildConfigField "int", "ENABLE_DOGE", "${rootProject.ext.constant.ENABLE_DOGE}"
+        buildConfigField "int", "ENABLE_DOT", "${rootProject.ext.constant.ENABLE_DOT}"
+        buildConfigField "int", "ENABLE_LTC", "${rootProject.ext.constant.ENABLE_LTC}"
+        buildConfigField "int", "ENABLE_BCH", "${rootProject.ext.constant.ENABLE_BCH}"
+        buildConfigField "int", "ENABLE_ZEC", "${rootProject.ext.constant.ENABLE_ZEC}"
+        buildConfigField "int", "ENABLE_ADA", "${rootProject.ext.constant.ENABLE_ADA}"
+        buildConfigField "int", "ENABLE_ETC", "${rootProject.ext.constant.ENABLE_ETC}"
+        buildConfigField "int", "ENABLE_SGB", "${rootProject.ext.constant.ENABLE_SGB}"
+        buildConfigField "int", "ENABLE_SOL", "${rootProject.ext.constant.ENABLE_SOL}"
+        buildConfigField "int", "ENABLE_MATIC", "${rootProject.ext.constant.ENABLE_MATIC}"
+
+        buildConfigField "boolean", "ALLOW_VISITOR_MODEL", "${rootProject.ext.constant.ALLOW_VISITOR_MODEL}"
+        buildConfigField "String", "C2C_LOCALHOST", "\"${rootProject.ext.constant.C2C_LOCALHOST}\""
+        buildConfigField "int", "ENABLE_ONE_CLICK_LOGIN", "${rootProject.ext.constant.ENABLE_ONE_CLICK_LOGIN}"
+        buildConfigField "String", "ONE_CLICK_LOGIN_PACKAGE", "\"${rootProject.ext.constant.ONE_CLICK_LOGIN_PACKAGE}\""
+
+        buildConfigField "int", "ENABLE_CREAT_ALL_WALLET_TYPE", "${rootProject.ext.constant.ENABLE_CREAT_ALL_WALLET_TYPE}"
+        buildConfigField "String", "ENABLE_CREAT_ALL_WALLET", "\"${rootProject.ext.constant.ENABLE_CREAT_ALL_WALLET}\""
+        buildConfigField "double", "TRANSFER_FEE", "${rootProject.ext.constant.TRANSFER_FEE}"
+        buildConfigField "int", "RELEASE_FEE", "${rootProject.ext.constant.RELEASE_FEE}"
+        buildConfigField "double", "TRANSFER_OTHER_FEE", "${rootProject.ext.constant.TRANSFER_OTHER_FEE}"
+        buildConfigField "int", "RELEASE_OTHER_FEE", "${rootProject.ext.constant.RELEASE_OTHER_FEE}"
+        buildConfigField "String", "C2C_LOCALHOST", "\"${rootProject.ext.constant.C2C_LOCALHOST}\""
+
+        buildConfigField "String", "BLOCK_BROWSER", "\"${rootProject.ext.constant.BLOCK_BROWSER}\""
+        buildConfigField "String", "DAPP_URL", "\"${rootProject.ext.constant.DAPP_URL}\""
+        buildConfigField "String", "ENABLE_ETF_ADDRESS", "\"${rootProject.ext.constant.ENABLE_ETF_ADDRESS}\""
+        buildConfigField "String", "ENABLE_MCC_ADDRESS", "\"${rootProject.ext.constant.ENABLE_MCC_ADDRESS}\""
+        buildConfigField "String", "ENABLE_OTHER_ADDRESS", "\"${rootProject.ext.constant.ENABLE_OTHER_ADDRESS}\""
+        buildConfigField "String", "CURRENCY_SYMBOL", "\"${rootProject.ext.constant.CURRENCY_SYMBOL}\""
+
+        buildConfigField "String", "BTC_NET", "\"${rootProject.ext.app_config.BTC_NET}\""
+        buildConfigField "String", "ETH_HOST", "\"${rootProject.ext.app_config.WALLET_HOST}\""
+        buildConfigField "String", "HOST_ETF_QUOTES", "\"${rootProject.ext.app_config.HOST_ETF_QUOTES}\""
+        buildConfigField "String", "HOST_DMF_QUOTES", "\"${rootProject.ext.app_config.HOST_DMF_QUOTES}\""
+        buildConfigField "String", "HOST_QUOTES", "\"${rootProject.ext.app_config.HOST_QUOTES}\""
+        buildConfigField "String", "HOST_DM_QUOTES", "\"${rootProject.ext.app_config.HOST_DM_QUOTES}\""
+        buildConfigField "String", "HOST_OTHER_QUOTES", "\"${rootProject.ext.app_config.HOST_OTHER_QUOTES}\""
+        buildConfigField "String", "HOST_TRX_QUOTES", "\"${rootProject.ext.app_config.HOST_TRX_QUOTES}\""
+
+
+        buildConfigField "String", "HOST_JSONRPC_ETH", "\"${rootProject.ext.app_config.HOST_JSONRPC_ETH}\""
+        buildConfigField "String", "HOST_JSONRPC_ETF", "\"${rootProject.ext.app_config.HOST_JSONRPC_ETF}\""
+        buildConfigField "String", "HOST_JSONRPC_DMF", "\"${rootProject.ext.app_config.HOST_JSONRPC_DMF}\""
+        buildConfigField "String", "HOST_JSONRPC_HT", "\"${rootProject.ext.app_config.HOST_JSONRPC_HT}\""
+        buildConfigField "String", "HOST_JSONRPC_BNB", "\"${rootProject.ext.app_config.HOST_JSONRPC_BNB}\""
+        buildConfigField "String", "HOST_JSONRPC_BTC", "\"${rootProject.ext.app_config.HOST_JSONRPC_BTC}\""
+        buildConfigField "String", "HOST_JSONRPC_XRP", "\"${rootProject.ext.app_config.HOST_JSONRPC_XRP}\""
+
+        buildConfigField "String", "HOST_FIL", "\"${rootProject.ext.app_config.HOST_FIL}\""
+        buildConfigField "String", "HOST_DOGE", "\"${rootProject.ext.app_config.HOST_DOGE}\""
+        buildConfigField "String", "HOST_DOT", "\"${rootProject.ext.app_config.HOST_DOT}\""
+        buildConfigField "String", "HOST_LTC", "\"${rootProject.ext.app_config.HOST_LTC}\""
+        buildConfigField "String", "HOST_BCH", "\"${rootProject.ext.app_config.HOST_BCH}\""
+        buildConfigField "String", "HOST_ZEC", "\"${rootProject.ext.app_config.HOST_ZEC}\""
+        buildConfigField "String", "HOST_ETC", "\"${rootProject.ext.app_config.HOST_ETC}\""
+        buildConfigField "String", "HOST_MARKET_PRICE", "\"${rootProject.ext.app_config.HOST_MARKET_PRICE}\""
+        buildConfigField "String", "HOST_TRUSTWALLET", "\"${rootProject.ext.app_config.HOST_TRUSTWALLET}\""
+        buildConfigField "String", "WS_SGB", "\"${rootProject.ext.app_config.WS_SGB}\""
+        buildConfigField "String", "HOST_SGB", "\"${rootProject.ext.app_config.HOST_SGB}\""
+        buildConfigField "String", "HOST_MATIC", "\"${rootProject.ext.app_config.HOST_MATIC}\""
+        buildConfigField "String", "HOST_SOL", "\"${rootProject.ext.app_config.HOST_SOL}\""
+
+        buildConfigField "String", "TRON_PRO_API_KEY", "\"${rootProject.ext.apiKey.TRON_PRO_API_KEY}\""
+        buildConfigField "String", "INFURA_APPKEY", "\"${rootProject.ext.apiKey.INFURA_APPKEY}\""
+    }
+
+    flavorDimensions "store"
+    productFlavors {
+        
+        develop {
+            buildConfigField "String", "AIRDROP_HOST", "\"${rootProject.ext.app_debug.AIRDROP_HOST}\""
+        }
+        
+        online {
+            buildConfigField "String", "AIRDROP_HOST", "\"${rootProject.ext.app_release.AIRDROP_HOST}\""
+        }
+
+        
+        gplay {
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    lintOptions {
+        disable 'MissingTranslation', 'ExtraTranslation'
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.android.javaVersion
+        targetCompatibility rootProject.ext.android.javaVersion
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = rootProject.ext.srcDirs
+            jniLibs.srcDirs = rootProject.ext.jniLibs
+        }
+    }
+
+}
+
+greendao {
+    schemaVersion 24
+    daoPackage "com.wallet.ctc.db.dao"
+    targetGenDir "src/main/java"
+}
+repositories {
+    flatDir {
+        dirs project(':common').file('libs')
+        dirs '../libs'
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation project(':common')
+    implementation rootProject.ext.libsVersion.lib_support_v4
+    implementation rootProject.ext.libsVersion.lib_recyclerview_v7
+    implementation rootProject.ext.libsVersion.greendao_generator
+    implementation rootProject.ext.libsVersion.greendao
+    implementation rootProject.ext.libsVersion.rxandroid
+    implementation rootProject.ext.libsVersion.rxjava
+    implementation rootProject.ext.libsVersion.butterknife
+    implementation rootProject.ext.libsVersion.gson
+    implementation rootProject.ext.libsVersion.retrofit
+    implementation rootProject.ext.libsVersion.pinyin4j
+    implementation rootProject.ext.libsVersion.ptr_refersh
+    implementation rootProject.ext.libsVersion.stetho
+    implementation rootProject.ext.libsVersion.stetho_okhttp3
+    implementation rootProject.ext.libsVersion.retrofitConverterGson
+    implementation rootProject.ext.libsVersion.retrofitAdapterRxJava
+    implementation rootProject.ext.libsVersion.tiny
+    implementation rootProject.ext.libsVersion.okHttpLoggingInterceptor
+    api rootProject.ext.libsVersion.mpchart
+    implementation rootProject.ext.libsVersion.cedarsoftware
+    implementation rootProject.ext.libsVersion.spongycastle
+    implementation rootProject.ext.libsVersion.spongycastle2
+    implementation rootProject.ext.libsVersion.fasterxml
+    testImplementation rootProject.ext.testDependencies.robolectric
+    implementation rootProject.ext.libsVersion.multidex
+    implementation(rootProject.ext.libsVersion.photoview) {
+        exclude group: 'com.android.support'
+    }
+
+    implementation 'com.cocosw:bottomsheet:1.3.0'
+    annotationProcessor rootProject.ext.libsVersion.butterknife_compiler
+    implementation(rootProject.ext.libsVersion.recovery) {
+        exclude group: 'com.android.support'
+    }
+    implementation rootProject.ext.libsVersion.eventbus
+    implementation(rootProject.ext.libsVersion.rteditor) {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    implementation rootProject.ext.libsVersion.web3js
+    testImplementation 'junit:junit:4.12'
+    
+    compileOnly(files("../libs/chat-sdk.aar"))
+    
+    compileOnly(files("../libs/wallet-core-3.0.2.aar"))
+    implementation 'com.joanzapata.android:base-adapter-helper:1.1.11'
+    implementation 'io.grpc:grpc-protobuf:1.34.0'
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-28'
+    implementation 'org.jsoup:jsoup:1.14.3'
+    implementation 'com.beust:klaxon:3.0.1'
+    implementation 'com.takwolf.android:hf-recyclerview:0.1.0'
+    implementation 'com.pnikosis:materialish-progress:1.7'
+    implementation(project(":library:root-wallet-view"))
+}
+

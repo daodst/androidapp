@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_737780">#737780</color>
+    <color name="income_text">#9EC7FF</color>
+    <color name="income_text2">#ffffff</color>
+    <color name="blue_0B65DF">#0B65DF</color>
+    <color name="green_263138">#263138</color>
+    <color name="green_3A454C">#3A454C</color>
+    <color name="zhuanzhang_bg">#47BAEF</color>
+    <color name="shoukuan_bg">#2A67CD</color>
+    <color name="black_7b">#7b7b7b</color>
+    <color name="black_97A2B3">#97A2B3</color>
+    <color name="black_3F4257">#3F4257</color>
+    <color name="black_85">#858585</color>
+    <color name="black_27">#272727</color>
+    <color name="black_6e">#6e6e6e</color>
+    <color name="yellow_75540f">#75540f</color>
+    <color name="black_c1">#c1c1c1</color>
+    <color name="black_80dd">#50dddddd</color>
+    <color name="green_18262c">#18262c</color>
+    <color name="black_2D3A5E">#2D3A5E</color>
+    <color name="black_333F61">#333F61</color>
+    <color name="black_9197A9">#9197A9</color>
+    <color name="green_00c693">#00c693</color>
+    <color name="coin_line_color">#0BBD8B</color>
+    <color name="goin_theme_color">#F6BC34</color>
+    <color name="color_14bf9d">#14BF9D</color>
+</resources>

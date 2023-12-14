@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Size will be overrode -->
+    <ImageView
+        android:id="@+id/redPacketBgImageView"
+        android:layout_width="225dp"
+        android:layout_height="55dp"
+        android:contentDescription="@string/a11y_static_red_packet"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/redpacket_bg" />
+
+    <ImageView
+        android:id="@+id/redPakcetPinImageView"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="11dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/redpacket_transfer"
+        app:layout_constraintBottom_toBottomOf="@id/redPacketBgImageView"
+        app:layout_constraintStart_toStartOf="@id/redPacketBgImageView"
+        app:layout_constraintTop_toTopOf="@id/redPacketBgImageView" />
+
+    <TextView
+        android:id="@+id/redPacketNumTextView"
+        style="@style/Widget.Vector.TextView.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        tools:text="10000 USDT"
+        android:textColor="@color/palette_white"
+        android:layout_marginStart="11dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/redPakcetPinImageView"
+        app:layout_constraintTop_toTopOf="@id/redPacketBgImageView"
+        app:layout_constraintBottom_toTopOf="@id/redPacketDescTextView" />
+
+    <TextView
+        android:id="@+id/redPacketDescTextView"
+        style="@style/Widget.Vector.TextView.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/red_packet_transfer"
+        android:textColor="@color/palette_white"
+        android:layout_marginStart="11dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/redPakcetPinImageView"
+        app:layout_constraintTop_toBottomOf="@id/redPacketNumTextView"
+        app:layout_constraintBottom_toBottomOf="@id/redPacketBgImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

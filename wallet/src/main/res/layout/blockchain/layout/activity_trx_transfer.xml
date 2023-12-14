@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/default_titlebar_bg_color">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/backs" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/default_titlebar_title_color"
+            android:textSize="18sp"
+            tools:text="ETH" />
+
+        <ImageView
+            android:id="@+id/imgqrcode"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerInside"
+            android:src="@mipmap/saoyisao" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/default_top_background_color"
+            android:paddingLeft="@dimen/dp_25"
+            android:paddingRight="@dimen/dp_25">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/payee_wallet_address"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/payee_wallet_address"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textColorHint="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/go_adddresslist"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/phonelist" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/default_dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/transfer_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/transfer_amount"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textColorHint="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/yue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textColorHint="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:visibility="gone"
+                android:background="@color/default_dividing_line" />
+
+            <EditText
+                android:id="@+id/remarks"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@null"
+                android:visibility="gone"
+                android:gravity="center_vertical"
+                android:hint="@string/remarks_kexuan"
+                android:textColor="@color/default_hint_text_color"
+                android:textColorHint="@color/default_hint_text_color"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/default_dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@string/pay_wallet_address"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/fromaddress"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/default_dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/kgfee_lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="@string/miner_costs1dm"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/kgfee"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/kgfee_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/candy_right" />
+            </LinearLayout>
+            <com.wallet.ctc.view.listview.NoScrollListView
+                android:id="@+id/kgfee_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="0.5dp"
+                android:visibility="gone"
+                android:divider="@color/white"
+                >
+
+            </com.wallet.ctc.view.listview.NoScrollListView>
+            <TextView
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_40"
+                android:background="@drawable/lin_blue_bg_wallet"
+                android:gravity="center"
+                android:text="@string/next_step"
+                android:textColor="@color/default_button_text_color"
+                android:textSize="@dimen/dp_14" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

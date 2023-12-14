@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <common.app.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        app:titleText=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <common.app.ui.view.MyPullableListView
+        android:id="@+id/my_pull_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:showLoading="true"
+        app:itemDivider="@android:color/transparent"
+        app:itemDividerHeight="12dp"
+        app:listPaddingTop="12dp"
+        app:listPaddingBottom="12dp"/>
+
+</LinearLayout>

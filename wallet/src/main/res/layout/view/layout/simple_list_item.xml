@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.wallet.ctc.view.choosemorepic.utils.FilterImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_120"
+        android:scaleType="centerCrop" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:layout_gravity="right|top"
+        android:background="@drawable/picture_setting_album_checkbox"
+        android:button="@null"
+        android:checked="false"
+        android:focusable="false" />
+</FrameLayout>

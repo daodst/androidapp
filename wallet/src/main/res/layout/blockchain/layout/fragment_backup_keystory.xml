@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:padding="@dimen/dp_25"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/default_text_color_stress_two"
+        android:text="@string/lixian"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textSize="13sp"
+        android:lineSpacingExtra="@dimen/dp_3"
+        android:textColor="@color/default_text_three_color"
+        android:text="@string/lixian_remark"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/dp_15"
+        android:textColor="@color/default_text_color_stress_two"
+        android:text="@string/no_use_http"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textSize="13sp"
+        android:lineSpacingExtra="@dimen/dp_3"
+        android:textColor="@color/default_text_three_color"
+        android:text="@string/no_use_http_remark"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/dp_15"
+        android:textColor="@color/default_text_color_stress_two"
+        android:text="@string/pwd_baoxian"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:textSize="13sp"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/default_text_three_color"
+        android:text="@string/pwd_baoxian_remark"
+        />
+
+    <TextView
+        android:id="@+id/keystore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/lin_eaeaea_bg"
+        android:minHeight="@dimen/dp_90"
+        android:textSize="11sp"
+        android:textColor="@color/default_text_two_color"
+        />
+
+    <TextView
+        android:id="@+id/copy_keystore"
+        android:layout_width="match_parent"
+        android:background="@drawable/default_btn_bg"
+        android:textSize="14sp"
+        android:textColor="@color/default_button_text_color"
+        android:text="@string/copy_keystore"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="center"
+        android:layout_height="44dp" />
+</LinearLayout>
+    </ScrollView>

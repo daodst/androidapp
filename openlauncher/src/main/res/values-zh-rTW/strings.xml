@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Intro -->
+    <string name="intro1_text">。</string>
+    <string name="intro1_community"></string>
+    <string name="intro1_features"></string>
+    <string name="intro1_customizable"></string>
+    <string name="intro2_text">。</string>
+    <string name="intro3_text">，。</string>
+    <string name="intro4_text">。</string>
+
+    <!--  -->
+    <string name="minibar"></string>
+    <string name="minibar_title__edit_minibar"></string>
+    <string name="minibar_summary__edit_minibar">。</string>
+    <string name="minibar_title__set_wallpaper"></string>
+    <string name="minibar_summary__set_wallpaper"></string>
+    <string name="minibar_title__lock_screen"></string>
+    <string name="minibar_summary__lock_screen">。</string>
+    <string name="minibar_title__device_settings"></string>
+    <string name="minibar_summary__device_settings">。</string>
+    <string name="minibar_title__launcher_settings"></string>
+    <string name="minibar_summary__launcher_settings">OpenLauncher 。</string>
+    <string name="minibar_title__volume_dialog"></string>
+    <string name="minibar_summary__volume_dialog">。</string>
+    <string name="minibar_title__app_drawer"></string>
+    <string name="minibar_summary__app_drawer">。</string>
+    <string name="minibar_title__search_bar"></string>
+    <string name="minibar_summary__search_bar">。</string>
+    <string name="minibar_title__mobile_network"></string>
+    <string name="minibar_summary__mobile_network">。</string>
+    <string name="minibar_title__notification_bar"></string>
+    <string name="minibar_summary__notification_bar">。</string>
+    <string name="minibar_title__camera"></string>
+    <string name="minibar_summary__camera"></string>
+
+    <!--  -->
+    <string name="about_libs"></string>
+    <string name="about_rate"></string>
+    <string name="about_credit"></string>
+    <string name="community"></string>
+    <string name="more_info_foss"> Android 。</string>
+    <string name="join_community"></string>
+    <string name="bug_reports_suggest_improvements"> GitHub 。</string>
+    <string name="help_translating_this_app"> GitHub  Stringlate ！</string>
+    <string name="source_code"></string>
+    <string name="project_license"></string>
+    <string name="project_contribution_info"></string>
+    <string name="more_info_on_how_to_contribute_to_this_project">。</string>
+    <string name="contribute_code_to_this_project_anybody_welcome">。 ！</string>
+    <string name="project_team"></string>
+    <string name="contributors_public_info">。</string>
+    <string name="contribute"></string>
+    <string name="help"></string>
+    <string name="licenses"></string>
+    <string name="contributors"></string>
+    <string name="changelog"></string>
+    <string name="more"></string>
+    <string name="open_source_licenses"></string>
+    <string name="rate_the_app"></string>
+    <string name="translate"></string>
+    <string name="bug_reports"></string>
+    <string name="more_info_support">。</string>
+    <string name="android_contribution_guide"></string>
+
+    <!--  -->
+    <string name="pref_title__settings"></string>
+    <string name="pref_title__desktop"></string>
+    <string name="pref_title__dock"></string>
+    <string name="pref_title__app_drawer"></string>
+    <string name="pref_title__appearance"></string>
+    <string name="pref_title__behavior"></string>
+    <string name="pref_title__advanced"></string>
+    <string name="pref_title__hide_apps"></string>
+    <string name="pref_title__about"></string>
+
+    <string name="pref_title__size"></string>
+    <string name="pref_title__style"></string>
+    <string name="pref_title__color"></string>
+    <string name="pref_title__icons"></string>
+    <string name="pref_title__search_bar"></string>
+    <string name="pref_title__interfaces"></string>
+    <string name="pref_title__inputs"></string>
+    <string name="pref_title__feels"></string>
+    <string name="pref_title__gestures"></string>
+    <string name="pref_title__others"></string>
+    <string name="pref_title__animations"></string>
+    <string name="pref_title__debug"></string>
+
+    <string name="pref_title__desktop_indicator_style"></string>
+    <string name="pref_title__desktop_wallpaper_scroll"></string>
+    <string name="pref_title__desktop_orientation"></string>
+    <string name="pref_title__desktop_show_grid"></string>
+    <string name="pref_summary__desktop_show_grid">。</string>
+    <string name="pref_title__desktop_fullscreen"></string>
+    <string name="pref_summary__desktop_fullscreen">。</string>
+    <string name="pref_title__desktop_show_position_indicator"></string>
+    <string name="pref_summary__desktop_show_position_indicator">。</string>
+    <string name="pref_title__desktop_show_label"></string>
+    <string name="pref_summary__desktop_show_label">。</string>
+    <string name="pref_title__desktop_background_color"></string>
+    <string name="pref_title__desktop_inset_color"></string>
+    <string name="pref_title__desktop_folder_color"></string>
+
+    <string name="pref_title__search_bar_enable"></string>
+    <string name="pref_summary__search_bar_enable">。</string>
+    <string name="pref_title__search_bar_starts_with"></string>
+    <string name="pref_summary__search_bar_starts_with">。</string>
+    <string name="pref_title__search_bar_base_uri"> URI</string>
+    <string name="pref_summary__search_bar_base_uri"> URI。</string>
+    <string name="pref_dialog__search_bar_base_uri"> URI。  {query} 
+       ，， URI 。</string>
+    <string name="pref_title__search_bar_force_browser"></string>
+    <string name="pref_summary__search_bar_force_browser">。</string>
+    <string name="pref_title__search_bar_show_hidden_apps"></string>
+    <string name="pref_summary__search_bar_show_hidden_apps">。</string>
+
+    <string name="pref_title__date_bar"></string>
+    <string name="pref_title__date_bar_text_color"></string>
+    <string name="pref_title__date_bar_date_format"></string>
+    <string name="pref_title__date_bar_date_format_custom_1">： 1 </string>
+    <string name="pref_title__date_bar_date_format_custom_2">： 2 </string>
+
+    <string name="pref_title__dock_show_label"></string>
+    <string name="pref_summary__dock_show_label">。</string>
+    <string name="pref_title__dock_background_color"></string>
+
+    <string name="pref_title__drawer_style"></string>
+    <string name="pref_summary__drawer_style">。</string>
+    <string name="pref_title__drawer_show_card_view"></string>
+    <string name="pref_summary__drawer_show_card_view">。</string>
+    <string name="pref_title__drawer_remember_position"></string>
+    <string name="pref_summary__drawer_remember_position">。</string>
+    <string name="pref_title__drawer_show_position_indicator"></string>
+    <string name="pref_summary__drawer_show_position_indicator">。</string>
+    <string name="pref_title__drawer_show_label"></string>
+    <string name="pref_summary__drawer_show_label">。</string>
+    <string name="pref_title__drawer_background_color"></string>
+    <string name="pref_title__drawer_card_color"></string>
+    <string name="pref_title__drawer_label_color"></string>
+    <string name="pref_title__drawer_fast_scroll_color"></string>
+    <string name="pref_title__drawer_label_font_size"></string>
+
+    <string name="pref_title__gesture_notifications"></string>
+    <string name="pref_summary__gesture_notifications">。</string>
+    <string name="pref_title__gesture_feedback"></string>
+    <string name="pref_summary__gesture_feedback">。</string>
+    <string name="pref_title__gesture_quick_swipe"></string>
+    <string name="pref_summary__gesture_quick_swipe">。</string>
+    <string name="pref_title__gesture_double_tap"></string>
+    <string name="pref_title__gesture_swipe_up"></string>
+    <string name="pref_title__gesture_swipe_down"></string>
+    <string name="pref_title__gesture_pinch_in"></string>
+    <string name="pref_title__gesture_pinch_out"></string>
+
+    <string name="pref_title__theme"></string>
+    <string name="pref_summary__theme"></string>
+    <string name="pref_title__primary_color"></string>
+    <string name="pref_summary__primary_color">。</string>
+    <string name="pref_title__icon_size"></string>
+    <string name="pref_summary__icon_size">。</string>
+    <string name="pref_title__icon_pack"></string>
+    <string name="pref_summary__icon_pack">。</string>
+    <string name="pref_title__animation_speed_modifier"></string>
+    <string name="pref_summary__animation_speed_modifier">。</string>
+
+    <string name="pref_title__language"></string>
+    <string name="pref_summary__language">。</string>
+    <string name="pref_title__backup"></string>
+    <string name="pref_summary__backup">。</string>
+    <string name="pref_title__restore"></string>
+    <string name="pref_summary__restore">。</string>
+    <string name="pref_title__reset_settings"></string>
+    <string name="pref_summary__reset_settings">。</string>
+    <string name="pref_title__reset_database"></string>
+    <string name="pref_summary__reset_database">。</string>
+    <string name="pref_title__restart"></string>
+    <string name="pref_summary__restart">。</string>
+
+    <!--  -->
+    <string name="vertical_scroll_drawer"></string>
+    <string name="horizontal_paged_drawer"></string>
+
+    <string name="indicator_mode_dots"></string>
+    <string name="indicator_mode_lines"></string>
+
+    <string name="orientation_mode_portrait"></string>
+    <string name="orientation_mode_rotate"></string>
+    <string name="orientation_mode_landscape"></string>
+
+    <string name="scroll_normal"></string>
+    <string name="scroll_inverse"></string>
+    <string name="scroll_off"></string>
+
+    <string name="none"></string>
+    <string name="app"></string>
+
+    <string name="light"></string>
+    <string name="dark"></string>
+    <string name="black"></string>
+
+    <!--  -->
+    <string name="please_wait">。 。</string>
+    <string name="are_you_sure">？ ，。</string>
+    <string name="device_admin_title"></string>
+    <string name="device_admin_summary">OpenLauncher 。</string>
+    <string name="select_app"></string>
+    <string name="select_wallpaper"></string>
+    <string name="select_icon_pack"></string>
+    <string name="volume_level_ringtone"></string>
+    <string name="volume_level_notification"></string>
+    <string name="volume_level_system"></string>
+    <string name="volume_level_media"></string>
+    <string name="notification_title"></string>
+    <string name="notification_summary">OpenLauncher 。</string>
+
+    <!--  -->
+    <string name="columns"></string>
+    <string name="rows"></string>
+    <string name="on"></string>
+    <string name="off"></string>
+    <string name="search_hint"></string>
+    <string name="bad_format"></string>
+    <string name="version"></string>
+    <string name="enable"></string>
+    <string name="placeholder">，！</string>
+    <string name="custom"></string>
+    <string name="default_folder"></string>
+    <string name="default_icons"></string>
+
+    <!--  -->
+    <string name="edit"></string>
+    <string name="info"></string>
+    <string name="uninstall"></string>
+    <string name="remove"></string>
+    <string name="resize"></string>
+    <string name="unremove">，</string>
+
+    <!--  -->
+    <string name="home"></string>
+    <string name="action"></string>
+    <string name="lock"></string>
+    <string name="widget"></string>
+
+    <string name="desktop_fm">FM</string>
+    <string name="desktop_computing_power_management">DVM</string>
+    <string name="desktop_dst_number">DID</string>
+    <string name="desktop_exchange"></string>
+    <string name="desktop_dapp_store">DAPP</string>
+    <string name="desktop_dao">DAO</string>
+    <string name="desktop_my_qr_code"></string>
+    <string name="desktop_scan"></string>
+    <string name="desktop_vpn">VPN</string>
+    <string name="desktop_transfer"></string>
+    <string name="desktop_collect_money"></string>
+    <string name="desktop_trade"></string>
+    <string name="desktop_destroy_mining"></string>
+    <string name="desktop_acquisition_of_voting_rights"></string>
+    <string name="desktop_share"></string>
+    <string name="desktop_rankinglist"></string>
+    <string name="desktop_dapp">DAPP</string>
+    <string name="desktop_choosepoint"></string>
+    <string name="desktop_address"></string>
+    <string name="desktop_pledge_management"></string>
+    <string name="desktop_cross_chain_bridge"></string>
+    <string name="desktop_change_language"></string>
+    <string name="desktop_checkupdate"></string>
+    <string name="desktop_information_on_the_chain"></string>
+    <string name="desktop_virtual_phone_book"></string>
+    <string name="desktop_privacy_setting"></string>
+    <string name="desktop_chat_setting"></string>
+    <string name="desktop_one_key_publish_coin"></string>
+    <string name="desktop_setting"></string>
+
+    <string name="desktop_sure"></string>
+    <string name="desktop_no"></string>
+    <string name="desktop_remind"></string>
+    <string name="desktop_change_wallerpager">，，？</string>
+    <string name="desktop_open_float_overlays">，</string>
+    <string name="desktop_open_gateway_widget">，</string>
+    <string name="desktop_open_chat_widget">，</string>
+
+    <!--  -->
+    <string name="toast_not_enough_space">。</string>
+    <string name="toast_app_uninstalled">。</string>
+    <string name="toast_device_admin_required">。</string>
+    <string name="toast_notification_permission_required">。</string>
+    <string name="toast_backup_success"></string>
+    <string name="toast_backup_error">。</string>
+    <string name="toast_settings_restored">。</string>
+    <string name="toast_database_deleted">。</string>
+    <string name="toast_icon_pack_error">。</string>
+    <string name="toast_remove_from_group_first">。</string>
+    <string name="toast_update_group_due_to_missing_items">。</string>
+
+    <string name="grant_permissions"></string>
+    <string name="please_grant_permissions"></string>
+    <string name="impassable_slide">。</string>
+
+
+    <!--Widget -->
+    <string name="widget_gateway_title">RP</string>
+    <string name="widget_gateway_block_height">：%1$s</string>
+    <string name="widget_gateway_signal_1"></string>
+    <string name="widget_gateway_signal_2"></string>
+    <string name="widget_gateway_signal_3"></string>
+    <string name="widget_chat_no_unread_message"></string>
+    <string name="widget_gateway_name">：</string>
+
+    <string name="super_node_recruit"></string>
+    <string name="dst_reduce_plan">DST</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:layout_height="match_parent" >
+    <include layout="@layout/fragment_home_main"/>
+    <include
+        layout="@layout/activity_right_menu"
+        android:id="@+id/right_drawer"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/default_top_background_color"
+        android:gravity="center_horizontal" >
+
+    </include>
+</androidx.drawerlayout.widget.DrawerLayout>

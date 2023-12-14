@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!---->
+    <string-array name="main_tab_names">
+        <item>@string/shequn</item>
+        <item>Dapp</item>
+        <item>@string/zichan</item>
+        <item>@string/faxian</item>
+        <item>@string/me</item>
+    </string-array>
+    <string-array name="permissions">
+        <item>，PERMISSION_RECORD_AUDIO。</item>
+        <item>，PERMISSION_GET_ACCOUNTS。</item>
+        <item>，PERMISSION_READ_PHONE_STATE。</item>
+        <item>，PERMISSION_READ_CALENDAR。</item>
+        <item>，PERMISSION_CAMERA。</item>
+        <item>，PERMISSION_ACCESS_FINE_LOCATION。</item>
+        <item>，PERMISSION_SENSORS。</item>
+        <item>SD，PERMISSION_READ_EXTERNAL_STORAGE。</item>
+        <item>，PERMISSION_SEND_SMS。</item>
+    </string-array>
+
+    <string-array name="bsc_coins">
+        <item>BNB</item>
+        <item>USDT</item>
+    </string-array>
+
+    <string-array name="mcc_coins">
+        <item>@string/default_token_name2</item>
+        <item>@string/default_token_name</item>
+        <item>@string/default_token_name3</item>
+    </string-array>
+
+    <!-- ，，CreateVoteActivity -->
+    <string-array name="create_vote_items">
+        <item>@string/vote_type_params</item>
+        <item>@string/vote_type_pay</item>
+        <item>@string/vote_type_update</item>
+    </string-array>
+
+</resources>

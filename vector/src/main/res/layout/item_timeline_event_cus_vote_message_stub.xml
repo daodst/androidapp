@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:addStatesFromChildren="true"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/cus_msg_ck"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/cusVoteName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:textColor="#ff03b384"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/cusVoteName" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_item_timeline_event_cus_vote"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.text.alginlib.XQJustifyTextView
+                android:id="@+id/cusVoteTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:textColor="#ff111111"
+                android:textStyle="bold"
+                tools:text="DAO" />
+
+            <TextView
+                android:id="@+id/cusVoteTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:textColor="#ff666666"
+                android:textSize="12sp"
+                tools:text="2023/09/14-2023/09/14" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cusVoteIv"
+            android:layout_width="44dp"
+            android:layout_height="71dp"
+            android:src="@color/green"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/cusVoteTimeView"
+        style="@style/Widget.Vector.TextView.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="right"
+        android:layout_marginTop="8dp"
+        android:tag="messageTimeView"
+        android:textColor="?vctr_content_secondary"
+        tools:ignore="RtlHardcoded"
+        tools:text="@tools:sample/date/hhmm" />
+</LinearLayout>

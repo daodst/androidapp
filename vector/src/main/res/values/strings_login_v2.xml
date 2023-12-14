@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ， Weblate -->
+
+    <string name="login_welcome_back"> %s！</string>
+    <string name="login_please_enter_your_password"></string>
+    <string name="login_please_enter_your_matrix_identifier"> Matrix </string>
+    <string name="login_please_enter_your_matrix_identifier_help">@，@alice:server.org</string>
+    <string name="login_enter_identifier_help"> Matrix ，（ Google ），， ，。</string>
+    <string name="login_choose_a_server"></string>
+    <string name="login_please_choose_a_server"></string>
+    <string name="login_please_select_your_server"></string>
+    <string name="login_please_choose_a_password"></string>
+    <string name="login_please_choose_a_new_password"></string>
+    <string name="login_your_matrix_identifier"> Matrix </string>
+    <string name="login_press_back_to_change"></string>
+    <string name="login_choose_a_password"></string>
+    <string name="login_enter_your_email"> Matrix </string>
+    <string name="login_choose_a_new_password"></string>
+    <string name="login_please_choose_a_user_name"></string>
+    <string name="login_please_choose_a_user_name_help_2">，。 ，。</string>
+    <string name="login_if_you_re_not_sure_select_this_option">，</string>
+    <string name="login_element_matrix_server_and_others"></string>
+    <string name="login_create_a_new_account"></string>
+    <string name="login_i_already_have_an_account"></string>
+
+    <string name="login_unknown_user_warning">： Matrix 。 。</string>
+
+    <string name="login_wait_for_email_notice_2"> %1$s 。</string>
+    <string name="login_wait_for_email_help">。</string>
+    <string name="login_account_created_title">！</string>
+    <string name="login_account_created_subtitle"> %s 。</string>
+    <string name="login_account_created_notice">，/。 。</string>
+    <string name="login_account_created_notice_2">：</string>
+    <string name="login_account_created_message">！</string>
+    <string name="login_account_created_instruction">。</string>
+
+    <string name="login_set_email_title_2"></string>
+    <string name="login_set_email_notice_2">，。</string>
+    <string name="login_set_email_mandatory_notice_2"> %s 。</string>
+
+    <string name="login_set_msisdn_title_2"></string>
+    <string name="login_set_msisdn_notice_2">。</string>
+    <string name="login_set_msisdn_mandatory_notice_2"> %s 。</string>
+    <!-- %S  login_server_modular_learn_more（“”）-->
+    <string name="login_server_modular_learn_more_about_ems">%s  Element Matrix 。</string>
+
+</resources>

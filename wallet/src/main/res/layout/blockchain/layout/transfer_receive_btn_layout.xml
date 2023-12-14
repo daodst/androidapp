@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/transfer"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_ff7f00_c10"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/zhuanzhang_ico"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="@string/transfer"
+            android:textColor="@color/default_button_text_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/collect_money"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/round_theme_c10"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/shoukuan_ico"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="@string/collect_money"
+            android:textStyle="bold"
+            android:textColor="@color/default_button_text_color"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

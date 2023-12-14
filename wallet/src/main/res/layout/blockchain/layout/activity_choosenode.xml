@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar"></include>
+    <TextView
+        android:id="@+id/node_sum"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#55CB66"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:gravity="center"
+        />
+    <ListView
+        android:id="@+id/choose_node_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:scrollbars="none"
+        android:dividerHeight="0dp"
+        android:paddingTop="@dimen/dp_10"
+        ></ListView>
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/default_top_background_color">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/old_pwd_title"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/default_text_color"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edit_old_pw"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="@dimen/dp_45"
+            android:hint="@string/oldpwd"
+            android:background="@null"
+            android:textColor="@color/default_text_color"
+            android:textColorHint="@color/default_hint_text_color"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            />
+        <View
+            style="@style/divider_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_pwd_title"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/default_text_color"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edit_new_pw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:hint="@string/newpwd"
+            android:textColor="@color/default_text_color"
+            android:textColorHint="@color/default_hint_text_color"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            />
+        <View
+            style="@style/divider_line" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_new_pwd_title"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/default_text_color"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+        <EditText
+            android:id="@+id/edit_sure_pw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:hint="@string/confirm_newpwd"
+            android:textColor="@color/default_text_color"
+            android:textColorHint="@color/default_hint_text_color"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            />
+        <View
+            style="@style/divider_line" />
+
+        <Button
+            style="@style/common_button"
+            android:id="@+id/btn_sure"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:text="@string/confirm"
+            android:layout_marginTop="35dp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

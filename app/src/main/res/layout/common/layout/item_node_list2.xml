@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:background="@color/default_top_background_color">
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Honeycomb tissue"
+        android:textStyle="bold"
+        android:textColor="@color/default_text_color"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_tv"
+        android:layout_marginTop="14dp"
+        android:text="@string/desc_tv_tips"
+        android:textColor="#ff999999"
+        android:textSize="12sp"
+        />
+    <LinearLayout
+        android:id="@+id/amount_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc_tv"
+        android:layout_marginTop="9dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pledge_num_tv_tips"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:id="@+id/pledge_num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2000 FM"
+            android:textColor="@color/default_theme_color"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/time_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount_layout"
+        android:layout_marginTop="9dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run_day_tv_tips"
+            android:textColor="#ff999999"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:id="@+id/run_day_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="550 "
+            android:textColor="@color/default_theme_color"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/now_flag_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="@string/now_select_node"
+        android:paddingBottom="14dp"
+        android:textColor="#ff999999"
+        android:textSize="12sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/now_flag_tv"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/use_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="22ms"
+            tools:textColor="#ff0bbd8b"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/speed_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:minWidth="36dp"
+            tools:background="@drawable/round_green_c2"
+            tools:text=""
+            android:textColor="#ffffffff"
+            android:textSize="11sp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

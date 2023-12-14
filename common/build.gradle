@@ -1,0 +1,118 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    viewBinding {
+        enabled = true
+    }
+    
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'MissingTranslation', 'ExtraTranslation'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.android.javaVersion
+        targetCompatibility rootProject.ext.android.javaVersion
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = rootProject.ext.srcDirs
+            
+            jniLibs.srcDirs = [rootProject.ext.jniLibs, 'libs']
+        }
+    }
+
+
+
+}
+
+    dependencies {
+        api fileTree(dir: 'libs', include: ['*.jar'])
+        api rootProject.ext.libsVersion.lib_support_v4
+        api project(path: ':common_router')
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+
+        api rootProject.ext.libsVersion.logger
+        api rootProject.ext.libsVersion.lib_design
+        api rootProject.ext.libsVersion.lib_recyclerview_v7
+        api rootProject.ext.libsVersion.greendao_generator
+        api rootProject.ext.libsVersion.greendao
+        api rootProject.ext.libsVersion.rxandroid
+        api rootProject.ext.libsVersion.rxjava
+        api rootProject.ext.libsVersion.gson
+        api rootProject.ext.libsVersion.butterknife
+
+        annotationProcessor rootProject.ext.libsVersion.butterknife_compiler
+        api(rootProject.ext.libsVersion.glide) {
+            exclude group: 'com.android.support'
+        }
+        annotationProcessor(rootProject.ext.libsVersion.glide_compiler) {
+            exclude group: 'com.android.support'
+        }
+
+
+        api rootProject.ext.libsVersion.retrofit
+        api rootProject.ext.libsVersion.stetho
+        api rootProject.ext.libsVersion.stetho_okhttp3
+        api rootProject.ext.libsVersion.retrofitConverterGson
+        api rootProject.ext.libsVersion.retrofitAdapterRxJava
+
+        api('com.zhihu.android:matisse:0.5.3-beta3') {
+            exclude group: 'com.android.support'
+        }
+
+
+
+        api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+        api "com.github.li-xiaojun:XPopup:2.9.19"
+
+
+        api ('com.aliyun.dpa:oss-android-sdk:2.9.0'){
+            exclude group: 'com.squareup.okhttp3'
+            exclude group: 'com.squareup.okio'
+        }
+
+        
+        api 'androidx.lifecycle:lifecycle-runtime:2.0.0'
+        api 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+        api 'androidx.lifecycle:lifecycle-common-java8:2.5.1'
+        annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+
+        
+        api 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+        api 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+        api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
+
+        
+        api 'com.tencent:mmkv-static:1.2.7'
+
+
+        
+        implementation 'com.huawei.hms:scan:2.1.0.300'
+        implementation("com.squareup.okhttp3:okhttp:4.10.0")
+        implementation 'org.conscrypt:conscrypt-android:2.5.0'
+
+        implementation 'androidx.webkit:webkit:1.4.0'
+        implementation 'androidx.biometric:biometric:1.1.0'
+
+        implementation project(path: ':common_router')
+    }

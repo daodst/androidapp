@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_8dp">
+
+
+    <common.app.base.view.RoundImageView
+        android:id="@+id/wx_account_list_item_ico"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher"
+        app:borderRadius="@dimen/chatlist_rv_radius"
+        app:type="round"/>
+
+    <TextView
+        android:id="@+id/wx_account_list_item_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/tv_chat_list_item_name"
+        android:layout_toRightOf="@id/wx_account_list_item_ico"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxWidth="@dimen/chat_name_width"
+        android:textColor="@color/default_button_text_color"
+        android:textSize="@dimen/dimen_16sp"/>
+
+
+    <ImageView
+        android:id="@+id/wx_account_list_item_account_del"
+        android:layout_width="@dimen/dimen_18dp"
+        android:layout_height="@dimen/dimen_18dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:background="@drawable/account_delete"/>
+
+</RelativeLayout>

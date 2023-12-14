@@ -1,0 +1,10 @@
+<resources>
+    <string name="language_auto" translatable="false">Auto</string>
+    <string name="language_zh_cn" translatable="false"></string>
+    <string name="language_zh_tw" translatable="false"></string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_french" translatable="false">Français</string>
+    <string name="language_ko" translatable="false">한국어</string>
+    <string name="language_vi" translatable="false">Tiếng việt</string>
+
+</resources>

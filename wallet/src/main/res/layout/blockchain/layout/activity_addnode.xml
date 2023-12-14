@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"></include>
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/title_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/round_top_c5"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/default_text_color"
+            android:text=""/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/default_text_color"
+            android:layout_marginLeft="12dp"
+            android:drawablePadding="7dp"
+            android:drawableLeft="@drawable/circle_green_c10"
+            android:textSize="15sp"
+            android:text=""/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/default_text_color"
+            android:layout_marginLeft="12dp"
+            android:drawablePadding="7dp"
+            android:drawableLeft="@drawable/circle_yellow_c10"
+            android:textSize="15sp"
+            android:text=""/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/default_text_color"
+            android:layout_marginLeft="12dp"
+            android:drawablePadding="7dp"
+            android:drawableLeft="@drawable/circle_red_c10"
+            android:textSize="15sp"
+            android:text=""/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/def_node_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/top_layout"
+        android:layout_above="@+id/add_node"
+        android:listSelector="@android:color/transparent"
+        android:divider="@color/white"
+        android:dividerHeight="0dp"
+        android:scrollbars="none" />
+
+    <Button
+        android:id="@+id/add_node"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:layout_marginEnd="@dimen/dp_25"
+        android:layout_marginStart="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/default_btn_bg"
+        android:text="@string/add_custom_node"
+        android:textColor="@color/default_button_text_color"
+        android:textSize="@dimen/dimen_16sp" />
+</RelativeLayout>

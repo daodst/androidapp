@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="BubbleImageView">
+        <attr name="bubble_arrowTop" format="dimension|reference"/>
+        <attr name="bubble_arrowWidth" format="dimension|reference"/>
+        <attr name="bubble_arrowHeight" format="dimension|reference"/>
+        <attr name="bubble_arrowOffset" format="dimension|reference"/>
+        <attr name="bubble_angle" format="dimension|reference"/>
+        <attr name="bubble_arrowLocation" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="bubble_showText" format="boolean"/>
+        <attr name="bubble_showShadow" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="DragBubbleView">
+        <attr name="Drag_bubbleRadius" format="dimension"/>
+        <attr name="Drag_bubbleColor" format="color"/>
+        <attr name="Drag_text" format="string"/>
+        <attr name="Drag_textSize" format="dimension"/>
+        <attr name="Drag_textColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="type">
+            <enum name="circle" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="BubbleLayout">
+        <attr name="bl_arrowWidth" format="dimension|reference"/>
+        <attr name="bl_cornersRadius" format="dimension|reference"/>
+        <attr name="bl_arrowHeight" format="dimension|reference"/>
+        <attr name="bl_arrowPosition" format="dimension|reference"/>
+        <attr name="bl_bubbleColor" format="color|reference"/>
+        <attr name="bl_bubbleColor_press" format="color|reference"/>
+        <attr name="bl_strokeWidth" format="dimension|reference"/>
+        <attr name="bl_strokeColor" format="color|reference"/>
+
+        <attr name="bl_arrowDirection" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="top" value="2"/>
+            <enum name="bottom" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="auto3d">
+        <attr name="textSize" format="dimension|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="Title_bar">
+        <attr name="titleText" format="string"/>
+        <attr name="righttitleText" format="string"/>
+        <attr name="setleftimg" format="boolean"/>
+        <attr name="leftimg" format="reference|integer"/>
+        <attr name="rightimg" format="reference|integer"/>
+        <attr name="backgroundcolor" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="NodataView">
+        <attr name="nv_img" format="reference|integer"/>
+        <attr name="nv_title" format="string"/>
+        <attr name="nv_setbutton" format="integer"/>
+        <attr name="nv_setleftbtimg" format="reference|integer"/>
+        <attr name="nv_setleftbttext" format="string"/>
+        <attr name="nv_setrightbtimg" format="reference|integer"/>
+        <attr name="nv_setrightbttext" format="string"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="slideswitch">
+        <attr name="themeColor" format="color"/>
+        <attr name="isOpen" format="boolean"/>
+        <attr name="shape">
+            <enum name="rect" value="1"/>
+            <enum name="circle" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="wheelview">
+        <attr name="gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="textSizes" format="dimension|reference"/>
+        <attr name="textColorOut" format="color"/>
+        <attr name="textColorCenter" format="color"/>
+        <attr name="dividerColor" format="color"/>
+    </declare-styleable>
+    <!---->
+    <declare-styleable name="MovieRecorderView">
+        <!--  -->
+        <attr name="is_open_camera" format="boolean"/>
+        <!--  -->
+        <attr name="record_max_time" format="integer"/>
+        <!--  -->
+        <attr name="record_width" format="integer"/>
+        <!--  -->
+        <attr name="record_height" format="integer"/>
+    </declare-styleable>
+
+    <!-- FlickeringTextView -->
+    <declare-styleable name="FlickeringTextView">
+        <attr name="flickeringColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="LazyViewPager">
+        <attr name="init_lazy_item_offset" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <!---->
+        <attr name="starDistance" format="dimension"/>
+        <!---->
+        <attr name="starSize" format="dimension"/>
+        <!---->
+        <attr name="starCount" format="integer"/>
+        <!---->
+        <attr name="starEmpty" format="reference"/>
+        <!---->
+        <attr name="starFill" format="reference"/>
+        <!--  -->
+        <attr name="integerMark" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="Emoji">
+        <attr name="emojiSize" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="Theme">
+        <attr name="rte_ToolbarButton" format="reference"/>
+        <attr name="rte_ToolbarSpinner" format="reference"/>
+        <attr name="rte_ToolbarSpinnerItem" format="reference"/>
+        <attr name="rte_ToolbarSpinnerSelectedColor" format="color"/>
+
+        <attr name="rte_icToolbarBold" format="reference"/>
+        <attr name="rte_icToolbarItalic" format="reference"/>
+        <attr name="rte_icToolbarUnderline" format="reference"/>
+        <attr name="rte_icToolbarStrikethrough" format="reference"/>
+        <attr name="rte_icToolbarSuperscript" format="reference"/>
+        <attr name="rte_icToolbarSubscript" format="reference"/>
+        <attr name="rte_icToolbarAlignLeft" format="reference"/>
+        <attr name="rte_icToolbarAlignCenter" format="reference"/>
+        <attr name="rte_icToolbarAlignRight" format="reference"/>
+        <attr name="rte_icToolbarIncIndent" format="reference"/>
+        <attr name="rte_icToolbarDecIntent" format="reference"/>
+        <attr name="rte_icToolbarBullet" format="reference"/>
+        <attr name="rte_icToolbarNumber" format="reference"/>
+        <attr name="rte_icToolbarFont" format="reference"/>
+        <attr name="rte_icToolbarFontSize" format="reference"/>
+        <attr name="rte_icToolbarFontColor" format="reference"/>
+        <attr name="rte_icToolbarBGColor" format="reference"/>
+        <attr name="rte_icToolbarLink" format="reference"/>
+        <attr name="rte_icToolbarImage" format="reference"/>
+        <attr name="rte_icToolbarCapture" format="reference"/>
+        <attr name="rte_icToolbarUndo" format="reference"/>
+        <attr name="rte_icToolbarRedo" format="reference"/>
+        <attr name="rte_icToolbarClear" format="reference"/>
+
+        <attr name="rte_ToolbarVerticalDivider" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="ToolbarButton">
+        <attr name="checked" format="boolean"/>
+        <attr name="state_checked" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SlidingMenu">
+        <attr name="mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="viewAbove" format="reference" />
+        <attr name="viewBehind" format="reference" />
+        <attr name="behindOffset" format="dimension" />
+        <attr name="behindWidth" format="dimension" />
+        <attr name="behindScrollScale" format="float" />
+        <attr name="touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="shadowDrawable" format="reference" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="fadeEnabled" format="boolean" />
+        <attr name="fadeDegree" format="float" />
+        <attr name="selectorEnabled" format="boolean" />
+        <attr name="selectorDrawable" format="reference" />
+    </declare-styleable>
+
+    <!--ButtonProgressBar-->
+    <declare-styleable name="ButtonProgressBar">
+        <attr name="bgColor" format="color" />
+        <attr name="progColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="pbtextSize" format="dimension" />
+        <attr name="text" format="string" />
+        <attr name="pbtype" format="enum">
+            <enum name="determinate" value="0" />
+            <enum name="indeterminate" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--DownloadProgressView-->
+    <declare-styleable name="DownloadProgressView">
+        <!--  -->
+        <attr name="dpv_bg" format="color" />
+        <!--  -->
+        <attr name="dpv_progress_bg" format="color" />
+        <!--  -->
+        <attr name="dpv_percentage_text_color" format="color" />
+        <!--  -->
+        <attr name="dpv_percentage_text_color2" format="color" />
+        <attr name="dpv_percentage_text_size" format="integer|float|dimension|reference" />
+        <!--  -->
+        <attr name="dpv_progress" format="integer" />
+        <!--  -->
+        <attr name="dpv_max_progress" format="integer" />
+        <!--  -->
+        <attr name="dpv_control_mode" format="enum">
+            <enum name="normal" value="1" />
+            <enum name="touch" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <!--RecyclerView-->
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+</resources>

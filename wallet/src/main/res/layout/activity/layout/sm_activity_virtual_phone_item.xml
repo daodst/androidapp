@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginEnd="15dp"
+    android:background="@drawable/sm_bg_virtual_phone_white"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    tools:background="@drawable/sm_bg_virtual_phone">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/sm_virtual_icon_logo_check"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/iv_logo"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="RelativeOverlap"
+        tools:text="15588963321" />
+
+    <!---->
+    <ImageView
+        android:id="@+id/iv_call"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/iv_check"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:src="@mipmap/sm_virtual_icon_phone"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/sm_virtual_icon_checked"
+        tools:ignore="ContentDescription" />
+</RelativeLayout>

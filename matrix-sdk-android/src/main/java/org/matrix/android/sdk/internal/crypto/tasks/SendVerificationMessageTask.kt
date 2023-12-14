@@ -1,0 +1,64 @@
+
+package org.matrix.android.sdk.internal.crypto.tasks
+
+import org.matrix.android.sdk.api.session.events.model.Event
+import org.matrix.android.sdk.api.session.room.send.SendState
+import org.matrix.android.sdk.internal.crypto.CryptoSessionInfoProvider
+import org.matrix.android.sdk.internal.network.GlobalErrorReceiver
+import org.matrix.android.sdk.internal.network.executeRequest
+import org.matrix.android.sdk.internal.session.room.RoomAPI
+import org.matrix.android.sdk.internal.session.room.send.LocalEchoRepository
+import org.matrix.android.sdk.internal.task.Task
+import org.matrix.android.sdk.internal.util.toMatrixErrorStr
+import javax.inject.Inject
+
+internal interface SendVerificationMessageTask : Task<SendVerificationMessageTask.Params, String> {
+    data class Params(
+            val event: Event
+    )
+}
+
+internal class DefaultSendVerificationMessageTask @Inject constructor(
+        private val localEchoRepository: LocalEchoRepository,
+        private val encryptEventTask: EncryptEventTask,
+        private val roomAPI: RoomAPI,
+        private val cryptoSessionInfoProvider: CryptoSessionInfoProvider,
+        private val globalErrorReceiver: GlobalErrorReceiver) : SendVerificationMessageTask {
+
+    override suspend fun execute(params: SendVerificationMessageTask.Params): String {
+        val event = handleEncryption(params)
+        val localId = event.eventId!!
+
+        try {
+            localEchoRepository.updateSendState(localId, event.roomId, SendState.SENDING)
+            val response = executeRequest(globalErrorReceiver) {
+                roomAPI.send(
+                        localId,
+                        roomId = event.roomId ?: "",
+                        content = event.content,
+                        eventType = event.type ?: ""
+                )
+            }
+            localEchoRepository.updateSendState(localId, event.roomId, SendState.SENT)
+            return response.eventId
+        } catch (e: Throwable) {
+            localEchoRepository.updateSendState(localId, event.roomId, SendState.UNDELIVERED, e.toMatrixErrorStr())
+            throw e
+        }
+    }
+
+    private suspend fun handleEncryption(params: SendVerificationMessageTask.Params): Event {
+        if (cryptoSessionInfoProvider.isRoomEncrypted(params.event.roomId ?: "")) {
+            try {
+                return encryptEventTask.execute(EncryptEventTask.Params(
+                        params.event.roomId ?: "",
+                        params.event,
+                        listOf("m.relates_to")
+                ))
+            } catch (throwable: Throwable) {
+                
+            }
+        }
+        return params.event
+    }
+}

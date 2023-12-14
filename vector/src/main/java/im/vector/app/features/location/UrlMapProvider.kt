@@ -1,0 +1,56 @@
+
+
+package im.vector.app.features.location
+
+import im.vector.app.BuildConfig
+import im.vector.app.core.resources.LocaleProvider
+import im.vector.app.core.resources.isRTL
+import im.vector.app.features.raw.wellknown.getElementWellknown
+import org.matrix.android.sdk.api.extensions.tryOrNull
+import org.matrix.android.sdk.api.raw.RawService
+import org.matrix.android.sdk.api.session.Session
+import javax.inject.Inject
+
+class UrlMapProvider @Inject constructor(
+        private val localeProvider: LocaleProvider,
+        private val session: Session,
+        private val rawService: RawService
+) {
+    private val keyParam = "?key=${BuildConfig.mapTilerKey}"
+
+    private val fallbackMapUrl = buildString {
+        append(MAP_BASE_URL)
+        append(keyParam)
+    }
+
+    suspend fun getMapUrl(): String {
+        val upstreamMapUrl = tryOrNull { rawService.getElementWellknown(session.sessionParams) }
+                ?.getBestMapTileServerConfig()
+                ?.mapStyleUrl
+        return upstreamMapUrl ?: fallbackMapUrl
+    }
+
+    fun buildStaticMapUrl(locationData: LocationData,
+                          zoom: Double,
+                          width: Int,
+                          height: Int): String {
+        return buildString {
+            append(STATIC_MAP_BASE_URL)
+            append(locationData.longitude)
+            append(",")
+            append(locationData.latitude)
+            append(",")
+            append(zoom)
+            append("/")
+            append(width)
+            append("x")
+            append(height)
+            append(".png")
+            append(keyParam)
+            if (!localeProvider.isRTL()) {
+                
+                append("&attribution=bottomleft")
+            }
+        }
+    }
+}

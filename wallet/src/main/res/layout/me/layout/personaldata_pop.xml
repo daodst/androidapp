@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/gouwuchebt_bg" >
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:text="@string/take_picture"
+                android:textSize="@dimen/dp_16"
+                android:background="@null"
+                android:textColor="@color/default_text_color"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/default_dividing_line"></View>
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:text="@string/choose_pic"
+                android:background="@null"
+                android:textSize="@dimen/dp_16"
+                android:textColor="@color/default_text_color"/>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:text="@string/cancel"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/default_button_text_color"
+            android:textSize="@dimen/dp_16"
+            android:background="@drawable/selectbluebg_r"/>
+    </LinearLayout>
+</LinearLayout>

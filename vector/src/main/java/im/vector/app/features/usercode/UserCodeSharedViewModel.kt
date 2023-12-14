@@ -1,0 +1,136 @@
+
+
+package im.vector.app.features.usercode
+
+import com.airbnb.mvrx.MavericksViewModelFactory
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
+import im.vector.app.R
+import im.vector.app.core.di.MavericksAssistedViewModelFactory
+import im.vector.app.core.di.hiltMavericksViewModelFactory
+import im.vector.app.core.platform.VectorViewModel
+import im.vector.app.core.resources.StringProvider
+import im.vector.app.features.createdirect.DirectRoomHelper
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.matrix.android.sdk.api.extensions.tryOrNull
+import org.matrix.android.sdk.api.raw.RawService
+import org.matrix.android.sdk.api.session.Session
+import org.matrix.android.sdk.api.session.permalinks.PermalinkData
+import org.matrix.android.sdk.api.session.permalinks.PermalinkParser
+import org.matrix.android.sdk.api.session.user.model.User
+import org.matrix.android.sdk.api.util.MatrixItem
+import org.matrix.android.sdk.api.util.toMatrixItem
+
+class UserCodeSharedViewModel @AssistedInject constructor(
+        @Assisted val initialState: UserCodeState,
+        private val session: Session,
+        private val stringProvider: StringProvider,
+        private val directRoomHelper: DirectRoomHelper,
+        private val rawService: RawService) : VectorViewModel<UserCodeState, UserCodeActions, UserCodeShareViewEvents>(initialState) {
+
+    companion object : MavericksViewModelFactory<UserCodeSharedViewModel, UserCodeState> by hiltMavericksViewModelFactory()
+
+    init {
+        val user = session.getUser(initialState.userId)
+        setState {
+            copy(
+                    matrixItem = user?.toMatrixItem(),
+                    shareLink = session.permalinkService().createPermalink(initialState.userId)
+            )
+        }
+    }
+
+    @AssistedFactory
+    interface Factory : MavericksAssistedViewModelFactory<UserCodeSharedViewModel, UserCodeState> {
+        override fun create(initialState: UserCodeState): UserCodeSharedViewModel
+    }
+
+    override fun handle(action: UserCodeActions) {
+        when (action) {
+            UserCodeActions.DismissAction                 -> _viewEvents.post(UserCodeShareViewEvents.Dismiss)
+            is UserCodeActions.SwitchMode                 -> setState { copy(mode = action.mode) }
+            is UserCodeActions.DecodedQRCode              -> handleQrCodeDecoded(action)
+            is UserCodeActions.StartChattingWithUser      -> handleStartChatting(action)
+            is UserCodeActions.CameraPermissionNotGranted -> _viewEvents.post(UserCodeShareViewEvents.CameraPermissionNotGranted(action.deniedPermanently))
+            is UserCodeActions.PostMatrixItem             -> {
+                _viewEvents.post(UserCodeShareViewEvents.PostMatrixItem(action.matrixItem))
+            }
+            UserCodeActions.ShareByText                   -> handleShareByText()
+        }
+    }
+
+    private fun handleShareByText() {
+        session.permalinkService().createPermalink(session.myUserId)?.let { permalink ->
+            val text = stringProvider.getString(R.string.invite_friends_text, permalink)
+            _viewEvents.post(
+                    UserCodeShareViewEvents.SharePlainText(
+                            text,
+                            stringProvider.getString(R.string.invite_friends),
+                            stringProvider.getString(R.string.invite_friends_rich_title)
+                    )
+            )
+        }
+    }
+
+    private fun handleStartChatting(withUser: UserCodeActions.StartChattingWithUser) {
+        val mxId = withUser.matrixItem.id
+        setState {
+            copy(mode = UserCodeState.Mode.SHOW)
+        }
+        _viewEvents.post(UserCodeShareViewEvents.ShowWaitingScreen)
+        viewModelScope.launch(Dispatchers.IO) {
+            val roomId = try {
+                directRoomHelper.ensureDMExists(mxId)
+            } catch (failure: Throwable) {
+                _viewEvents.post(UserCodeShareViewEvents.ToastMessage(stringProvider.getString(R.string.invite_users_to_room_failure)))
+                return@launch
+            } finally {
+                _viewEvents.post(UserCodeShareViewEvents.HideWaitingScreen)
+            }
+            if (withUser.matrixItem is MatrixItem.UserItem && withUser.matrixItem.shouldSendFlowers) {
+                session.getRoom(roomId)?.sendGifts()
+            }
+            _viewEvents.post(UserCodeShareViewEvents.NavigateToRoom(roomId))
+        }
+    }
+
+    private fun handleQrCodeDecoded(action: UserCodeActions.DecodedQRCode) {
+        val linkedId = PermalinkParser.parse(action.code)
+        if (linkedId is PermalinkData.FallbackLink) {
+            _viewEvents.post(UserCodeShareViewEvents.ToastMessage(stringProvider.getString(R.string.not_a_valid_qr_code)))
+            return
+        }
+        _viewEvents.post(UserCodeShareViewEvents.ShowWaitingScreen)
+        viewModelScope.launch(Dispatchers.IO) {
+            when (linkedId) {
+                is PermalinkData.RoomLink            -> {
+                    
+                    _viewEvents.post(UserCodeShareViewEvents.ToastMessage(stringProvider.getString(R.string.not_implemented)))
+                }
+                is PermalinkData.UserLink            -> {
+                    val user = tryOrNull { session.resolveUser(linkedId.userId) }
+                    
+                            ?: User(linkedId.userId, null, null)
+
+                    setState {
+                        copy(
+                                mode = UserCodeState.Mode.RESULT(user.toMatrixItem(), action.code)
+                        )
+                    }
+                }
+                is PermalinkData.GroupLink           -> {
+                    
+                    _viewEvents.post(UserCodeShareViewEvents.ToastMessage(stringProvider.getString(R.string.not_implemented)))
+                }
+                is PermalinkData.FallbackLink        -> {
+                    
+                    _viewEvents.post(UserCodeShareViewEvents.ToastMessage(stringProvider.getString(R.string.not_implemented)))
+                }
+                is PermalinkData.RoomEmailInviteLink -> Unit
+            }
+            _viewEvents.post(UserCodeShareViewEvents.HideWaitingScreen)
+        }
+    }
+}

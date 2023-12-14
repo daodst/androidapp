@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="50dp"
+    android:background="#00000000"
+    android:layout_height="50dp">
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/fuwurexian"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:background="@drawable/lin_debug_bg"
+        android:text="DeBug"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_12sp"
+        android:scaleType="centerInside"
+        />
+    <ImageView
+        android:id="@+id/zaixiankefu"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        />
+</LinearLayout>

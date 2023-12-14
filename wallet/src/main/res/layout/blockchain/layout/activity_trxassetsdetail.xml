@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <common.app.ui.view.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_lin"
+        android:layout_below="@+id/title_bar"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/dp_0"
+        android:listSelector="@android:color/transparent">
+
+        <include layout="@layout/refresh_head" />
+
+
+        <common.app.ui.view.PullableListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/default_top_background_color"
+            android:divider="@color/default_top_background_color"
+            android:dividerHeight="0dp"
+            android:scrollbars="none" />
+
+        <include layout="@layout/load_more" />
+    </common.app.ui.view.PullToRefreshLayout>
+    <include
+        android:id="@+id/nodata"
+        android:visibility="gone"
+        layout="@layout/has_no_data"/>
+    <LinearLayout
+        android:id="@+id/bottom_lin"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/transfer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/zhuanzhang_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/zhuanzhang_ico"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@string/transfer"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/collect_money"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/shoukuan_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/shoukuan_ico"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@string/collect_money"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

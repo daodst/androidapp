@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/clusterCreateBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/cluster_back"
+            tools:ignore="contentDescription" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/cluster_create_title"
+            android:textColor="#ff111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="185dp"
+                android:padding="16dp"
+                tools:viewBindingIgnore="true">
+
+                <!-- I cannot do what I want using layer-list, do it manually here-->
+                <FrameLayout
+                    android:id="@+id/clusterCreateIvContainer"
+                    android:layout_width="113dp"
+                    android:layout_height="113dp"
+                    android:background="@drawable/placeholder_round_background"
+                    android:contentDescription="@string/a11y_change_avatar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/clusterCreateIv"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:importantForAccessibility="no"
+                        android:scaleType="center"
+                        tools:alpha="0.3" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/clusterCreateIvTake"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/header_panel_round_background"
+                    android:contentDescription="@string/a11y_delete_avatar"
+                    android:scaleType="center"
+                    android:src="@drawable/cluster_take_pic"
+                    app:layout_constraintBottom_toBottomOf="@id/clusterCreateIvContainer"
+                    app:layout_constraintEnd_toEndOf="@id/clusterCreateIvContainer" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#F0F1F3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/cluster_create_name"
+                android:textColor="#ff111111"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/clusterCreateName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_cluster_input"
+                android:hint="@string/cluster_create_name_hint"
+                android:inputType="numberDecimal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="#111111"
+                android:textColorHint="#ff999999"
+                android:textSize="14sp"
+                tools:text="30" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#F0F1F3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/cluster_create_topic"
+                android:textColor="#ff111111"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/clusterCreateTopic"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_cluster_input"
+                android:hint="@string/cluster_create_topic_hint"
+                android:inputType="numberDecimal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="#111111"
+                android:textColorHint="#ff999999"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#F0F1F3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/cluster_create_right"
+                android:textColor="#ff111111"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#E6E6E6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_right_person"
+                android:textColor="#ff111111"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:drawableRightCompat="@drawable/cluster_person_ico" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_right_person_tips"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_commission_rate"
+                android:textColor="#ff111111"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_commission_rate_tips"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_cluster_input"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/clusterCreateCommissionRate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/cluster_create_commission_rate_hint"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#ff999999"
+                    android:textSize="14sp"
+                    tools:text="30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="%"
+                    android:textColor="#ff0bbd8b"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_owner_balance"
+                android:textColor="#ff111111"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_owner_balance_tips"
+                android:textColor="#ff999999"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_cluster_input"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/clusterCreateOwnerRate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/cluster_create_owner_balance_hint"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#ff999999"
+                    android:textSize="14sp"
+                    tools:text="30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="%"
+                    android:textColor="#ff0bbd8b"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_destory"
+                android:textColor="#ff111111"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_cluster_input"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/clusterCreateDestory"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/cluster_create_destory_hint"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#ff999999"
+                    android:textSize="14sp"
+                    tools:text="30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="DST"
+                    android:textColor="#ff0bbd8b"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:includeFontPadding="false"
+                android:text="@string/cluster_create_gas"
+                android:textColor="#ff111111"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_cluster_input"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/clusterCreateDstGas"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="#111111"
+                    android:textColorHint="#ff999999"
+                    android:textSize="14sp"
+                    tools:text="30" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#F0F1F3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:drawablePadding="4dp"
+                android:text="@string/cluster_create_note"
+                android:textColor="#ff111111"
+                android:textSize="15sp"
+                app:drawableLeftCompat="@drawable/cluster_person_note" />
+
+            <TextView
+                android:id="@+id/clusterCreateNote1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="15dp"
+                android:background="#08FF7F00"
+                android:padding="14dp"
+                android:text="@string/cluster_create_note1"
+                android:textColor="#ff111111"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/clusterCreateNote2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="15dp"
+                android:background="#080BBD8B"
+                android:padding="14dp"
+                android:text="@string/cluster_create_note2"
+                android:textColor="#ff111111"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/clusterCreateNote3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="15dp"
+                android:background="#08FF7F00"
+                android:padding="14dp"
+                android:text="@string/cluster_create_note3"
+                android:textColor="#ff111111"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#F0F1F3" />
+
+            <TextView
+                android:id="@+id/clusterCreateBt"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_cluster_bt_big"
+                android:gravity="center"
+                android:text="@string/cluster_create_create"
+                android:textColor="#ffffffff"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

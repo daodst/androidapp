@@ -1,0 +1,36 @@
+
+
+package im.vector.app.features.qrcode
+
+import com.airbnb.mvrx.MavericksViewModelFactory
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
+import im.vector.app.core.di.MavericksAssistedViewModelFactory
+import im.vector.app.core.di.hiltMavericksViewModelFactory
+import im.vector.app.core.platform.VectorDummyViewState
+import im.vector.app.core.platform.VectorViewModel
+import org.matrix.android.sdk.api.session.Session
+
+class QrCodeScannerViewModel @AssistedInject constructor(
+        @Assisted initialState: VectorDummyViewState,
+        val session: Session
+) : VectorViewModel<VectorDummyViewState, QrCodeScannerAction, QrCodeScannerEvents>(initialState) {
+
+    @AssistedFactory
+    interface Factory : MavericksAssistedViewModelFactory<QrCodeScannerViewModel, VectorDummyViewState> {
+        override fun create(initialState: VectorDummyViewState): QrCodeScannerViewModel
+    }
+
+    companion object : MavericksViewModelFactory<QrCodeScannerViewModel, VectorDummyViewState> by hiltMavericksViewModelFactory()
+
+    override fun handle(action: QrCodeScannerAction) {
+        _viewEvents.post(
+                when (action) {
+                    is QrCodeScannerAction.CodeDecoded -> QrCodeScannerEvents.CodeParsed(action.result, action.isQrCode)
+                    is QrCodeScannerAction.SwitchMode  -> QrCodeScannerEvents.SwitchMode
+                    is QrCodeScannerAction.ScanFailed  -> QrCodeScannerEvents.ParseFailed
+                }
+        )
+    }
+}

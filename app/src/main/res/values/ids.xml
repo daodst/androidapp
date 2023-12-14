@@ -1,0 +1,5 @@
+<resources>
+    <item name="type_header" type="integer" />
+    <item name="type_footer" type="integer" />
+    <item name="type_child" type="integer" />
+</resources>

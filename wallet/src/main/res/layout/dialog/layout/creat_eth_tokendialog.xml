@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="290dp"
+        android:layout_height="230dp"
+        android:background="@color/default_top_background_color"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/default_text_color"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/shouxufei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0.1025642 eth"
+            android:textColor="@color/default_stress_color"
+            android:textSize="@dimen/dp_21" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#00BF84"
+            android:textSize="@dimen/dimens_11dp" />
+
+
+        <TextView
+            android:id="@+id/yes"
+            android:layout_width="140dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/default_stress_color"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="140dp"
+            android:layout_height="39dp"
+            android:background="@null"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/default_text_three_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_background_color">
+
+    <common.app.ui.view.TitleBarView
+        android:id="@+id/toolbar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="@string/node_selecte_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_view"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/et_node_name"
+                style="@style/nodeEtStyle"
+                android:hint="@string/add_node_name_hint" />
+
+            <EditText
+                android:id="@+id/et_node_url"
+                style="@style/nodeEtStyle"
+                android:layout_height="80dp"
+                android:layout_below="@+id/et_node_name"
+                android:gravity="left|top"
+                android:hint="@string/nodeEtStyle"
+                android:paddingTop="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_node_url"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="16dp"
+                android:lineSpacingExtra="6dp"
+                android:text="@string/add_node_use_tip"
+                android:textColor="@color/default_text_three_color"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_add"
+                style="@style/common_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/add_node_confirm_add"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

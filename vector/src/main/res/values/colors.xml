@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_hint_text_color">#999999</color>
+    <color name="default_dividing_line">#d9d9d9</color>
+    <color name="default_error_color">#ff0000</color>
+    <color name="default_button_text_color">@android:color/white</color>    <!--  -->
+    <color name="default_theme_color">#0BBD8B</color>
+    <color name="pay_talk_tips_new">#333333</color>
+    <color name="pay_talk_tips_prohibit">#FF5500</color>  <!--  --> <!--  4E569C  -->
+
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="color03B384">#03B384</color>
+    <color name="timeline_bg">#F0F1F3</color>
+    <color name="timeline_item_bg">#FFEBC1</color>
+    <color name="color_group_pill">#F1C871</color>
+    <color name="color_FF7505">#FF7505</color>
+    <color name="color_F1C15C">#F1C15C</color>
+    <color name="color_FF7F00">#FF7F00</color>
+    <color name="color_FF6701">#FF6701</color>
+    <color name="color_C2AE83">#C2AE83</color>
+    <color name="voice_color_out">#699361</color>
+    <color name="voice_color_out_play">#94C08B</color>
+    <color name="voice_color_in">#54657C</color>
+    <color name="voice_color_in_play">#7E9CC5</color>
+    <color name="voice_cus_line_color_normal">#7FADBD</color>
+    <color name="voice_cus_line_color_normal2">#54657C</color>
+    <color name="voice_cus_line_color_normal_me">#66A758</color>
+    <color name="voice_cus_line_color_group">#D6C39B</color>
+
+    <color name="voice_cus_text_color_normal">#264651</color>
+    <color name="voice_cus_text_color_normal_me">#305628</color>
+    <color name="voice_cus_text_color_group">#C18E22</color>
+</resources>

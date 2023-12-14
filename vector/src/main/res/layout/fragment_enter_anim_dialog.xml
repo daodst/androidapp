@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc000000"
+    android:clickable="true"
+    android:focusable="true"
+
+    android:orientation="vertical"
+    tools:visibility="visible">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingStart="33dp"
+        android:paddingEnd="31dp">
+
+        <ImageView
+            android:id="@+id/enterAnimImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBaseline_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="h,1:1.05"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/enterAnimTips1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0"
+        android:gravity="center"
+        android:text="@string/enter_anim_tips1"
+        android:textColor="#ff48e98f"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:alpha="1" />
+
+    <TextView
+        android:id="@+id/enterAnimTips2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0"
+        android:gravity="center"
+        android:text="@string/enter_anim_tips2"
+        android:textColor="#DBD819"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:alpha="1" />
+
+    <LinearLayout
+        android:id="@+id/enterAnimStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:alpha="0"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="33dp"
+        android:paddingEnd="31dp"
+        tools:alpha="1">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/enter_anim_30" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-7dp"
+            android:layout_marginRight="-7dp"
+            android:src="@drawable/enter_anim_next" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/enter_anim_pos" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-7dp"
+            android:layout_marginRight="-7dp"
+            android:src="@drawable/enter_anim_next" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/enter_anim_dao" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/enterAnimTips3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:alpha="0"
+        android:gravity="center"
+        tools:alpha="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/enter_anim_tips31"
+            android:textColor="#ff0bbd8b"
+            android:textSize="28sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/enter_anim_tips32"
+            android:textColor="#DBD819"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/enterAnimBt"
+        android:layout_width="230dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:alpha="0"
+        android:background="@drawable/bg_enter_bt"
+        android:gravity="center"
+        android:text="@string/enter_anim_bt"
+        android:textColor="#ffffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:alpha="1" />
+</LinearLayout>

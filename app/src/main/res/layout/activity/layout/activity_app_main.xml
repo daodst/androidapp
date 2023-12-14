@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.wallet.ctc.view.viewpager.NoScrollViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_above="@+id/line1" />
+
+    <Space
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/tl_main"
+        android:visibility="gone"
+        android:background="@color/default_tab_dividing_bg_color" />
+    <!--padding，0，，-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_main"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/default_tab_bg_color"
+        app:tabIndicatorHeight="0dp"
+        app:tabPaddingBottom="@dimen/main_tb_pvb"
+        app:tabPaddingEnd="0dp"
+        app:tabPaddingStart="0dp"
+        app:tabPaddingTop="@dimen/main_tb_pvt"
+        android:visibility="gone"
+        app:tabSelectedTextColor="@color/default_tab_text_selected_color"
+        app:tabTextAppearance="@style/main_tab_text"
+        app:tabTextColor="@color/main_tb_vt" />
+
+    <ImageView
+        android:id="@+id/zichan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/main_tab_zichan"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/waiting_view"
+        layout="@layout/merge_overlay_waiting_view" />
+
+</RelativeLayout>

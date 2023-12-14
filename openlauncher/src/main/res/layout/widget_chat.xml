@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp">
+
+    <LinearLayout
+        android:id="@+id/widget_chat_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/widget_bg_circle_right_25"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <android.widget.ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/tab_chat" />
+
+        <android.widget.GridView
+            android:id="@+id/widget_chat_grid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:numColumns="5"
+            android:clickable="false"
+            tools:listitem="@layout/widget_chat_item" />
+
+    </LinearLayout>
+
+    <android.widget.TextView
+        android:id="@+id/widget_chat_empty"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:text="@string/widget_chat_no_unread_message" />
+</FrameLayout>

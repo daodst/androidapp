@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    -->
+    <color name="default_theme_color">#0BBD8B</color>  <!--  --> <!--  4E569C  -->
+    <color name="default_background_color">#F6F7FB</color>  <!--   style  -->
+    <color name="default_top_background_color">#ffffff</color>  <!--   -->
+    <color name="default_titlebar_bg_color">@color/white</color> <!--    #ffffff -->
+    <color name="default_titlebar_title_color">#111111</color>  <!--  111111 -->
+    <color name="default_titlebar_left_color">#111111</color>   <!--    111111-->
+    <color name="default_titlebar_right_color">#0BBD8B</color>  <!--   -->
+    <color name="default_titlebar_dividing_line_color">#e6e6e6</color>  <!--   -->
+    <color name="default_text_color">#111111</color>             <!--  -->
+    <color name="default_text_two_color">#333333</color>           <!--  -->
+    <color name="default_text_three_color">#666666</color>           <!--  -->
+    <color name="default_hint_text_color">#999999</color>           <!--  -->
+    <color name="default_stress_color">@color/default_theme_color</color>    <!-- 、 -->
+    <color name="default_text_color_stress_two">@color/default_theme_color</color>    <!-- 、 -->
+    <color name="default_button_color">@color/default_theme_color</color>    <!--  -->
+    <color name="default_button_click_color">@color/default_theme_color</color>    <!--  -->
+    <color name="default_button_noclick_color">#CFCFCF</color>    <!--  -->
+    <color name="default_cancle_button_text_color">#333333</color>     <!--  -->
+    <color name="default_button_text_color">@color/white</color>    <!--  -->
+    <color name="default_coloraccent">@color/default_theme_color</color>          <!-- CheckBox，RadioButton，SwitchCompat， -->
+    <color name="default_dividing_line">#E6E6E6</color>         <!--   listview -->
+    <color name="default_tab_text_color">#666666</color>         <!-- tab    929292-->
+    <color name="default_tab_text_selected_color">#0BBD8B</color> <!-- tab   4E569C-->
+    <color name="default_tab_bg_color">#FCFCFC</color> <!-- tab   f4f4f4-->
+    <color name="default_tab_dividing_bg_color">#a6a6a6</color> <!-- tab   f4f4f4-->
+    <color name="default_error_color">#FF3600</color>            <!-- 、、 -->
+    <color name="default_error_two_color">#ff0000</color>        <!-- -->
+    <color name="default_tip_color">#FF7F00</color>        <!-- -->
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_48baf3">@color/default_theme_color</color>
+    <color name="transparent_70_black">#4C000000</color>
+    <color name="color_e5e5e5">#E5E5E5</color>
+    <color name="shuaxinbgs">#A00BBD8B</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="shuaxinbg_ones">#e1e3e2</color>
+    <color name="textxiaos">#7b7b7b</color>
+    <color name="medium_gray">#AAB2BD</color>
+    <color name="light_blue">#28caf3</color>
+    <color name="shuaxinbg_one">#cdd7e2</color>
+    <color name="scan_corner_color">#ff5bb26e</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="btxian">#babcbe</color>
+    <color name="center_tip_bg">#4c000000</color>
+    <color name="right_index_touch">#26000000</color>
+    <color name="line_gray">#CCCCCC</color>
+
+
+
+
+<!--    -->
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="textPrimary">#2F3640</color>
+    <color name="gray_100">#FAFAFA</color>
+    <color name="light_blue_500">#03A9F4</color>
+
+    <color name="tintColor">#515151</color>
+
+    <color name="black">#000000</color>
+    <color name="blue">#2196F3</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="red">#F44336</color>
+</resources>

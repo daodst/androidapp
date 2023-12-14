@@ -1,0 +1,219 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_wallet_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45"
+            android:padding="@dimen/dp_13"
+            android:scaleType="centerInside"
+            android:src="@mipmap/backs"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="8dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingEnd="8dp"
+            android:visibility="gone"
+            android:text="@string/change_language" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_top_bg"
+        android:layout_alignParentRight="true"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_bottom_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center"
+                android:text="@string/login_title_1"
+                android:textColor="@color/default_text_color"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tishi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center"
+                android:text="@string/login_title_2"
+                android:textColor="#000000"
+                android:textSize="31sp" />
+
+            <TextView
+                android:id="@+id/tishi2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tishi"
+                android:gravity="center"
+                android:text="@string/login_title_3"
+                android:textSize="23sp"
+                android:textColor="@color/default_theme_color" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tishi"
+                android:src="@drawable/login_user_bg"/>
+
+            <LinearLayout
+                android:id="@+id/login_userlogo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/tishi2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_50"
+                android:background="@drawable/lin_wallet_login_logo_bg"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/user_logo"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@mipmap/login_wallet_logo" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/user_nickname"
+                android:visibility="gone"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/login_userlogo"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:background="@null"
+                android:hint="@string/login_title_4"
+                android:padding="@dimen/dp_5"
+                android:textColor="@color/default_button_text_color"
+                android:textColorHint="@color/wallet_login_hint"
+                android:textSize="@dimen/dimen_14sp" />
+
+            <View
+                android:id="@+id/user_nickname_view"
+                android:layout_width="170dp"
+                android:visibility="gone"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/user_nickname"
+                android:layout_centerHorizontal="true"
+                android:background="@color/wallet_login_hint" />
+
+            <LinearLayout
+                android:id="@+id/wallet_address_lin"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_below="@+id/user_nickname_view"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/lin_wallet_login_address_bg"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/now_wallet_address"
+                    android:textColor="@color/default_text_color"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/wallet_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:drawableRight="@drawable/arrow_right_gray"
+                    android:hint="@string/select_login_wallet"
+                    android:textColorHint="@color/default_hint_text_color"
+                    android:textColor="@color/default_text_color"
+                    tools:text=""
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tishi3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wallet_address_lin"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/round_light_theme_empty_c10"
+                android:padding="11dp"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/login_title_5"
+                android:textColor="#469C84"
+                android:textSize="13sp" />
+
+            <Button
+                style="@style/common_button"
+                android:id="@+id/btn_submit"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tishi3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="@string/login_begin"
+                android:textSize="@dimen/dimen_16sp" />
+
+            <TextView
+                android:id="@+id/go_login"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/btn_submit"
+                android:layout_marginLeft="@dimen/dp_18"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/dp_18"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:gravity="center"
+                android:text="@string/use_account_login"
+                android:textColor="@color/wallet_login_hint"
+                android:textSize="@dimen/dimen_12sp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

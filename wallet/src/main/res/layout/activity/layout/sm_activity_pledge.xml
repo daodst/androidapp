@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_top_background_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="44dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp_15"
+            android:src="@mipmap/sm_virtual_icon_back"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/lin_assets_management_tips"
+            android:textColor="@color/default_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp_15"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <common.app.my.view.CircularImage
+                android:id="@+id/civ_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/login_wallet_logo" />
+
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:background="@drawable/bg_level_text"
+                android:gravity="center"
+                android:paddingStart="6dp"
+                android:paddingTop="1.5dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="1.5dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="LV.4" />
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:textColor="@color/default_text_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="dex1r3s358934svtftfzv8zaf6n69du4t8lc4dt5m9" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/sm_pledge_string_10"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="16sp" />
+
+                <!--#0BBD8B  -->
+                <TextView
+                    android:id="@+id/tv_my_did"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sm_bg_pledge_green"
+                    android:drawableEnd="@mipmap/sm_pledge_icon_down"
+                    android:drawablePadding="9dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@color/default_theme_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="15678954268" />
+
+                <TextView
+                    android:id="@+id/tv_see_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/sm_pledge_string_11"
+                    android:textColor="@color/default_theme_color" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_my_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="@color/default_text_two_color"
+                android:textIsSelectable="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Fmd699451c482f8265c...5481" />
+
+            <!--   、LV.x -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <View
+                    android:id="@+id/vv_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/default_background_color" />
+
+                <ImageView
+                    android:id="@+id/iv_reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="122dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@mipmap/sm_pledge0" />
+
+                <TextView
+                    android:id="@+id/tv_level_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/vv_divider"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="24sp"
+                    android:textStyle="italic|bold"
+                    tools:text="" />
+
+                <TextView
+                    android:id="@+id/tv_level_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_level_name"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/tv_level_name"
+                    android:textColor="@color/default_theme_color"
+                    android:textSize="16sp"
+                    android:textStyle="italic|bold"
+                    tools:text="LV.0" />
+
+                <TextView
+                    android:id="@+id/tv_level_remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_level_name"
+                    android:layout_alignStart="@+id/tv_level_name"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/iv_reward"
+                    android:text="@string/sm_pledge_tip"
+                    android:textColor="@color/default_text_three_color" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sm_pledge_pb_tips"
+                    android:textColor="#ff666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/sm_pledge_pb_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff0bbd8b"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="45M /100M" />
+
+                <ProgressBar
+                    android:id="@+id/sm_pledge_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_8dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="3dp"
+                    android:progressDrawable="@drawable/sm_pledge_progressbar"
+                    tools:max="100"
+                    tools:progress="80" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/default_background_color" />
+
+
+            <!---->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_pledge_yue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="100 TT" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tv_pledge_yue_tips"
+                    android:textColor="@color/default_text_three_color"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/sm_pledge_hash"
+                    android:padding="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_pledge_yizhiya"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_pledge_yizhiya_tips"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_pledge_chuangshi_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_pledge_yizhiya"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        tools:text="103 TT" />
+                    <!--                    android:id="@+id/btn_hash"-->
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/sm_bg_pledge_white_t20"
+                        android:gravity="center"
+                        android:text="@string/btn_hash_tips"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/sm_bg_pledge_zhiya"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_pledge_yizhiya2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_pledge_yizhiya2_tips"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_pledge_yizhiya_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_pledge_yizhiya2"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        tools:text="103 TT" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/btn_hash"
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/sm_bg_pledge_white_t20"
+                            android:gravity="center"
+                            android:text="@string/btn_hash_tips"
+                            android:textColor="@color/white" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="6dp" />
+
+                        <TextView
+                            android:id="@+id/btn_suhui"
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/sm_bg_pledge_white_t20"
+                            android:gravity="center"
+                            android:text="@string/sm_pledge_string_14"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/sm_bg_pledge_shengxi"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_pledge_shengxi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_pledge_shengxi_tips"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_pledge_shengxi_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_pledge_shengxi"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        tools:text="103 TT" />
+
+                    <TextView
+                        android:id="@+id/btn_lingqu"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/sm_bg_pledge_white_t20"
+                        android:gravity="center"
+                        android:text="@string/sm_pledge_string_16"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/default_background_color" />
+
+                <!---->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="30dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tv_pledge_wakuang_yue_tips"
+                            android:textColor="@color/default_text_color" />
+
+                        <TextView
+                            android:id="@+id/tv_pledge_wakuang_yue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_toStartOf="@+id/tv_get_now"
+                            android:textColor="@color/default_text_three_color"
+                            android:textSize="12sp"
+                            tools:ignore="RelativeOverlap"
+                            tools:text="：500.80" />
+
+                        <TextView
+                            android:id="@+id/tv_get_now"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="@string/sm_pledge_string_18"
+                            android:textColor="@color/default_theme_color"
+                            android:textSize="12sp"
+                            tools:ignore="RelativeOverlap"
+                            tools:text="" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/et_min_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/sm_bg_pledge_edit"
+                        android:gravity="center_vertical"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:textColor="@color/default_text_color"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:hint="@string/min_pledge_num"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/sm_pledge_string_20"
+                        android:textColor="@color/default_text_color" />
+
+                    <TextView
+                        android:id="@+id/tv_pledge_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/sm_bg_pledge_edit"
+                        android:drawableEnd="@mipmap/sm_pledge_icon_address_books"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:textColor="@color/default_text_color"
+                        android:textIsSelectable="true"
+                        android:textSize="15sp"
+                        tools:ignore="Autofill,LabelFor"
+                        tools:text="Fmd161f2c97l5g6ehavgfafxx6cc677Fmd161f2c97l5g6ehavgfafxx6cc677" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/sm_pledge_suanli_tips"
+                        android:textColor="@color/default_text_color" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/sm_bg_pledge_edit"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sm_pledge_suanli"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:paddingStart="15dp"
+                            android:textColor="@color/default_text_color"
+                            android:textIsSelectable="true"
+                            android:textSize="15sp"
+                            tools:ignore="Autofill,LabelFor"
+                            tools:text="Fmd161f2c97l5g6ehavgfafxx6cc677Fmd161f2c97l5g6ehavgfafxx6cc677" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:text="@string/sm_pledge_suanli_tips2"
+                            android:textColor="#ff111111"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/tv_pledge_phone_start_tips"
+                        android:textColor="@color/default_text_color" />
+
+                    <TextView
+                        android:id="@+id/tv_pledge_phone_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/sm_bg_pledge_edit"
+                        android:drawableEnd="@drawable/arrow_down_gray2"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:textColor="@color/default_text_color"
+                        android:textIsSelectable="true"
+                        android:textSize="20sp"
+                        tools:ignore="Autofill,LabelFor"
+                        tools:text="1888888XXXX" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_pledge_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="14dp"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="12sp"
+                    tools:text="：\n15%\n\nDID" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/default_background_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="18dp"
+                        android:text="@string/sm_pledge_chart_tab_tips"
+                        android:textColor="#ff111111"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/sm_pledge_chart_tab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="12dp"
+                        android:background="@null"
+                        android:paddingEnd="0dp"
+                        app:tabIndicator="@null"
+                        app:tabMaxWidth="85dp"
+                        app:tabMode="scrollable"
+                        app:tabPaddingStart="0dp"
+                        app:tabTextAppearance="@android:style/TextAppearance.Holo.Small" />
+                </FrameLayout>
+
+                <RadioGroup
+                    android:id="@+id/sm_pledge_chart_raio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/sm_pledge_chart_address_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/sm_pledge_chart_address_radio_bg"
+                        android:button="@null"
+                        android:checked="true"
+                        android:ellipsize="middle"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/sm_pledge_chart_address_radio_tips"
+                        android:textColor="@color/sm_pledge_text_color" />
+
+                    <RadioButton
+                        android:id="@+id/sm_pledge_chart_num_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/sm_pledge_chart_num_radio_bg"
+                        android:button="@null"
+                        android:ellipsize="middle"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/sm_pledge_chart_num_radio_tips"
+                        android:textColor="@color/sm_pledge_text_color" />
+                </RadioGroup>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/sm_pledge_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/sm_pledge_chart_buttom_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp">
+
+                    <TextView
+                        android:id="@+id/sm_pledge_chart_tips1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff999999"
+                        android:textSize="12sp"
+                        tools:text="1CBC：5000CBC" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_10" />
+
+                    <TextView
+                        android:id="@+id/sm_pledge_chart_tips2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff999999"
+                        android:textSize="12sp"
+                        tools:text="1：100" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/default_background_color" />
+
+            <Button
+                android:id="@+id/btn_mint"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/sm_btn_pledge"
+                android:text="@string/btn_mint_tips"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

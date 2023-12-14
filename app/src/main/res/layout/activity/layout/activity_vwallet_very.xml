@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F7FB"
+    android:orientation="vertical">
+
+    <common.app.base.view.TopBackBar
+        android:id="@+id/wallet_very_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.takwolf.android.hfrecyclerview.HeaderAndFooterRecyclerView
+        android:id="@+id/wallet_very_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_wallet_very_list" />
+</LinearLayout>

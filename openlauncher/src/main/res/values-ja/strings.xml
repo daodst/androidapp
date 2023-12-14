@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Titles -->
+    <string name="minibar">ミニバー</string>
+    <string name="pref_title__about">アプリについて</string>
+
+    <!-- Edit Mode -->
+
+    <!-- Toasts -->
+
+    <string name="toast_device_admin_required">デバイスをにしてください</string>
+
+    <!-- Intro -->
+
+    <string name="intro2_text">のからにスワイプするとミニバーがきます。 や、
+        の、にもくのことができます。</string>
+    <string name="intro3_text">デスクトップ、アプリケーションドロワー、ドックをすることができます … してみてください!</string>
+
+    <!-- MiniBar -->
+
+    <string name="minibar_summary__edit_minibar">ミニバーのレイアウトを。</string>
+    <string name="minibar_summary__set_wallpaper">のと、ぼかし。</string>
+    <string name="minibar_summary__lock_screen">をすぐにロック。 デバイスがです。</string>
+    <string name="minibar_summary__device_settings">デバイスのショートカット。</string>
+    <string name="minibar_summary__launcher_settings">OpenLauncher のショートカット。</string>
+    <string name="minibar_summary__volume_dialog">ボリュームダイアログをく。</string>
+    <string name="minibar_summary__app_drawer">アプリドロワーをく。</string>
+
+    <!-- About -->
+
+    <string name="about_libs">オープンソース ライブラリー</string>
+    <string name="about_rate"></string>
+    <string name="about_credit"></string>
+
+    <!-- Dialogs -->
+
+    <string name="select_icon_pack">アイコンパックの</string>
+    <string name="toast_icon_pack_error">READ_EXTERNAL_STORAGE アクセスがないとアイコンをできません。</string>
+    <string name="toast_backup_success">しました。</string>
+    <string name="toast_backup_error">がしました。</string>
+
+    <!-- Settings -->
+
+    <string name="pref_title__color"></string>
+    <string name="pref_title__advanced">その</string>
+
+    <string name="pref_title__size">サイズ</string>
+    <string name="pref_title__search_bar_enable">バー</string>
+    <string name="pref_summary__search_bar_enable">デスクトップのにバーをします。</string>
+    <string name="pref_title__desktop_fullscreen"></string>
+    <string name="pref_summary__desktop_fullscreen">デスクトップのをにします。</string>
+    <string name="pref_title__desktop_show_position_indicator">デスクトップ インジケーター</string>
+    <string name="pref_summary__desktop_show_position_indicator">デスクトップにページインジケーターをします。</string>
+    <string name="pref_title__desktop_show_label">ラベル</string>
+    <string name="pref_summary__desktop_show_label">デスクトップにアプリとフォルダーをします。</string>
+
+    <string name="pref_title__dock_show_label">ラベル</string>
+    <string name="pref_summary__dock_show_label">ドックにアプリとフォルダーをします。</string>
+
+    <string name="pref_title__drawer_style">スタイル</string>
+    <string name="pref_summary__drawer_style">アプリドロワーのページとをします。</string>
+    <string name="pref_title__drawer_show_card_view">カード</string>
+    <string name="pref_summary__drawer_show_card_view">ドロワーのとしてカードをします。</string>
+    <string name="pref_title__drawer_remember_position">のページを</string>
+    <string name="pref_title__drawer_show_position_indicator">ドロワーのスクロールバー</string>
+    <string name="pref_summary__drawer_show_position_indicator">ドロワーにページインジケーターをします。</string>
+
+    <string name="pref_title__gesture_quick_swipe">ドロワーのスワイプ</string>
+    <string name="pref_summary__gesture_quick_swipe">ドロワーのアプリアイコンをにスワイプして、アプリドロワーをきます。</string>
+
+    <string name="pref_title__dock_background_color">ドック</string>
+    <string name="pref_title__drawer_background_color">ドロワーの</string>
+    <string name="pref_title__drawer_card_color">ドロワーカード</string>
+    <string name="pref_title__desktop_folder_color">フォルダー</string>
+    <string name="pref_title__drawer_label_color">ラベル</string>
+
+    <string name="pref_summary__icon_size">すべてのアプリアイコンのサイズ。</string>
+    <string name="pref_title__icon_pack">アイコンパック</string>
+    <string name="pref_summary__icon_pack">インストールしたアイコンパックの。</string>
+    <string name="pref_title__hide_apps">アプリの</string>
+
+    <string name="pref_title__backup">バックアップ</string>
+    <string name="pref_summary__backup">をバックアップおよびします。</string>
+    <string name="pref_title__restart"></string>
+    <string name="pref_summary__restart">がおかしいに、ランチャーをします。</string>
+
+    <!-- Other -->
+
+    <string name="placeholder">Hello world!</string>
+    <string name="please_wait">インストールされたアプリを。しばらくおちください。</string>
+    <string name="on">オン</string>
+    <string name="off">オフ</string>
+    <string name="select_wallpaper">の</string>
+
+    <!-- Titles -->
+    <string name="pref_title__settings"></string>
+
+    <!-- Edit Mode -->
+
+    <string name="info"></string>
+    <string name="uninstall">アンインストール</string>
+    <string name="widget">ウィジェット</string>
+    <string name="remove"></string>
+
+    <!-- Toasts -->
+
+    <string name="toast_not_enough_space">がしています</string>
+    <string name="toast_app_uninstalled">このアプリはアンインストールされました。</string>
+
+    <!-- Intro -->
+
+    <!-- MiniBar -->
+
+    <!-- About -->
+
+    <!-- Dialogs -->
+
+    <!-- Settings -->
+
+    <!-- Other -->
+
+    <string name="home">ホーム</string>
+    <string name="default_folder">なし</string>
+
+
+</resources>
+    

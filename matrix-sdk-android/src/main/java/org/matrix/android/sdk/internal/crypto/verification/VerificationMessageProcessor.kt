@@ -1,0 +1,153 @@
+
+package org.matrix.android.sdk.internal.crypto.verification
+
+import io.realm.Realm
+import org.matrix.android.sdk.api.session.crypto.MXCryptoError
+import org.matrix.android.sdk.api.session.crypto.model.OlmDecryptionResult
+import org.matrix.android.sdk.api.session.crypto.verification.VerificationService
+import org.matrix.android.sdk.api.session.events.model.Event
+import org.matrix.android.sdk.api.session.events.model.EventType
+import org.matrix.android.sdk.api.session.events.model.LocalEcho
+import org.matrix.android.sdk.api.session.events.model.toModel
+import org.matrix.android.sdk.api.session.room.model.message.MessageContent
+import org.matrix.android.sdk.api.session.room.model.message.MessageRelationContent
+import org.matrix.android.sdk.api.session.room.model.message.MessageType
+import org.matrix.android.sdk.api.session.room.model.message.MessageVerificationReadyContent
+import org.matrix.android.sdk.api.session.room.model.message.MessageVerificationRequestContent
+import org.matrix.android.sdk.api.session.room.model.message.MessageVerificationStartContent
+import org.matrix.android.sdk.internal.crypto.EventDecryptor
+import org.matrix.android.sdk.internal.database.model.EventInsertType
+import org.matrix.android.sdk.internal.di.DeviceId
+import org.matrix.android.sdk.internal.di.UserId
+import org.matrix.android.sdk.internal.session.EventInsertLiveProcessor
+import timber.log.Timber
+import javax.inject.Inject
+
+internal class VerificationMessageProcessor @Inject constructor(
+        private val eventDecryptor: EventDecryptor,
+        private val verificationService: DefaultVerificationService,
+        @UserId private val userId: String,
+        @DeviceId private val deviceId: String?
+) : EventInsertLiveProcessor {
+
+    private val transactionsHandledByOtherDevice = ArrayList<String>()
+
+    private val allowedTypes = listOf(
+            EventType.KEY_VERIFICATION_START,
+            EventType.KEY_VERIFICATION_ACCEPT,
+            EventType.KEY_VERIFICATION_KEY,
+            EventType.KEY_VERIFICATION_MAC,
+            EventType.KEY_VERIFICATION_CANCEL,
+            EventType.KEY_VERIFICATION_DONE,
+            EventType.KEY_VERIFICATION_READY,
+            EventType.MESSAGE,
+            EventType.ENCRYPTED
+    )
+
+    override fun shouldProcess(eventId: String, eventType: String, insertType: EventInsertType): Boolean {
+        if (insertType != EventInsertType.INCREMENTAL_SYNC) {
+            return false
+        }
+        return allowedTypes.contains(eventType) && !LocalEcho.isLocalEchoId(eventId)
+    }
+
+    override suspend fun process(realm: Realm, event: Event) {
+        Timber.v("## SAS Verification live observer: received msgId: ${event.eventId} msgtype: ${event.type} from ${event.senderId}")
+
+        
+        
+
+        if (!VerificationService.isValidRequest(event.ageLocalTs
+                        ?: event.originServerTs)) return Unit.also {
+            Timber.d("## SAS Verification live observer: msgId: ${event.eventId} is outdated")
+        }
+
+        
+        if (event.isEncrypted() && event.mxDecryptionResult == null) {
+            
+            
+            try {
+                val result = eventDecryptor.decryptEvent(event, "")
+                event.mxDecryptionResult = OlmDecryptionResult(
+                        payload = result.clearEvent,
+                        senderKey = result.senderCurve25519Key,
+                        keysClaimed = result.claimedEd25519Key?.let { mapOf("ed25519" to it) },
+                        forwardingCurve25519KeyChain = result.forwardingCurve25519KeyChain
+                )
+            } catch (e: MXCryptoError) {
+                Timber.e("## SAS Failed to decrypt event: ${event.eventId}")
+                verificationService.onPotentiallyInterestingEventRoomFailToDecrypt(event)
+            }
+        }
+        Timber.v("## SAS Verification live observer: received msgId: ${event.eventId} type: ${event.getClearType()}")
+
+        
+        val relatesToEventId = event.content.toModel<MessageRelationContent>()?.relatesTo?.eventId
+
+        if (event.senderId == userId) {
+            
+            
+
+            if (EventType.MESSAGE == event.getClearType()) {
+                val msgType = event.getClearContent().toModel<MessageContent>()?.msgType
+                if (MessageType.MSGTYPE_VERIFICATION_REQUEST == msgType) {
+                    event.getClearContent().toModel<MessageVerificationRequestContent>()?.let {
+                        if (it.fromDevice != deviceId) {
+                            
+                            Timber.v("## SAS Verification live observer: Transaction requested from other device  tid:${event.eventId} ")
+                            event.eventId?.let { txId -> transactionsHandledByOtherDevice.add(txId) }
+                        }
+                    }
+                }
+            } else if (EventType.KEY_VERIFICATION_START == event.getClearType()) {
+                event.getClearContent().toModel<MessageVerificationStartContent>()?.let {
+                    if (it.fromDevice != deviceId) {
+                        
+                        Timber.v("## SAS Verification live observer: Transaction started by other device  tid:$relatesToEventId ")
+                        relatesToEventId?.let { txId -> transactionsHandledByOtherDevice.add(txId) }
+                        verificationService.onRoomRequestHandledByOtherDevice(event)
+                    }
+                }
+            } else if (EventType.KEY_VERIFICATION_READY == event.getClearType()) {
+                event.getClearContent().toModel<MessageVerificationReadyContent>()?.let {
+                    if (it.fromDevice != deviceId) {
+                        
+                        Timber.v("## SAS Verification live observer: Transaction started by other device  tid:$relatesToEventId ")
+                        relatesToEventId?.let { txId -> transactionsHandledByOtherDevice.add(txId) }
+                        verificationService.onRoomRequestHandledByOtherDevice(event)
+                    }
+                }
+            } else if (EventType.KEY_VERIFICATION_CANCEL == event.getClearType() || EventType.KEY_VERIFICATION_DONE == event.getClearType()) {
+                relatesToEventId?.let {
+                    transactionsHandledByOtherDevice.remove(it)
+                    verificationService.onRoomRequestHandledByOtherDevice(event)
+                }
+            }
+
+            Timber.v("## SAS Verification ignoring message sent by me: ${event.eventId} type: ${event.getClearType()}")
+            return
+        }
+
+        if (relatesToEventId != null && transactionsHandledByOtherDevice.contains(relatesToEventId)) {
+            
+            Timber.v("## SAS Verification live observer: Ignore Transaction handled by other device  tid:$relatesToEventId ")
+            return
+        }
+        when (event.getClearType()) {
+            EventType.KEY_VERIFICATION_START,
+            EventType.KEY_VERIFICATION_ACCEPT,
+            EventType.KEY_VERIFICATION_KEY,
+            EventType.KEY_VERIFICATION_MAC,
+            EventType.KEY_VERIFICATION_CANCEL,
+            EventType.KEY_VERIFICATION_READY,
+            EventType.KEY_VERIFICATION_DONE -> {
+                verificationService.onRoomEvent(event)
+            }
+            EventType.MESSAGE               -> {
+                if (MessageType.MSGTYPE_VERIFICATION_REQUEST == event.getClearContent().toModel<MessageContent>()?.msgType) {
+                    verificationService.onRoomRequestReceived(event)
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:addStatesFromChildren="true"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/cus_msg_ck"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/cusPledgeAwardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:includeFontPadding="false"
+                android:textColor="#ff03b384"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="@string/msg_cus_pledge_award_title" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cusPledgeAwardBg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140"
+            android:layout_marginTop="3dp"
+            android:orientation="vertical"
+            tools:background="@drawable/item_timeline_event_cus_pledge_award_bg">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cusPledgeAwardBalanceParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="47dp"
+                    android:layout_marginBottom="6dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/cusPledgeAwardBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="#ffffffff"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText"
+                        tools:text="123" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="DST"
+                        android:textColor="#ffffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@id/cusPledgeAwardBalance"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/cusPledgeAwardBalance"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/cusPledgeAwardBalanceHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="41dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:includeFontPadding="false"
+                        android:text="**** "
+                        android:textColor="#ffffffff"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="DST"
+                        android:textColor="#ffffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/cusPledgeAwardBt"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/bg_award_bt"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:includeFontPadding="false"
+                android:textColor="#ffffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="@string/item_timeline_cus_pledge_award_bt_tips" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/cusPledgeAwardBtTimeView"
+        style="@style/Widget.Vector.TextView.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="right"
+        android:tag="messageTimeView"
+        android:textColor="?vctr_content_secondary"
+        app:layout_constraintBottom_toBottomOf="@id/messageCusWellcomeContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="RtlHardcoded"
+        tools:text="@tools:sample/date/hhmm" />
+</LinearLayout>

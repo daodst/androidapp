@@ -1,0 +1,47 @@
+
+package im.vector.app.features.settings.troubleshoot
+
+import android.content.Intent
+import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.StringRes
+import kotlin.properties.Delegates
+
+abstract class TroubleshootTest(@StringRes val titleResId: Int) {
+
+    enum class TestStatus {
+        NOT_STARTED,
+        RUNNING,
+        WAITING_FOR_USER,
+        FAILED,
+        SUCCESS
+    }
+
+    var description: String? = null
+
+    var status: TestStatus by Delegates.observable(TestStatus.NOT_STARTED) { _, _, _ ->
+        statusListener?.invoke(this)
+    }
+
+    var statusListener: ((TroubleshootTest) -> Unit)? = null
+
+    var manager: NotificationTroubleshootTestManager? = null
+
+    abstract fun perform(activityResultLauncher: ActivityResultLauncher<Intent>)
+
+    fun isFinished(): Boolean = (status == TestStatus.FAILED || status == TestStatus.SUCCESS)
+
+    var quickFix: TroubleshootQuickFix? = null
+
+    abstract class TroubleshootQuickFix(@StringRes val title: Int) {
+        abstract fun doFix()
+    }
+
+    open fun cancel() {
+    }
+
+    open fun onPushReceived() {
+    }
+
+    open fun onNotificationClicked() {
+    }
+}

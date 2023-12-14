@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/heard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/trandfer_bg"
+        >
+        <ImageView
+            android:id="@+id/right_menu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:scaleType="centerInside"
+            android:src="@mipmap/qihuanqianbao" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/liulanqi"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_30"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/block_btn"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:background="@drawable/lin_write_bg3"
+                android:gravity="center"
+                android:text="@string/block"
+                android:textColor="#036BFF" />
+
+            <TextView
+                android:id="@+id/seach_btn"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="27dp"
+                android:background="@drawable/lin_write_bg3"
+                android:gravity="center"
+                android:text="@string/inquire"
+                android:textColor="#036BFF" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/default_top_background_color"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dm"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:gravity="center"
+                android:text="DM"
+                android:textColor="@color/default_text_color" />
+
+            <View
+                android:id="@+id/dm_bottem"
+                android:layout_width="32dp"
+                android:layout_height="2dp"
+                android:background="@color/default_text_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/eth_btn"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:gravity="center"
+                android:text="ETH"
+                android:textColor="@color/default_text_three_color" />
+
+            <View
+                android:id="@+id/eth_bottem"
+                android:layout_width="32dp"
+                android:layout_height="2dp"
+                android:background="@color/default_text_color"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:background="@color/default_top_background_color"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

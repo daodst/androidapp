@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/time_txt"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/default_background_color"
+        android:paddingLeft="@dimen/dp_15"
+        android:textColor="@color/default_hint_text_color"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:text="2018-12-12 08:08:08" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_25"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_25">
+
+        <ImageView
+            android:id="@+id/assets_logo"
+            android:layout_width="43dp"
+            android:layout_height="@dimen/dimen_43dp"
+            android:layout_marginRight="@dimen/dp_10"
+            tools:src="@mipmap/xrp_logo" />
+
+        <TextView
+            android:id="@+id/wallet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/ether"
+            android:layout_toRightOf="@+id/assets_logo"
+            android:textColor="@color/default_text_two_color"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="：0 ether " />
+
+        <TextView
+            android:id="@+id/ether"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:maxWidth="@dimen/dp_180"
+            android:maxLines="2"
+            android:textColor="@color/default_hint_text_color"
+            android:textSize="12sp"
+            tools:text="22" />
+
+        <TextView
+            android:id="@+id/kuanggong"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/wallet_name"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/lin_red_f9_bg"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/notice_jieshou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/wallet_name"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/assets_logo"
+            android:textColor="@color/default_hint_text_color"
+            android:textSize="12sp"
+            tools:text="@string/about" />
+
+        <TextView
+            android:id="@+id/order_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/assets_logo"
+            android:gravity="right"
+            android:text=""
+            android:textColor="@color/default_text_three_color"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/status_progressBar"
+            style="@style/StyleProgressBarMiniOrder"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_below="@+id/order_state"
+            android:layout_marginTop="@dimen/dp_3"
+            android:max="100"
+            android:padding="2dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/dp_25"
+        android:layout_marginRight="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/default_dividing_line" />
+</LinearLayout>

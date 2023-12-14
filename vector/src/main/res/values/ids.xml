@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="space_item_home" type="id" />
+
+    <!--easyfloat-->
+    <item type="id" name="animate_type" />
+</resources>

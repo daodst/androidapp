@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/llq_lin"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/lin_write_bg4"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dimen_23dp"
+        android:paddingRight="@dimen/dp_13"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <common.app.my.view.CircularImage
+            android:id="@+id/wallet_type_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            tools:src="@mipmap/home_bg"
+            android:layout_marginRight="@dimen/dp_15"
+            />
+        <TextView
+            android:id="@+id/wallet_name"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:drawableRight="@mipmap/choose_import_wallet"
+            android:textColor="@color/default_text_two_color"
+            android:gravity="center_vertical"
+            />
+    </LinearLayout>
+</LinearLayout>

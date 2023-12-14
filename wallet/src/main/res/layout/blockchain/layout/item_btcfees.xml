@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fees_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:textColor="@color/default_hint_text_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@+id/notice_time"
+            android:textSize="13sp"
+            tools:text="：0 ether "/>
+        <ImageView
+            android:id="@+id/choosed_img"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:scaleType="centerInside"
+            android:src="@mipmap/duihao"
+            />
+
+</LinearLayout>

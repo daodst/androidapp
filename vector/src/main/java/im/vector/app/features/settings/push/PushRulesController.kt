@@ -1,0 +1,32 @@
+
+
+package im.vector.app.features.settings.push
+
+import com.airbnb.epoxy.TypedEpoxyController
+import im.vector.app.R
+import im.vector.app.core.resources.StringProvider
+import im.vector.app.core.ui.list.genericFooterItem
+import im.vector.lib.core.utils.epoxy.charsequence.toEpoxyCharSequence
+import javax.inject.Inject
+
+class PushRulesController @Inject constructor(
+        private val stringProvider: StringProvider
+) : TypedEpoxyController<PushRulesViewState>() {
+
+    override fun buildModels(data: PushRulesViewState?) {
+        val host = this
+        data?.let {
+            it.rules.forEach {
+                pushRuleItem {
+                    id(it.ruleId)
+                    pushRule(it)
+                }
+            }
+        } ?: run {
+            genericFooterItem {
+                id("footer")
+                text(host.stringProvider.getString(R.string.settings_push_rules_no_rules).toEpoxyCharSequence())
+            }
+        }
+    }
+}

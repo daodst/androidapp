@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Modify some severity -->
+
+    <!-- Resource -->
+    <issue id="MissingTranslation" severity="ignore" />
+    <issue id="TypographyEllipsis" severity="error" />
+    <issue id="ImpliedQuantity" severity="warning" />
+    <issue id="MissingQuantity" severity="warning" />
+    <issue id="UnusedQuantity" severity="error" />
+    <issue id="IconXmlAndPng" severity="error" />
+    <issue id="IconDipSize" severity="error" />
+    <issue id="IconDuplicatesConfig" severity="error" />
+    <issue id="IconDuplicates" severity="error" />
+    <issue id="IconExpectedSize" severity="error" />
+    <issue id="LocaleFolder" severity="error" />
+
+    <issue id="TooManyViews" severity="warning">
+        <!-- Ignore TooManyViews in debug build type -->
+        <ignore path="**/src/debugsrc/debughtmlcompressor-1.4.jar" />
+        <!-- Ignore error from dropbox-core-sdk-3.0.8 lib, which comes with Jitsi library -->
+        <ignore path="**/dropbox-core-sdk-3.0.8.jar" />
+    </issue>
+
+    <!-- Manifest -->
+    <issue id="PermissionImpliesUnsupportedChromeOsHardware" severity="error" />
+
+    <!-- Performance -->
+    <issue id="UselessParent" severity="error" />
+
+    <!-- Dependencies -->
+    <issue id="KtxExtensionAvailable" severity="error" />
+
+    <!-- Timber -->
+    <!--    This rule is failing on CI because it's marked as unknwown rule id :/-->
+    <!--    <issue id="BinaryOperationInTimber" severity="error" />-->
+    <issue id="LogNotTimber" severity="error" />
+
+    <!-- Wording -->
+    <issue id="Typos" severity="error" />
+    <issue id="TypographyDashes" severity="error" />
+
+    <!-- DI -->
+    <issue id="JvmStaticProvidesInObjectDetector" severity="error" />
+</lint>

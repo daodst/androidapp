@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar"/>
+    <TextView
+        android:id="@+id/change_language"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:drawableRight="@mipmap/right_go"
+        android:background="@color/default_top_background_color"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:textColor="@color/default_text_two_color"
+        android:textSize="14sp"
+        android:text="@string/change_language"
+        android:gravity="center_vertical"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/default_dividing_line"
+        />
+    <TextView
+        android:id="@+id/currency_unit"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:visibility="gone"
+        android:drawableRight="@mipmap/right_go"
+        android:background="@color/default_top_background_color"
+        android:layout_marginTop="0.5dp"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:textColor="@color/default_text_two_color"
+        android:textSize="14sp"
+        android:text="@string/currency_unit"
+        android:gravity="center_vertical"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/default_dividing_line"
+        />
+
+    <TextView
+        android:id="@+id/gesture_password"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:visibility="gone"
+        android:drawableRight="@mipmap/right_go"
+        android:background="@color/default_top_background_color"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:textColor="@color/default_text_two_color"
+        android:textSize="14sp"
+        android:text="@string/change_language"
+        android:gravity="center_vertical"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/default_dividing_line"
+        />
+</LinearLayout>

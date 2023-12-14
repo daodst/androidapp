@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginEnd="15dp"
+    android:background="@drawable/white_r_bg">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/dpos_new_item_string_1"
+        android:textColor="@color/default_text_color"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="：" />
+
+    <TextView
+        android:id="@+id/tvTitleValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/default_text_color"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle"
+        tools:text="Stake.fish" />
+
+    <TextView
+        android:id="@+id/tvPledgeNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/dpos_new_string_sift_2"
+        android:textColor="@color/default_hint_text_color"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/tvPledgeNumberValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/default_text_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPledgeNumber"
+        app:layout_constraintStart_toEndOf="@+id/tvPledgeNumber"
+        app:layout_constraintTop_toTopOf="@+id/tvPledgeNumber"
+        tools:text="87,100.424 DSD" />
+
+    <TextView
+        android:id="@+id/tvCommissions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/dpos_new_item_string_3"
+        android:textColor="@color/default_hint_text_color"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPledgeNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvPledgeNumber"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/tvCommissionsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/default_text_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCommissions"
+        app:layout_constraintStart_toEndOf="@+id/tvCommissions"
+        app:layout_constraintTop_toTopOf="@+id/tvCommissions"
+        tools:text="1%" />
+
+    <TextView
+        android:id="@+id/tvDevicesNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/dpos_new_string_sift_4"
+        android:textColor="@color/default_hint_text_color"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/tvCommissions"
+        app:layout_constraintTop_toBottomOf="@+id/tvCommissions"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/tvDevicesNoValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/default_text_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDevicesNo"
+        app:layout_constraintStart_toEndOf="@+id/tvDevicesNo"
+        app:layout_constraintTop_toTopOf="@+id/tvDevicesNo"
+        tools:text="43%" />
+
+    <TextView
+        android:id="@+id/tvPledgeDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/dpos_new_item_string_6"
+        android:textColor="@color/default_theme_color"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDevicesNo"
+        tools:text=" 21457154780.000 NXN" />
+
+    <Button
+        android:id="@+id/btnPledge"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/dpos_new_item_string_5"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvPledgeDesc"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

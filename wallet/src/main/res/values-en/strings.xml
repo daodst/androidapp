@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<string name="default_token_name">MCC</string>-->
+    <!--<string name="language_auto">Auto</string>-->
+    <!--<string name="language_zh_cn">Simplified Chinese</string>-->
+    <!--<string name="language_zh_tw">Traditional Chinese</string>-->
+    <!--<string name="language_english">English</string>-->
+    <string name="register">Register</string>
+    <string name="app_name2">DST browser</string>
+    <string name="first_wallet2">Digital Wallet Connection Unlimited</string>
+    <string name="start_download">Start downloading</string>
+    <string name="download_progress">Download progress</string>
+    <string name="was_latest_version">This is the latest edition.</string>
+    <string name="finished_install">Download complete, click Install</string>
+    <string name="download_done">Task download completed</string>
+    <string name="download_tips">New version hints</string>
+    <string name="new_ver_tips">Is there a new version, update?</string>
+    <string name="download_cancel">Downloading</string>
+    <string name="download_continue">Continue downloading</string>
+    <string name="next_time">Next time</string>
+    <string name="download">Immediate update</string>
+    <string name="wallet_type_error"> The wallet is an observation wallet and cannot be transferred, please use the corresponding cold wallet to transfer!!</string>
+    <string name="has_no_data">There is no relevant information</string>
+
+    <string name="permission_storage">Please allow application to add storage permission.</string>
+    <string name="uploading_dialog_title">Upload prompt</string>
+    <string name="uploading_dialog_message">Uploading...</string>
+    <string name="downloading_dialog_title">Download prompt</string>
+    <string name="downloading_dialog_message">Downloading...</string>
+    <string name="bug_submit_title">Feedback feedback</string>
+    <string name="bug_submit_do">Submission</string>
+    <string name="bug_submit_content">Questions and opinions</string>
+    <string name="mailbox">mailbox</string>
+    <string name="please_input_the_email_address">Please input your email address.</string>
+    <string name="bug_submit_img">Please provide screenshots or photos of related questions.</string>
+    <string name="bug_submit_content_sugg">Please input a description of at least 10 words or more.</string>
+    <string name="question_no_null">Please input the description of the problem.</string>
+    <string name="bug_submit_img_count">%1$s/%2$s</string>
+    <string name="question_length_low">Please input at least 10 words or more.</string>
+    <string name="skill_exchange_num">%1$s/%2$s</string>
+    <string name="upfeed_success">Submission of success</string>
+    <string name="upfeed_faile">Submission failure</string>
+    <string name="net_error">The network is not powerful. Please check the network.</string>
+    <string name="connect_failuer_toast">Please check the network or try again later.</string>
+    <string name="sys_error">System error</string>
+    <string name="change_language">Multilingual</string>
+    <string name="confirm">confirm</string>
+    <string name="ok">Sure?</string>
+    <string name="oldpwd">Please input the original password.</string>
+    <string name="newpwd">Please enter a new password.</string>
+    <string name="confirm_newpwd">Please confirm the new password.</string>
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="cancel">cancel</string>
+    <string name="scan_it">Scan</string>
+    <string name="save">Preservation</string>
+    <string name="share">Share</string>
+    <string name="change_pwd">Change Password</string>
+    <string name="add">Add to</string>
+    <string name="caozuo_success">Successful operation</string>
+    <string name="caozuo_fail">operation failed</string>
+    <string name="transfer">Send</string>
+    <string name="qrcode_failer">Failure of decoding two-dimensional code</string>
+    <string name="coin_support"> support</string>
+    <string name="qrcode">QR code</string>
+    <string name="huozhan"> Huobi Station No. 1</string>
+    <string name="copy">copy</string>
+    <string name="copyed">Replicating</string>
+    <string name="numbers">Amount</string>
+    <string name="gesture_password">Gesture cipher</string>
+    <string name="assets">Assets</string>
+    <string name="me">Me</string>
+    <string name="protocol">《Service and privacy clause》</string>
+    <string name="agree_protocol">I have read carefully and agree to the above terms.</string>
+    <string name="carry_on">Continue</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Please input the password again.</string>
+    <string name="pwd_remind">Cryptographic hints</string>
+    <string name="password_prompt">Password prompts (not filled)</string>
+    <string name="im_agree">I have read and agreed carefully.</string>
+    <string name="register_protocol">Service and privacy clause</string>
+    <string name="password_remind">The password is not less than 8 characters. It is recommended to mix uppercase letters, numbers, and special characters.</string>
+    <string name="password_error">Two password inconsistency</string>
+    <string name="password_error2">Password error</string>
+
+    <string name="place_edit_new_password">Please enter a new password.</string>
+    <string name="place_edit_commit_password">Please enter confirmation password.</string>
+    <string name="got_it">Got it</string>
+    <string name="next_step">Next step</string>
+    <string name="changepwd">Change Password</string>
+    <string name="setting">Settings</string>
+    <string name="release_token">Publish Token</string>
+    <string name="change_node">Switch node</string>
+    <string name="help">Help center</string>
+    <string name="addressbook">Address book</string>
+    <string name="addaddressbook">New contacts</string>
+    <string name="updaddressbook">Edit Contact</string>
+    <string name="deladdressbook">Are you sure you want to delete this contact?</string>
+    <string name="enter_lxradd">Please input the name of the contact.</string>
+    <string name="enter_lxr_remark">Please note the contact information.</string>
+    <string name="enter_lxr_address_error">Please enter your wallet address.</string>
+    <string name="enter_lxr_address">Only enter the valid address of the Ethernet link and DST wallet.</string>
+    <string name="about">About us</string>
+    <string name="share_app">APP sharing</string>
+    <string name="first_wallet">Your first smart digital wallet</string>
+    <string name="wallet">wallet</string>
+    <string name="me_wallet">My wallet</string>
+    <string name="create_wallet">Create a wallet</string>
+    <string name="import_wallet">Import the wallet</string>
+    <string name="del_wallet">Delete the wallet</string>
+    <string name="import_begin">Start importing</string>
+    <string name="wallet_name_ishas">The name of the wallet already exists.</string>
+    <string name="wallet_ishas">The wallet already exists. Do you want to change the password?</string>
+    <string name="hint_exist_wallet">The wallet already exists.</string>
+    <string name="create_wallet_remind">The password is used to protect the private key and transaction authorization, the strength is very important This platform does not store passwords,</string>
+    <string name="create_wallet_remind_tip">We can\'t help you get it back, please remember</string>
+    <string name="wallet_name">Purse name</string>
+    <string name="place_edit_wallet_name">Please enter the name of the purse.</string>
+    <string name="wallet_names">Purse name</string>
+    <string name="mnemonic">Memorizing words</string>
+    <string name="copy_dapp_url">copy</string>
+    <string name="shuaxin">Refresh</string>
+    <string name="mnemonic_error">Mnemonic verification failed</string>
+    <string name="official_wallet">Official Purse</string>
+    <string name="official_wallet_remind">Copy and paste the keystore file content to the input box directly. Or through the generated keystore content of the two-dimensional code, scan code input.</string>
+    <string name="official_wallet_remind_edit">Keystore text content</string>
+    <string name="official_wallet_password">Keystore password</string>
+    <string name="what_is_official_wallet">What is keystore?</string>
+    <string name="private_key">private key</string>
+    <string name="private_key_eror">The private key can not be empty.</string>
+    <string name="private_key_eror2">Private key error</string>
+    <string name="clear_private_key">Private key</string>
+    <string name="clear_private_key_hint">Please input private key</string>
+    <string name="what_is_private_key">What is a private key?</string>
+    <string name="observed">observation</string>
+    <string name="observed_remind">Observing a wallet does not require importing a private key, only importing the wallet address, daily checking accounts, transactions, and receiving notifications. The private key of large funds suggests using cold purses or hardware wallets to avoid leakage.</string>
+    <string name="observed_remind2">Note: the wallet must be accompanied by signature when sending the transaction. You can use another idle mobile phone, open flight mode as a cold wallet, import the wallet private key, with offline signature.</string>
+    <string name="observed_remind_edit">Scan code or enter wallet address</string>
+    <string name="what_id_observed">How to use cold purse for offline signature?</string>
+    <string name="mnemonic_remind">Mnemonic words separated by spaces</string>
+    <string name="observe_wallet"> Observe the wallet</string>
+    <string name="import_observe_wallet_remind"> Please enter the address or scan and observe the QR code of the wallet</string>
+    <string name="what_is_observe_wallet"> what is an observation wallet</string>
+    <string name="wallet_address_empty"> wallet address cannot be empty </string>
+    <string name="wallet_address_error"> invalid address</string>
+    <string name="del_my_address"> Are you sure to delete the current wallet?</string>
+    <string name="what_is_mnemonic">What is a mnemonic word?</string>
+    <string name="backup_wallet">Backup</string>
+    <string name="last_step">Last step: backup your wallet immediately!</string>
+    <string name="backup_wallet_remind">Back up your wallet: Export [mnemonics] and copy it to a safe place, never save it to the network, and then try to roll in and out of small assets for use.</string>
+    <string name="backup_wallet_detail">View Backup detail tutorial</string>
+    <string name="backup_mnemonic">Backup mnemonics</string>
+    <string name="transcription_mnemonic">Copy your wallet and memorize words.</string>
+    <string name="transcription_mnemonic_remind">Mnemonics are used to restore the password of a wallet or a rechargeable wallet, copy it accurately onto paper, and keep it safe where only you know it.</string>
+    <string name="transcription_mnemonic_safety">If someone picks up your mnemonics and gets your assets directly, copy them and store them in a safe place.</string>
+    <string name="please_do_not_screenshot">Do not have a screenshot</string>
+    <string name="confirm_mnemonic">Confirm your wallet mnemonics.</string>
+    <string name="cilck_mnemonic">Please click the mnemonic word in order to confirm that your backup mnemonic is correct.</string>
+    <string name="total_assets">Total assets (yuan)</string>
+    <string name="please_backup">Please backup</string>
+    <string name="humanity">Humans, please backup your wallet immediately.</string>
+    <string name="blockchain_remind">Block chain wallet is different from traditional website account. It is a de centralized accounting system based on cryptography. n You must keep your wallet\'s private key and transaction password. Any unexpected occurrence will result in the loss of assets. \n we suggest that we do double backup first, then enter the small test, and finally start to use it happily.</string>
+    <string name="if_lose">When you lose your wallet or forget your password, you can help restore your wallet.</string>
+    <string name="official_wallet_format">Official wallet format, transaction password protected private key file</string>
+    <string name="back_up_now">Immediate backup</string>
+    <string name="back_up_the_keystore_file">Backup Keystore files</string>
+    <string name="export_the_private_key">Export private key</string>
+    <string name="export_the_keystore">Export Keystore</string>
+    <string name="add_new_asset">Add new assets</string>
+    <string name="add_asset">Add assets</string>
+    <string name="wallet_yue">Current balance:</string>
+    <string name="seach_token">Search for token name or contract address</string>
+    <string name="seach_hangqing">Search the market</string>
+    <string name="nofind_token">DID not find the matching result? \n try to submit a new token at the bottom of the page.</string>
+    <string name="push_new_token">Submit new token to us</string>
+    <string name="payee_wallet_address">Receiver\'s Address</string>
+    <string name="payee_wallet_address_errpr">Receiver\'s wallet address error</string>
+    <string name="pay_wallet_address_empty">Please select a payment wallet</string>
+    <string name="collect_money">Receive</string>
+    <string name="no_money">The purse balance is insufficient.</string>
+    <string name="collect_money_amount">Amount Collected</string>
+    <string name="transfer_amount">Transfer amount</string>
+    <string name="transfer_assest">Currency of transfer</string>
+    <string name="transfer_assest_num">Quantity of input and transfer</string>
+    <string name="transfer_assest_num_error">Wrong transfer quantity </string>
+    <string name="transfer_assest_num_hint">Please input the quantity of transfer.</string>
+    <string name="gaoji_gasprice">Please enter custom Gas Price</string>
+    <string name="gaoji_gas">Please enter custom Gas</string>
+    <string name="gaoji_16">Sixteen binary data</string>
+    <string name="remarks">Remarks:</string>
+    <string name="remarks_kexuan">Remarks (optional)</string>
+    <string name="seach">Search</string>
+    <string name="miner_costs">Gas Fee:</string>
+    <string name="miner_costs1dm">Gas Fee:</string>
+    <string name="slow">Slow</string>
+    <string name="bql_standard">Standard</string>
+    <string name="bql_custom">Custom</string>
+    <string name="fast">Fast</string>
+    <string name="bql_about">≈</string>
+    <string name="bql_second">s</string>
+    <string name="manage_wallet">Manage the purse</string>
+    <string name="block">Block</string>
+    <string name="transaction_record">Transaction record</string>
+    <string name="transaction_detail">Transaction details</string>
+    <string name="recent_transaction">Recent transaction records</string>
+    <string name="transaction_error">Transfer failure</string>
+    <string name="transfer_notification">Transfer notice</string>
+    <string name="transfer_successful">Transfer success</string>
+    <string name="transfer_timeout">Transfer time</string>
+    <string name="allreaded">All read</string>
+    <string name="use_agreement">Use protocol</string>
+    <string name="current_version">current version</string>
+    <string name="currency_unit">Monetary unit</string>
+    <string name="privacy_policy">Privacy clause</string>
+    <string name="version_log">Version log</string>
+    <string name="product_guide">Product Guide</string>
+    <string name="new_version">New version detected</string>
+    <string name="asset_name">currency</string>
+    <string name="latest_price">Latest price</string>
+    <string name="quote_change">Day highs and lows</string>
+    <string name="add_market">Adding Quotes</string>
+    <string name="edit_market">Edit Quotes</string>
+    <string name="way_nodata">Why can\'t we find it?</string>
+    <string name="notoken">No relevant Token was found to understand why.</string>
+    <string name="export_the_private_key_remain">Security warning: private key is not encrypted, and there is risk in exporting. It is recommended to use mnemonic and Keystore for backup.</string>
+    <string name="caveat">Please be careful. This operation cannot be cancelled.</string>
+    <string name="receiver">Recipient:</string>
+    <string name="about_remain">NXN is a mobile light wallet APP designed to provide ordinary users with a secure, easy to use, powerful digital wallet applications.</string>
+    <string name="shoukuan">Receiving code</string>
+    <string name="copy_shoukuan">Copy Wallet Address</string>
+    <string name="copy_address">Duplicate wallet address</string>
+    <string name="pay_detail">Details of payment</string>
+    <string name="order_info">Order Info:</string>
+    <string name="ru_address">To Address:</string>
+    <string name="amount">Amount    :</string>
+    <string name="pay_address">Pay Address:</string>
+    <string name="fakuan">Payer:</string>
+    <string name="shoukuanfang">Receivables:</string>
+    <string name="jiaoyihao">Transaction number:</string>
+    <string name="jiaoyi">Record</string>
+    <string name="liulanqi">Browser</string>
+    <string name="transferss">transaction</string>
+    <string name="qukuai">Block:</string>
+    <string name="jiaoyishijian">Trading hours:</string>
+    <string name="copy_url">Copy URL</string>
+    <string name="copy_keystore">Copy Keystore</string>
+    <string name="copy_success">Replicating success</string>
+    <string name="wenzhang">Article</string>
+    <string name="lixian">Off-line preservation</string>
+    <string name="no_use_http">Do not use network transmission.</string>
+    <string name="pwd_baoxian">Password safe deposit box</string>
+    <string name="lixian_remark">Please copy and paste Keystore files to secure and offline places. Do not save to the mailbox, Notepad, SkyDrive, chat tools, etc., very dangerous.</string>
+    <string name="no_use_http_remark">Do not transfer Keystore files through network tools, once it is acquired by hackers, it will cause irreparable loss of assets. It is recommended that off-line devices be transmitted by scanning the two-dimensional code.</string>
+    <string name="pwd_baoxian_remark">If you need to save it online, it is recommended that Keystore be saved using password storage software such as 1Password with higher security level.</string>
+    <string name="only_sao">Direct scan only</string>
+    <string name="only_sao_remark">Two dimensional code prohibits preservation, screenshots, and photographs. It is only for users to scan directly in the security environment to facilitate the import of wallets.</string>
+    <string name="only_anquan">Use in a secure environment</string>
+    <string name="only_anquan_remark">Please make sure that you are surrounded by no cameras and no cameras. Once the two-dimensional code is acquired by others, it will cause irreparable loss of assets.</string>
+    <string name="no_cammer">Unmanned cameras and cameras have been identified.</string>
+    <string name="show_qrcode">Display two-dimensional code</string>
+    <string name="backup_keystore_dialog">Make sure no one is around and no cameras! Do not save Keystore files or corresponding two-dimensional codes by screenshots or photographs.</string>
+    <string name="keystore_error">Keystore format error</string>
+    <string name="private_key_error">Private key error</string>
+    <string name="keystore_empty">Keystore can not be empty.</string>
+    <string name="share_app_success">You have installed the application.</string>
+    <string name="unknow_web_content_title">Link content</string>
+    <string name="unknow_web_title">Scanning content</string>
+    <string name="pull_to_refresh">Drop-down refresh</string>
+    <string name="release_to_refresh">Release immediate refresh</string>
+    <string name="refreshing">Refreshing...</string>
+    <string name="refresh_succeed">Refresh the success</string>
+    <string name="refresh_fail">refresh failed</string>
+    <string name="pullup_to_load">Pull up to load more</string>
+    <string name="release_to_load">Release immediate loading</string>
+    <string name="loading">Loading...</string>
+    <string name="load_succeed">Load success</string>
+    <string name="load_fail">Load failure</string>
+    <string name="shezhicanshu">How do I set parameters?</string>
+    <string name="gaojixuanxiang">Advanced options</string>
+    <string name="block_sum">Total number of blocks</string>
+    <string name="this_block_sum">Total number of local blocks</string>
+    <string name="last_sync_time">Last synchronization time</string>
+    <string name="synchronize">synchronization</string>
+    <string name="details">Detailed</string>
+    <string name="time">time</string>
+    <string name="block_details">Block detail</string>
+    <string name="current_block">Current block:</string>
+    <string name="creat_time">Creation time:</string>
+    <string name="seach_hint">Please enter the block you want to see.</string>
+    <string name="token_name">Token name</string>
+    <string name="key">key</string>
+    <string name="value">value</string>
+    <string name="next">Next</string>
+    <string name="next_block">The next piece</string>
+    <string name="back_block">The last piece</string>
+    <string name="create_token">Publish Token</string>
+    <string name="basic_information">First</string>
+    <string name="create_token_sum">Second</string>
+    <string name="create_token_success">Third</string>
+    <string name="create_token_name">Please enter the name of token.</string>
+    <string name="create_token_suoxie">Please enter the abbreviation of the token name, for example, BTC.</string>
+    <string name="token_suoxie">Token name abbreviation</string>
+    <string name="creat_token_time">Release time</string>
+    <string name="creat_token_zongliang">Total assets:</string>
+    <string name="creat_token_yuwa">Number of pre digits:</string>
+    <string name="creat_token_kuanggong">The cost of transferring miners:</string>
+    <string name="meici">/ times</string>
+    <string name="meibi">/ pen</string>
+    <string name="creat_token_fabi">Side chain miners cost:</string>
+    <string name="creat_token_pos">POS annual yield:</string>
+    <string name="creat_token_tongsuo">Deflation</string>
+    <string name="creat_token_guanwang">Official website</string>
+    <string name="creat_token_shouyi">Revenue record</string>
+    <string name="creat_token_daishouyi">Income to be collected</string>
+    <string name="creat_token_diya">Mortgage rules</string>
+    <string name="creat_token_yilingqu">Received</string>
+    <string name="creat_token_pos2">POS annual income</string>
+    <string name="creat_token_posjilu">POS income collection records</string>
+    <string name="creat_token_linbenjin">Receive the principal</string>
+    <string name="creat_token_zhouqi">Mortgage cycle</string>
+    <string name="creat_token_linshouyi">Receive income</string>
+    <string name="daoqi">Expire</string>
+    <string name="yilingbenjin">The principal has been collected (YHC).</string>
+    <string name="zongbenjin">Total mortgage principal (YHC)</string>
+    <string name="shengyubenjin">Residual mortgage principal (YHC)</string>
+    <string name="benjinjilu">Mortgage payment record</string>
+    <string name="lingqubenjin">Receive mortgage principal (YHC)</string>
+    <string name="nojilu">No record of receipt</string>
+    <string name="create_token_guanwang">Please input official website, such as mobi.com</string>
+    <string name="create_token_mccguanwang">Please input official website, such as xxx.cc</string>
+    <string name="create_token_ethguanwang">Please input official website, such as etherscan.io</string>
+    <string name="create_token_slogo">Token logo</string>
+    <string name="create_token_slogo_choose">Please select token logo.</string>
+    <string name="create_token_tishi">Current%1$s balance%2$s, this release token will deduct%3$s only%4$s</string>
+    <string name="create_token_tishi1">Current DM balance %1$s, the issue application requires mortgage %2$s only DM, release 10%% in the first month from the date of issue, release in the second, third and fourth months 30%%. Please make sure there are enough DMs in your account.</string>
+    <string name="create_token_tishi2">The current%1$s balance is%2$s. Please republish token after purchase.</string>
+    <string name="create_token_putong"> Normal Release </string>
+        
+    <string name="create_token_diya"> Mortgage Issue </string>
+    <string name="please_choose">Please choose</string>
+    <string name="is_loading">Transaction processing, please wait.</string>
+    <string name="transfer_error">Transaction failure:</string>
+    <string name="choose_assest">Choice of currency</string>
+    <string name="transfer_success">Successful trade</string>
+    <string name="seach_assert_hint">Search for%1$s token contract address</string>
+    <string name="choosenode">Node selection</string>
+    <string name="create_token_jingdu">Token accuracy, please enter the exact position after token decimal point.</string>
+    <string name="create_token_jingdu2">Please input currency accuracy.</string>
+    <string name="create_token_sum2">Total assets (pieces)</string>
+    <string name="create_token_sum3">Please input token Total (piece).</string>
+    <string name="create_token_wa">Number of pre digits (pieces)</string>
+    <string name="create_token_wa2">Please input quantity of predigits.</string>
+    <string name="create_token_shouyi">Annual income</string>
+    <string name="create_token_shouyi2">Please import annual income.</string>
+    <string name="create_token_email">E-mail address</string>
+    <string name="create_token_email_edit">Please input your email address.</string>
+    <string name="create_token_zidong">Automatic mining</string>
+    <string name="nomore_kuai">There are no more blocks.</string>
+    <string name="create_token_email_tishi">E-mail address is used to receive development documents and other information.</string>
+    <string name="token_yicunzai">Token abbreviation already exists!</string>
+    <string name="jiansuohao">The transaction has been recorded by judicial authentication and can be used as judicial evidence. \n record number:</string>
+    <string name="token_detail">Token details</string>
+    <string name="wakuangshouyi">Mining profit</string>
+    <string name="code_from_local">Local album</string>
+    <string name="code_camera">Photograph</string>
+    <string name="pwd_error">The password is the same as the last password, please re input.</string>
+    <string name="beifenwanle">The backup word sequence you verified is correct. Do you want to remove the mnemonic from DST?</string>
+    <string name="permission_deny">Permission is denied. Please authorize it again.</string>
+    <string name="pwd_strong">strong</string>
+    <string name="pwd_middle">in</string>
+    <string name="pwd_weak">weak</string>
+    <string name="kaifazhong">Under development!!!</string>
+    <string name="ctocjiaoyi">Token Exchange</string>
+    <string name="write_a_review">Write a comment...</string>
+    <string name="all_comments">All comments</string>
+    <string name="no_comments">There is no comment. I look forward to your wonderful comments.</string>
+    <string name="please_enter">Please enter</string>
+    <string name="abbreviation">Abbreviation</string>
+    <string name="for_example">Such as Eth</string>
+    <string name="token_accuracy">Token precision</string>
+    <string name="total_amount_of_issuance">Total issued amount</string>
+    <string name="planned_release_total">Total planned release</string>
+    <string name="submit_currency">Submission of currency</string>
+    <string name="seat">0-18 bits</string>
+    <string name="insufficient_balance">Insufficient balance</string>
+    <string name="http_out_time">request timeout</string>
+    <string name="release_record">Release records</string>
+    <string name="currency_processing">In the processing of coins, please wait a moment.</string>
+    <string name="success">Success</string>
+    <string name="processing">In the process of processing</string>
+    <string name="total_amount_of_coins">Total amount of currency</string>
+    <string name="currency_time">Time of currency</string>
+    <string name="status">state</string>
+    <string name="please_enter_content">Please input contents</string>
+    <string name="fire_coin">Fire coin</string>
+    <string name="evaluation_details">Details of evaluation</string>
+    <string name="reply">Reply</string>
+    <string name="delete_this_comment">Are you sure you want to delete this comment?</string>
+    <string name="people">people</string>
+    <string name="block_browser">Block browser</string>
+    <string name="wallet_not_support">The current wallet does not support the currency. Please confirm that you have increased the currency to assets.</string>
+    <string name="select_wallet_type">Choose wallet type</string>
+    <string name="select_wallet">Choose a wallet</string>
+    <string name="set_as_default_wallet">Set as default Wallet</string>
+    <string name="default_wallet">Default Purse</string>
+    <string name="current_wallet">Current Wallet</string>
+    <string name="post_article">Publish articles</string>
+    <string name="add_cover">Add the cover</string>
+    <string name="edit_article">Editor\'s article</string>
+    <string name="edit_article_body">Edit the body of the article</string>
+    <string name="edit_candybox_body">Editor\'s candy box</string>
+    <string name="candybox_body">Editor\'s candy box</string>
+    <string name="submit">Submission</string>
+    <string name="please_add_a_cover">Please add cover.</string>
+    <string name="please_enter_title">Please input the title.</string>
+    <string name="please_enter_the_body_of_the_article">Please input the body of the article.</string>
+    <string name="good_img_size">The best size for picture uploading is 500x360 pixels.</string>
+    <string name="release">Release</string>
+    <string name="pdate">To update</string>
+    <string name="audited">Audited</string>
+    <string name="under_review">Audit</string>
+    <string name="rejected">Have refused</string>
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+    <string name="delete_this_article">Are you sure you want to delete this article?</string>
+    <string name="my_article">My article</string>
+    <string name="opening_price">Open price</string>
+    <string name="highest">Highest</string>
+    <string name="lowest">minimum</string>
+    <string name="total_transaction_volume">Total volume of transactions</string>
+    <string name="minute">5 points</string>
+    <string name="day">day</string>
+    <string name="week">week</string>
+    <string name="month">month</string>
+    <string name="no_details">No detailed information</string>
+    <string name="volume">volume</string>
+    <string name="price_trend">Price trend</string>
+    <string name="exchange_information_error">Exchange information error</string>
+    <string name="inquire">query</string>
+    <string name="switch_wallet">Switching Purse</string>
+    <string name="days_ago">The day before</string>
+    <string name="hour_ago">Hours ago</string>
+    <string name="minutes_ago">Minutes ago</string>
+    <string name="just_a_moment_ago">just</string>
+    <string name="pending_package">To be packed</string>
+    <string name="publish_tokens">Issuing a token</string>
+    <string name="packed">In the package</string>
+    <string name="completed">Completed</string>
+    <string name="handling_fee">Service Charge</string>
+    <string name="all_pictures">All the pictures</string>
+    <string name="token_released">Token release</string>
+    <string name="personal_information">My Profile</string>
+    <string name="address_is_save">The address already exists.</string>
+    <string name="address_books_name">Name</string>
+    <string name="remarks_xuantian">Remarks (Optional)</string>
+    <string name="address_books">Contact address</string>
+    <string name="is_normal_not_transefer">You choose the ordinary node, unable to make money, transfer operation. Please switch the super node and then do the operation.</string>
+    <string name="is_normal_not_transefer2">You choose the ordinary node, unable to make money, transfer and other operations!!</string>
+    <string name="token_detail2">Details of the token</string>
+    <string name="all">whole</string>
+    <string name="zhuanchu">Turn out</string>
+    <string name="zhuanru">To change into</string>
+    <string name="fail">fail</string>
+    <string name="nodesum">The current%1$s node is optional, and the fastest node has been loaded to the list.</string>
+    <string name="yugushouxufei">Estimated service charge (%1$s)</string>
+    <string name="yugushouxufei2">Estimated service charge</string>
+    <string name="data_transfer_protocol">Gossip data transfer protocol</string>
+    <string name="network_delay">Network delay</string>
+    <string name="qingshurappsuoxie">Please enter token abbreviation.</string>
+    <string name="create_wallet_fail">Wallet creation failed</string>
+    <string name="wan">ten thousand</string>
+    <string name="yi">Hundreds of millions</string>
+    <string name="pay_wallet_address">Payment wallet address</string>
+    <string name="wallet_address">Purse address</string>
+    <string name="in_wallet_address">Transfer to wallet address</string>
+    <string name="need_have_assest">Currencies need to be held.</string>
+    <string name="back">Return</string>
+    <string name="out_wallet_address_error">Issue of wallet address error</string>
+    <string name="plase_choose_assest">Please choose currencies.</string>
+    <string name="in_wallet_address_error">Revenue wallet address error</string>
+    <string name="assest_error">Token mistake</string>
+    <string name="assest_error_rechoose">There is an error in the token. Please choose the token again.</string>
+    <string name="please_choose_wallet">Please choose your wallet first.</string>
+    <string name="please_choose_candy_assest">Please choose candy currency.</string>
+    <string name="please_xianling_num">Please enter the number of users per limit.</string>
+    <string name="xianling_num">Limit per user</string>
+    <string name="please_choose_endtime">Please select end time.</string>
+    <string name="endtime">Deadline</string>
+    <string name="please_edit">Please edit</string>
+    <string name="edited">Edited</string>
+    <string name="fee_payment_failed">Fee payment failed</string>
+    <string name="send_candybox_success">Candy released successfully</string>
+    <string name="lingqutiaojian">Receive conditions</string>
+    <string name="can_ling_num">Quantity available</string>
+    <string name="lingqu">Receive</string>
+    <string name="ge">individual</string>
+    <string name="lingqu_success">Receive success</string>
+    <string name="lingqu_fail">Receive failure</string>
+    <string name="please_import_def_wallet">You DID not import default wallet.</string>
+    <string name="no_def_seting_defwallet">You haven\'t set the default wallet. Do you want to set it up?</string>
+    <string name="ling_candybox">The%2$s from%1$s will be deposited in your wallet later. Please check it!</string>
+    <string name="ling_candybox2">The%2$s%3$s from%1$s will be deposited in your wallet later. Please check it!</string>
+    <string name="candybox_detail">Confectionery details</string>
+    <string name="xianling">Limit per person:</string>
+    <string name="shengyu">Surplus</string>
+    <string name="lingqushijian">Time to collect:</string>
+    <string name="lingqutiaojian2">Conditions of collection:</string>
+    <string name="zhi">to</string>
+    <string name="fafangdizhi">Address:</string>
+    <string name="kelingshuliang">Quantity available:</string>
+    <string name="lingtangguo">Get the candy</string>
+    <string name="lingqujilu">Receiving records</string>
+    <string name="lingqudizhi">Collect addresses:</string>
+    <string name="daizhuanbi">Pending currency</string>
+    <string name="fafangjilu">Lssue records</string>
+    <string name="shenyushouxufei">Fees remaining:</string>
+    <string name="fafangshijian">Payment time:</string>
+    <string name="jiezhishijian">Up to date:</string>
+    <string name="kelingqu">Receive</string>
+    <string name="yilingwan">Have finished</string>
+    <string name="shouxufeibuzu">Insufficient service charge</string>
+    <string name="buchongshouxufei">Supplementary handling fee</string>
+    <string name="chehui">withdraw</string>
+    <string name="yichehui">Withdrawn</string>
+    <string name="yilingqu">Already received:</string>
+    <string name="say_something">Say something</string>
+    <string name="comment">Comment</string>
+    <string name="contact">Contact</string>
+    <string name="third_party">Third party</string>
+    <string name="lingqu_here">Candy collected</string>
+    <string name="fasong_here">The candy I sent</string>
+    <string name="xianlings">Limited</string>
+    <string name="shengyus">Remaining</string>
+    <string name="jiezhi">Cutoff</string>
+    <string name="contact_official">Contact Official</string>
+
+    <string name="weishezhi">(Not set)</string>
+    <string name="yishezhi">(Has been set)</string>
+    <string name="weidaoru">(Not imported)</string>
+    <string name="set_default_wallet">Binding wallet</string>
+    <string name="now_wallet_address">Current wallet address</string>
+    <string name="please_wait">Not open</string>
+
+    <string name="huobidanwei">Currency unit </string>
+    <string name="website">official website address </string>
+    <string name="email">mail address </string>
+    <string name="whitepaper">white paper address </string>
+    <string name="twitter">official twitter number </string>
+    <string name="telegram">official telegram number </string>
+    <string name="github">official github number </string>
+    <string name="facebook">official facebook number </string>
+    <string name="reddit">official reddit number </string>
+    <string name="slack">official slack number </string>
+    <string name="medium">official medium number </string>
+    <string name="eth">eth pricing number</string>
+    <string name="usd">usd pricing number </string>
+    <string name="btc">btc pricing </string>
+    <string name="symbol">Identification </string>
+    <string name="zhongwen">Chinese introduction </string>
+    <string name="yingwen">Introduction to English</string>
+    <string name="published_on">release time </string>
+    <string name="qr_error_waller">For security reasons, please use this QR code on the transfer page.</string>
+    <string name="her_no_def_seting_defwallet">The other party has not set this type of default wallet</string>
+    <string name="manage_identity_wallet"> manage identity wallet </string>
+    <!---->
+    <string name="open_yunwallet_paypwd">Set password </string>
+        
+    <string name="setting_paypwd_hint">Please set your trading password </string>
+        
+    <string name="setting_paypwd_hint2">Please confirm your transaction password </string>
+        
+    <string name="go_yunwallet">Save and go to the cloud wallet</string>
+        
+    <string name="online_wallet">cloud wallet</string>
+        
+    <string name="online_wallet_recharge">charge coins </string>
+        
+    <string name="online_wallet_extract">to raise coins </string>
+        
+    <string name="online_wallet_buy">buy </string>
+        
+    <string name="online_wallet_sell">sale </string>
+        
+    <string name="online_wallet_history">record </string>
+        
+    <string name="online_wallet_recharge_history">charged record </string>
+        
+    <string name="online_wallet_extract_history">Tick money record </string>
+        
+    <string name="online_wallet_source">Source: </string>
+        
+    <string name="online_wallet_num">Quantity: </string>
+        
+    <string name="online_wallet_time">Time: </string>
+        
+    <string name="online_wallet_current_balance">current balance: </string>
+        
+    <string name="online_wallet_current_quantity">current %1$s number </string>
+        
+    <string name="online_wallet_recharge_coin">%1$scharged coins</string>
+        
+    <string name="online_wallet_extract_coin">%1$s coins </string>
+        
+    <string name="online_wallet_save_qrcode">Save QR code</string>
+        
+    <string name="online_wallet_address">wallet address </string>
+        
+    <string name="online_wallet_address_hint">Please enter your wallet address</string>
+        
+    <string name="online_wallet_extract_num">Please enter the amount of coins </string>
+        
+    <string name="online_wallet_minimum_withdrawal">minimum withdrawal </string>
+        
+    <string name="online_wallet_all_withdrawal">full withdrawal </string>
+        
+    <string name="online_wallet_google_code_hint">Please enter Google verification code </string>
+        
+    <string name="online_wallet_pay_pwd_hint">Please enter your transaction password </string>
+        
+    <string name="online_wallet_handling_fee">handling fee</string>
+        
+    <string name="online_wallet_actual_arrival">actual arrival </string>
+        
+    <string name="online_wallet_withdraw_immediately"> immediate withdrawal </string>
+        
+    <string name="online_wallet_buy_unit_price">unit price </string>
+        
+    <string name="online_wallet_buy_num_hint">Please enter the purchase quantity </string>
+        
+    <string name="online_wallet_buy_total_transaction_amount">Total transaction </string>
+        
+    <string name="online_wallet_sell_num_hint">Please enter the quantity sold </string>
+        
+    <string name="online_wallet_setting_accounts">Please set up your collection account first</string>
+        
+    <string name="online_wallet_setting_pay_type">Set the payment method </string>
+        
+    <string name="online_wallet_setting">Settings </string><![CDATA[
+        
+        
+
+        
+
+        
+    ]]>
+    <string name="online_wallet_activated">activated </string>
+        
+    <string name="online_wallet_inactivated">not activated </string>
+        
+    <string name="online_wallet_add_pay_type">Add payment method </string><![CDATA[
+        
+        
+
+        
+
+        
+    ]]>
+    <string name="online_wallet_username">name</string>
+
+    <string name="online_wallet_chain">Chain type: </string>
+        
+    <string name="online_wallet_username_hint">Enter user name </string><![CDATA[
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+    ]]>
+    <string name="online_wallet_account_number">account </string><![CDATA[
+        
+        
+
+        
+
+        
+    ]]>
+    <string name="online_wallet_settingpay_type">Please set up your collection account first</string>
+        
+    <string name="online_wallet_no_permisssions"> is temporarily unavailable for you</string>
+        
+    <string name="online_wallet_del_hint">Are you sure you want to cancel?</string>
+        
+    <string name="online_wallet_add_paypal">Add Paypal</string>
+        
+    <string name="online_wallet_paypal_account_number">Please enter the Paypal account </string>
+
+    <string name="online_wallet_order_coin">Currency</string>
+        
+    <string name="online_wallet_order_type">Type </string>
+        
+    <string name="online_wallet_order_num">Number </string>
+        
+    <string name="online_wallet_order_no">Order number </string>
+        
+    <string name="online_wallet_order_time">Transaction time </string>
+        
+    <string name="online_wallet_order_shensu">Appeal </string>
+        
+    <string name="online_wallet_order_detail">Order details </string>
+
+    <string name="online_wallet_all_zichan">Cloud Wallet Assets</string>
+
+    <string name="me_my_otc">My OTC</string>
+        
+    <string name="other">other </string>
+        
+    <string name="pwd_pay_set">Settings </string>
+        
+    <string name="person_qr_save_success"> saved </string>
+        
+    <string name="person_qr_save_fail">Save failed</string>
+        
+    <string name="me_wallet_function_finance_record">financial record </string>
+        
+    <string name="deposit_treasured_ok">confirm </string><![CDATA[
+        
+        
+    ]]>
+    <string name="application_hint">You will be redirected to a third-party DAPP page, and your use will be directly responsible for the third party\'s Service Agreement and Privacy Policy. </string>
+        
+    <string name="relevant_hint">The use of third-party DApps accessed through the DApp browser will be subject to the User Agreement of the third-party DApp, and the third-party DApp will be directly and separately responsible to you, please pay attention to the risk! </string>
+        
+    <string name="dapp_hint">Enter DApp website</string>
+        
+    <string name="me_app">application </string>
+    <string name="not_backed_up"> not backed up</string>
+    <string name="add_coin_type"> add currency </string>
+    <string name="drop_out"> exit </string>
+    <string name="drop_out_identity"> exit identity</string>
+    <string name="drop_out_identity_remark"> All wallet data will be deleted after exiting the identity, please make sure that all wallets have been backed up</string>
+    <string name="drop_out_ok"> confirm exit </string>
+    <string name="manage_identity_wallet_remark"> backup the wallet in order to restore the multi-currency assets under the identity wallet in the future</string>
+    <string name="manage_wallet2"> management </string>
+    <string name="backup_your_wallet_first"> Please backup your wallet first</string>
+    <string name="fee_moshi"> miner fee mode</string>
+    <string name="eip_remark"> The Ethereum series does not open EIP-1559 by default. When you turn on the switch, if the chain supports EIP-1559, EIP-1559 will be used when interacting on the chain. If not, the old miner mode will be used. </string>
+    <string name="about_eip">About EIP-1559</string>
+    <string name="node_settings"> node settings </string>
+    <string name="delete_node_address"> Are you sure you want to delete the node address?</string>
+    <string name="node_is"> The current node is </string>
+    <string name="add_custom_node"> add a custom node</string>
+    <string name="custom_node"> custom node</string>
+    <string name="add_node_warn"> Please confirm the configuration of trusted third-party nodes to avoid potential risks.</string>
+    <string name="input_node_is_wrong"> The input node is wrong</string>
+    <string name="valid_node_address"> Please enter a valid node address</string>
+    <string name="add_the_currency"> Please add the currency under the identity wallet (multiple choice). </string>
+    <string name="identity_wallet"> identity wallet</string>
+    <string name="add_currency"> add currency </string>
+    <string name="other_wallets"> other wallets</string>
+    <string name="add_wallet"> add wallet</string>
+    <string name="ziding_gas"> Custom Gas</string>
+    <string name="create_token_otherguanwang"> please enter the official website such as etherscan.io</string>
+
+    <!---->
+
+    <string name="google_miyao"> key</string>
+    <string name="google_verifycode">Google verification code</string>
+    <string name="zhantie"> paste</string>
+    <string name="cc_in_email_hint"> please enter the key</string>
+    <string name="cc_sms_inemail_hint"> please enter the email verification code</string>
+    <string name="cc_sms_ingoogle_hint">Please enter Google verification code</string>
+    <string name="cc_save_btn_google"> open GOOGLE authentication</string>
+    <string name="jinrongjia_info_error"> Please continue to operate after completing the information</string>
+    <string name="google_steep"> binding steps:</string>
+    <string name="google_steep_one">1. Install the two-step verification code program: Google Authenticator</string>
+    <string name="google_steep_two">2. After opening Google Authenticator, please scan the QR code on this page, or enter the password:</string>
+    <string name="google_steep_two1">*After the configuration is completed, a 6-digit number will be displayed on the phone, which changes every 30 seconds. This number is your two-factor authentication password. </string>
+    <string name="google_steep_two2">*Please keep this key in mind, if your password is accidentally deleted or your phone is lost, you need to use this key to retrieve the binding</string>
+    <string name="google_steep_two3">*Do not delete this two-factor authentication password account, otherwise you will be unable to perform account operations</string>
+    <string name="google_steep_three">3. Enter the verification code with CS Wallet information in the APP</string>
+    <string name="google_steep_hint">Please enter Google verification code</string>
+    <string name="google_bind"> confirm binding</string>
+    <string name="submit_error"> failed to submit</string>
+    <string name="submit_success"> submitted successfully</string>
+    <string name="bc_unbindgoogle">Unbind GOOGLE authentication</string>
+    <string name="bind_email"> mailbox binding </string>
+    <string name="bind_email_shuoming"> Please fill in the following information to complete email authentication. </string>
+    <string name="bind_email_hint"> fill in your email address</string>
+    <string name="bind_email_sms_hint"> enter your email verification code</string>
+    <string name="bind_email_send_sms"> send verification code </string>
+
+    <string name="common_save_img"> save the picture</string>
+    <string name="common_save_faile"> save failed</string>
+    <string name="creat_token_tishi"> Your current default wallet type is inconsistent with the type of currency issued, we will randomly select a wallet consistent with the type of currency issued for payment</string>
+    <string name="creat_token_nowallet"> Please first create a wallet for the type of tokens you want to issue</string>
+
+    <string name="xrp_transfee_title"> handling fee</string>
+    <string name="remarks_hints"> tag is tag 0~4294967295</string>
+    <string name="xpy_transfer_tip"> Tip: Please make sure the receiving address is activated. If it is not activated, please activate the XRP address first (20XRP is required for activation). If the receiving address is activated, any amount of XRP can be transferred. </string>
+    <string name="xpy_get_seq_error"> Transaction Sequence failed to get </string>
+    <string name="xpy_token_tip_begin"> Tip: Please make sure that the payment address is activated, if not activated, please activate first</string>
+    <string name="xpy_token_tip_end"> address (5XRP is required for activation), after the payment address is activated, any number can be transferred </string>
+    <string name="xpy_dm_add_tip"> Are you sure you want to add the currency? 5XRP needs to be frozen according to XRP platform requirements</string>
+    <string name="xpy_home_tips"> Ripple Networks stipulates: Users need to switch to 25XRP to activate the XRP/XPY address, and can not use or extract at will, so as not to affect the use. </string>
+
+    <string name="dapp_look_address"> view application address</string>
+    <string name="dapp_link_wallet"> want to link your wallet</string>
+    <string name="dapp_wallet_error"> The current wallet does not support Dapp</string>
+    <string name="wallet_isfen"> This wallet is already an identity wallet, please do not import it again!</string>
+    <string name="please_dev_wait">stay tuned</string>
+    <string name="dapp_not_support">Current DApp does not support this wallet</string>
+    <string name="please_create_wallet">Please create a wallet first</string>
+    <string name="please_first_selecte_wallet">Please choose a wallet first</string>
+    <string name="please_input_hint">Please input</string>
+    <string name="default_node_title">Default Node</string>
+    <string name="this_node_has_add">Node already exists</string>
+    <string name="ping_net_error_tip">Wrong</string>
+
+
+    <string name="sm_string_me_see_more">See more</string>
+    <string name="sm_string_me_dapp">DAPP</string>
+    <string name="sm_string_me_chat_setting">Communication Settings</string>
+    <string name="sm_string_me_assets_management">pledge management</string>
+    <string name="sm_string_me_virtual_phone">DID management</string>
+    <string name="sm_string_me_privacy_policy">Anti-harassment settings</string>
+    <string name="sm_string_me_chat">Chat Settings</string>
+    <string name="sm_string_me_logout">logout</string>
+    <string name="sm_string_level_ranking">Pledge now</string>
+    <string name="sm_virtual_phone_title_1">DID management</string>
+    <string name="sm_virtual_phone_title_2">Get Newsletter DID</string>
+    <string name="sm_virtual_phone_string_10">Currently holding DID</string>
+    <string name="sm_virtual_phone_string_11">Default communication DID settings</string>
+    <string name="sm_virtual_phone_string_12">MINT Newsletter DID</string>
+    <string name="sm_virtual_phone_string_20">The current gateway supports DID number segment</string>
+    <string name="sm_virtual_phone_string_21">Continue</string>
+
+    <string name="sm_pledge_string_title">Pledge mining</string>
+    <string name="sm_pledge_string_1">Pledge</string>
+    <string name="sm_pledge_string_10">DID:</string>
+    <string name="sm_pledge_string_11">View</string>
+    <string name="sm_pledge_string_12">Pledged (Genesis)</string>
+    <string name="sm_pledge_string_13">Pledged</string>
+    <string name="sm_pledge_string_14">Redeem</string>
+    <string name="sm_pledge_string_15">Pledge interest</string>
+    <string name="sm_pledge_string_16">Receive</string>
+    <string name="sm_pledge_string_17">Balance:</string>
+    <string name="sm_pledge_string_18">Get it now</string>
+    <string name="sm_pledge_string_19">The minimum initial pledge is %1$s</string>
+    <string name="sm_pledge_string_20">Get pledge address</string>
+    <string name="sm_pledge_string_21">Please register the communication first, and then destroy to obtain the mobile phone number</string>
+    <string name="data_error">Illegal data</string>
+    <string name="sm_pledge_tip">Unlocked:\nchat, communication number, call,\ncorresponding level of freedom medal</string>
+    <string name="ziyoushijiang">Free mason</string>
+    <string name="min_pledge_num">The minimum initial pledge is %1$s</string>
+    <string name="pledge_fee_num">Reminder:\nPledge and redemption will deduct %1$s \nAutomatic mining after pledge\nFirst pledge login will automatically generate a DID</string>
+    <string name="please_input_min_num">Please enter the pledge amount</string>
+    <string name="balance_no_enaful">Insufficient balance</string>
+    <string name="no_found_wallet_info">Wallet information not found</string>
+    <string name="operate_success">The operation is successful</string>
+    <string name="register_succss_and_login">Successful registration, please log in again</string>
+    <string name="please_selecte_phone_prefix">Please select a mobile phone number segment</string>
+    <string name="transfer_fail">transfer failed</string>
+    <string name="mint_phone_alert">Destroy %1$s %2$s to get a DID number\nOne number only needs to be destroyed once, no extra charge\nThe complete number will be provided after purchase\nMaximum %3$s numbers\nThe virtual number is allowed to be transferred, and will be automatically bound after the transfer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="did_transfer_title">DID number transfer</string>
+    <string name="did_transfer_bt">Confirm</string>
+    <string name="did_transfer_remark_hint">Please enter a remark (optional)</string>
+    <string name="did_transfer_remark_tips">Remarks</string>
+    <string name="did_transfer_did_hint">Please enter the transfer number</string>
+    <string name="did_transfer_did_tips">Transfer number</string>
+    <string name="did_transfer_address_ed_hint">Please enter or paste the wallet address</string>
+    <string name="did_transfer_address_ed_tips">Receiving wallet address</string>
+    <string name="pledge_login">pledge login</string>
+    <string name="pledge_gas_title">GAS fee:</string>
+    <string name="please_input_unple_num">Please enter the redemption number</string>
+    <string name="please_selecte_gateway">Please select the redemption gateway</string>
+    <string name="shuhui_num_error">Please fill in the correct amount</string>
+
+    <string name="room_privacy_setting_title">Privacy Settings</string>
+    <string name="room_privacy_setting_sub_title">Anti-harassment settings</string>
+    <string name="room_privacy_ck_white_tips">Only receive white list messages</string>
+    <string name="room_privacy_ck_stranger_tips">Receive information from strangers for a fee\n(Do not be pulled into a multi-person chat room by strangers)</string>
+    <string name="room_privacy_ck_stranger_tips2"> Strangers can send you messages, but need to consume</string>
+    <string name="room_privacy_stranger_consume">Please enter the consumption quantity</string>
+    <string name="room_privacy_ck_accept_all_tips"> Receive all chat messages</string>
+    <string name="room_privacy_ck_accept_all_tips_sub"> Strangers can send you messages without consuming</string>
+    <string name="room_privacy_bt">Save</string>
+    <string name="room_privacy_tips">The anti-harassment settings will be saved and recorded on the chain, and a small amount of gas fee is required.\nThe fee setting must be an integer and cannot be 0</string>
+    <string name="room_privacy_setting_error">Please select anti-harassment mode</string>
+    <string name="pledge_ranking_list">Leaderboard</string>
+    <string name="chain_bridge_title">Cross-chain bridge</string>
+    <string name="go_block_browser_confirm">Confirm in block browser</string>
+    <string name="no_more_wallet_can_change">There is no wallet available for switching</string>
+    <string name="no_more_wallet_can_do">There is no wallet available for operation</string>
+
+    <string name="nft_detail">NFT details</string>
+    <string name="nft_send">send</string>
+    <string name="nft_add_hint">Please enter the NFT contract to be added</string>
+    <string name="nft_contract_input_hint">Please enter the NFT contract</string>
+    <string name="nft_wrong_contract">The contract was not found</string>
+    <string name="nft_wrong_exist_contract">The contract already exists, no need to add it again</string>
+    <string name="nft_net_error">The request failed, please try again later</string>
+
+    <string name="nft_add_personal_nft">Custom add NFT</string>
+    <string name="nft_">Invalid contract address</string>
+
+    <string name="no_support_this_chain">This chain is not currently supported:</string>
+    <string name="switch_no_wallet_tip">Please create a wallet under the corresponding chain first</string>
+    <string name="kualianqiao">Cross-chain bridge</string>
+    <string name="daozhili">DAO Governance</string>
+
+    <string name="js_dapp_search"> enter link access</string>
+    <string name="js_un_known"> unknown</string>
+    <string name="js_go">Go</string>
+    <string name="js_search_history"> historical records</string>
+    <string name="js_hint_error_url"> please enter the correct link</string>
+    <string name="dapp_collect">collection</string>
+    <string name="dapp_cancle_collect">Uncollect</string>
+    <string name="dapp_servir_submit">This service is provided by %1$s</string>
+    <string name="has_cancle_collect">Cancelled</string>
+    <string name="collect_dapp_title">Collect DApp</string>
+    <string name="dapp_add_alert">The application cannot verify the security of the DApp. Please confirm that the DApp is safe and reliable when you add it to your favorites. Please do not add third-party links such as airdrops and mining from unknown sources!</string>
+    <string name="dapp_name_title">DApp name</string>
+    <string name="dapp_name_input_hint">Please enter the DApp name</string>
+    <string name="url_title">Link</string>
+    <string name="confirm_add_text">Confirm to add</string>
+    <string name="has_collected">Has collected</string>
+    <string name="please_create_wallet_first">Please create a wallet first</string>
+    <string name="this_wallet_unsupport_dapp">The current wallet does not support DApp</string>
+    <string name="dapp_switch_wallets">accounts</string>
+    <string name="delete_confirm_alert">Are you sure you want to delete? </string>
+    <string name="my_dapp_title">My DApp</string>
+    <string name="phone_destory">Destroy</string>
+    <string name="sm_pledge_tip_empty">empty</string>
+    <string name="enter_address_tips">Only enter valid addresses of Ethereum, Binance Smart Chain and DST Wallet</string>
+    <string name="blog">Official blog number</string>
+    <string name="security_bind_google">Google verification settings</string>
+    <string name="del_assets">Are you sure to delete the current token?</string>
+    <string name="shoukuan_addr">Receipt address</string>
+    <string name="btn_vpn_open">Open VPN</string>
+    <string name="btn_vpn_close">Close VPN</string>
+    <string name="hint_vpn_start_failed">Open VPN failed</string>
+    <string name="wallet_level_ob">Watch the wallet</string>
+    <string name="wallet_level_hd">HD</string>
+    <string name="hint_did_trans_current">The currently used number cannot be transferred</string>
+    <string name="show_pay_dialog_wallet_error">The login wallet does not exist</string>
+    <string name="sm_pledge_pb_tips">Today\'s communication gateway space quota (this value is updated dynamically every day)</string>
+    <string name="tv_pledge_yue_tips">total pledge</string>
+    <string name="tv_pledge_yizhiya_tips">Hash computing power</string>
+    <string name="btn_hash_tips">Stake</string>
+    <string name="tv_pledge_yizhiya2_tips">Pledged hash power</string>
+    <string name="tv_pledge_shengxi_tips">Pledge Incentive</string>
+    <string name="tv_pledge_wakuang_yue_tips">destroy mining</string>
+    <string name="sm_pledge_suanli_tips">Get hash power</string>
+    <string name="sm_pledge_suanli_tips2">Hash computing power</string>
+    <string name="tv_pledge_phone_start_tips">Current gateway support number segment</string>
+    <string name="sm_pledge_chart_tab_tips">Destroy</string>
+    <string name="sm_pledge_chart_address_radio_tips">Number of destroyed addresses</string>
+    <string name="sm_pledge_chart_num_radio_tips">Number of destruction</string>
+    <string name="please_input_min_num2">Please enter the destruction amount</string>
+    <string name="min_pledge_num2">The minimum %1$s for the first destruction</string>
+    <string name="min_pledge_destory_tips">Your first destruction has been completed</string>
+    <string name="please_input_ple_num">Please enter the pledge amount</string>
+    <string name="sm_pledge_string_178">Redeemable quantity</string>
+    <string name="sm_pledge_string_177">Total quantity</string>
+    <string name="noed_layout_tips">Redeem Gateway</string>
+    <string name="tv_unpledge_yue_available_tips">Amount of redemption</string>
+    <string name="btn_all_tips">All</string>
+    <string name="btn_shuhui_tips">Redeem</string>
+    <string name="tv_pledge2_yue_tips">Pledge amount</string>
+    <string name="edit_num2_hint">Please enter the pledge amount</string>
+    <string name="btn_all2_tips">All</string>
+    <string name="btn_shuhui2_tips">Pledge</string>
+    <string name="lin_assets_management_tips">destroy mining</string>
+    <string name="btn_mint_tips">Destroy</string>
+    <string name="trans_send_gifts_tips">Send gifts</string>
+    <string name="issuance_coin_back_title">Issuance Token</string>
+    <string name="issuance_rec_title">Issuance Record</string>
+    <string name="issuance_coin_name_tips">Token full name</string>
+    <string name="issuance_coin_name_hint">Please enter </string>
+    <string name="issuance_coin_name_hint2">Please enter URL</string>
+    <string name="issuance_coin_name_hint3">Please enter Token full name</string>
+    <string name="issuance_coin_short_name_hint">such as DST</string>
+    <string name="issuance_coin_short_name_tips">Token short name</string>
+    <string name="issuance_coin_decimal_tips">Token precision</string>
+    <string name="issuance_coin_decimal_hint">Format such as 0-18 digits</string>
+    <string name="issuance_coin_num_tips">Total issuance (pieces)</string>
+    <string name="issuance_coin_num_hint">The total amount of planned issuance</string>
+    <string name="issuance_coin_info">The handling fee changes according to the DST main chain network environment</string>
+    <string name="issuance_coin_tips">This token issuance will deduct a handling fee of about </string>
+    <string name="issuance_coin_title">Reminder</string>
+    <string name="issuance_coin_left_tips">Look again</string>
+    <string name="issuance_coin_right_tips">Confirm release</string>
+    <string name="load_more_finished">It\'s finished</string>
+    <string name="load_more_failed">Failed to load, click to try again</string>
+    <string name="nodata_info">There is no data</string>
+    <string name="get_wallet_address_fail2">Get wallet information failed</string>
+    <string name="issuance_coin_logo">Token Logo</string>
+    <string name="issuance_coin_bt">Submit to issue coins</string>
+    <string name="item_issuance_coin_address">Contract address:</string>
+    <string name="item_issuance_coin_status">Status</string>
+    <string name="item_issuance_coin_status_success">Success</string>
+    <string name="item_issuance_coin_time_tips">Issuance time</string>
+    <string name="item_issuance_coin_num_tips">Total amount of coins issued</string>
+    <string name="yi_unit">billions</string>
+    <string name="million_unint">million pieces</string>
+    <string name="only_unint">pieces</string>
+    <string name="set_private_chat_error">Please destroy the registered chat first, then continue to operate the settings</string>
+    <string name="no_found_token_info">No relevant currency information was found</string>
+    <string name="sm_me_issuance_coin_tips">One-click issuance</string>
+    <string name="wallet_method_waiting_result">Pending confirmation transaction result</string>
+    <string name="wallet_success">The operation was successful</string>
+    <string name="sm_me_computing">Computing power management</string>
+    <string name="chain_yingshe_count">Number of mappings</string>
+    <string name="chain_yingshe_count_hint">Please enter the quantity</string>
+    <string name="chain_yingshe_address">Receiving address</string>
+    <string name="chian_yingshe_address_hint">Please enter the receiving address</string>
+    <string name="confirm_yingshe">Confirm Mapping</string>
+    <string name="operate_success_and_wait">The operation is successful, please be patient</string>
+    <string name="exchange_center">Exchange</string>
+    <string name="wait_confirm_hash_result">Pending confirmation transaction result</string>
+    <string name="transfer_num_must_above0">The transfer amount must be greater than 0</string>
+    <string name="input_address_error">The wallet address is wrong</string>
+    <string name="no_found_wallet_error">The relevant wallet information was not found, please create a wallet first</string>
+    <string name="main_chain_title">main chain</string>
+    <string name="pleas_selecte_chain_coin">Please select a cross-chain currency</string>
+    <string name="can_use_reamin_num">Available Balance</string>
+    <string name="req_balance_info">Request balance information</string>
+    <string name="dapp_req_chaintype">This Dapp needs to switch to %s type wallet</string>
+    <string name="dapp_no_balance_error">The balance is not enough to pay miners fees</string>
+    <string name="receive_wallet_addr">Receive wallet address</string>
+    <string name="transfer_amount_title">Transfer amount</string>
+    <string name="wallet_yue_title">Balance</string>
+    <string name="pay_wallet_addr_title">Payment wallet address</string>
+    <string name="remark_info_hint">remark information</string>
+    <string name="wallet_fee_title">Fee</string>
+    <string name="wallet_time_hint">--s</string>
+    <string name="no_did_buy_tip">No have DID Num yet, go apply</string>
+
+    <string name="please_input_wallet_name">Enter wallet name</string>
+    <string name="password_input_hint">Enter password</string>
+    <string name="repeat_password_title">Repeat password</string>
+    <string name="password_hint_tip_text">Enter password hint question</string>
+    <string name="ipmort_guancha_wallet_tip">Note: The cold wallet is required to cooperate with the signature when the observation wallet sends the transaction. You can use another idle mobile phone, turn on the airplane mode as a cold wallet, import the private key of the wallet, and cooperate with offline signature. </string>
+    <string name="import_guancha_address_alert">The observation wallet does not need to import the private key, but only imports the wallet address for daily checking of accounts, transactions and receiving notifications. It is recommended to use a cold wallet or hardware wallet to manage the private key of large amounts of funds to avoid leakage and theft. </string>
+    <string name="jiasu_title">acceleration</string>
+    <string name="approve_success_continue">The authorization is successful, please continue</string>
+    <string name="map_send_address">Send address</string>
+    <string name="map_send_addr_hint">Please select the sending address</string>
+    <string name="map_send_title">Send</string>
+    <string name="map_yue_title">Balance:</string>
+    <string name="map_to_title">to</string>
+    <string name="map_receive_addr_tip">(Please do not send to exchange wallet or escrow wallet)</string>
+    <string name="map_gas_tip">Cross-chain handling fee %1$s, the minimum number of cross-chains is %2$s</string>
+    <string name="req_config_info_please">Request configuration information, please wait</string>
+    <string name="min_map_num_hint">Minimum number of cross-chains</string>
+    <string name="first_pay_approve_tip">The first transaction requires you to authorize the asset transaction first</string>
+    <string name="to_approve_do">Transaction Authorization</string>
+    <string name="ex_shouquan">execution authorization</string>
+    <string name="old_pwd_title">Original password</string>
+    <string name="new_pwd_title">New password</string>
+    <string name="confirm_new_pwd_title">Confirm new password</string>
+    <string name="address_is_no_invalidate">The receiving wallet address format is wrong, please check</string>
+    <string name="issuance_coin_success">block confirmation</string>
+    <string name="caozuo_success2">block confirmation</string>
+    <string name="item_issuance_coin_add_wallet">Add to wallet</string>
+    <string name="issuance_coin_exit">This token already exists in the wallet</string>
+    <string name="issuance_coin_add_success">Added successfully</string>
+    <string name="trade_type_title">TradeType:</string>
+    <string name="btn_login_change">Switch account</string>
+    <string name="mnemonic_tips">Wallet mnemonic words</string>
+    <string name="content_edit_tips">Keystore text content</string>
+    <string name="wallet_get_gas_fail">Gas</string>
+    <string name="wallet_create_device_group_title"></string>
+    <string name="operate_success_waiting">，，</string>
+    <string name="nxn_move_wallet_data">NXN</string>
+    <string name="create_root_wallet_tips">%s，，</string>
+    <string name="create_success"></string>
+    <string name="gas_alert_add_group_member"></string>
+    <string name="gas_alert_change_group_name"></string>
+    <string name="gas_alert_exit_device_group"></string>
+    <string name="gas_alert_burn_to_power"></string>
+    <string name="gas_alert_change_yongjin_radio"></string>
+    <string name="gas_alert_change_gongzi_radio"></string>
+    <string name="gas_alert_move_group"></string>
+    <string name="gas_alert_ling_power_reward"></string>
+    <string name="gas_alert_lingqu_pos">POS</string>
+    <string name="gas_alert_lingqu_gongzi"></string>
+    <string name="gas_alert_unfree_power"></string>
+    <string name="gas_alert_group_vote_zhichu"> </string>
+    <string name="gas_alert_dao_power_auth">Dao</string>
+    <string name="gas_alert_group_vote">Group </string>
+    <string name="gas_alert_dvm_auth">DVM</string>
+    <string name="select_chain_bridge_zichan"></string>
+    <string name="chain_bridge_bianxian"></string>
+    <string name="chain_bridge_100_beishu">100</string>
+    <string name="chain_bridge_out_chain"></string>
+    <string name="chain_bridge_to_chain"></string>
+    <string name="chain_bridge_no_exchange_addr"></string>
+    <string name="btn_now_start"></string>
+    <string name="chain_bridge_opt_tips">： \n1. ，。“”，，，，。 \n2. ，，。</string>
+    <string name="chain_bridge_please_from"></string>
+    <string name="chain_bridge_please_to"></string>
+    <string name="chain_bridge_please_diff">,</string>
+    <string name="chain_bridge_no_support">%s</string>
+    <string name="chain_bridge_confirm_exch_title"></string>
+    <string name="chain_bridge_you_will_receive"></string>
+    <string name="chain_bridge_order_confirm"></string>
+    <string name="chain_bridge_senting">：</string>
+    <string name="chain_bridge_order_pipei"></string>
+    <string name="chain_bridge_all_exch_num"></string>
+    <string name="chain_bridge_about_recevie"></string>
+    <string name="chain_bridge_gas_yugu">GAS</string>
+    <string name="chain_bridge_baozhengjin"></string>
+    <string name="chain_bridge_baozhengjin_tip">：%1$s，，，，%2$s。</string>
+    <string name="chain_bridge_pipei_num_title">：</string>
+    <string name="chain_bridge_ex_radio_title">：</string>
+    <string name="chain_bridge_auth_prikey_alert">1. 。\n2. ，，GAS，APP，。\n3. APP。</string>
+    <string name="chain_bridge_auth_prikey_title"></string>
+    <string name="confirm_auth"></string>
+    <string name="chain_bridage_status"></string>
+    <string name="chain_bridage_time"></string>
+    <string name="chain_bridge_continue_btn"></string>
+    <string name="chain_bridge_status_ing"></string>
+    <string name="chain_bridge_status_complete"></string>
+    <string name="chain_bridge_pre_order_error">，。</string>
+    <string name="chain_bridge_preorder_suggest">，:</string>
+    <string name="get_data_fail"></string>
+    <string name="get_private_key_fail"></string>
+    <string name="order"></string>
+    <string name="chain_bridge_get_bzj_fail"></string>
+    <string name="chain_bridge_to_wallet_no_balance"></string>
+    <string name="chain_b_order_ing"></string>
+    <string name="chain_b_order_some_over"></string>
+    <string name="chain_b_order_all_over"></string>
+    <string name="chain_b_order_has_cancel"></string>
+    <string name="chain_b_order_unknow"></string>
+    <string name="chain_b_step_buyer_yuyue"></string>
+    <string name="chain_b_step_buyer_yuyue_tip">%s</string>
+    <string name="chain_b_step_buyer_pay"></string>
+    <string name="chain_b_step_buyer_pay_tip">%1$s%2$s</string>
+    <string name="chain_b_step_seller_queren"></string>
+    <string name="chain_b_step_seller_queren_tip">%s</string>
+    <string name="chain_b_step_buyer_confirm"></string>
+    <string name="chain_b_step_buyer_confirm_tip">%s，</string>
+    <string name="chain_b_step_buyer_cancel"></string>
+    <string name="chain_b_step_buyer_cancel_tip">%s</string>
+    <string name="chain_b_step_seller_cancel"></string>
+    <string name="chain_b_step_seller_cancel_tips">%s</string>
+    <string name="chain_b_step_status_complete"></string>
+    <string name="chain_b_step_status_cancel"></string>
+    <string name="chain_b_step_status_wait_seller_confirm"></string>
+    <string name="chain_b_step_status_buyer_confrim"></string>
+    <string name="chain_b_step_status_wait_buyer_pay"></string>
+    <string name="unkown_status"></string>
+    <string name="chain_b_receive_count_title"></string>
+    <string name="chain_b_pay_title"></string>
+    <string name="chain_b_receive_title"></string>
+    <string name="chain_b_exrate_title"></string>
+    <string name="chain_b_baozhengji_lock_time"></string>
+    <string name="chain_b_seller_title"></string>
+    <string name="chain_b_order_no_title"></string>
+    <string name="chain_b_order_lock_time_title"></string>
+    <string name="chain_b_buy_over_time_title"></string>
+    <string name="chain_b_pay_addr_title"></string>
+    <string name="chain_b_receive_addr_title"></string>
+    <string name="chain_b_order_step_title"></string>
+    <string name="chain_b_order_step_zhankai"></string>
+    <string name="chain_b_order_step_shouqi"></string>
+    <string name="chain_b_deposite_has_quhui"></string>
+    <string name="chain_b_depo_wait_quhui"></string>
+    <string name="chain_b_order_no_complete"></string>
+    <string name="pipei_dingdan_title"></string>
+    <string name="chain_bridge_status_pause"></string>
+    <string name="status_complete"></string>
+    <string name="status_started"></string>
+    <string name="status_xieshang_ex"></string>
+
+    <string name="please_input_legal_number">Please enter a legal number</string>
+    <string name="pledge_comm">Pledge communication</string>
+    <string name="my_private_dvm">My DVM virtual machine</string>
+    <string name="all_use_time_title"></string>
+    <string name="rpc_node_unconnect_tip">URL，</string>
+    <string name="chain_b_error_node_connect">%s</string>
+    <string name="chain_b_error_send_fail">%s</string>
+    <string name="chain_b_error_init_client">%s</string>
+    <string name="chain_b_error_get_nonce">%s</string>
+    <string name="chain_b_error_get_gas_price">%s Gas</string>
+    <string name="chain_b_error_sign">%s</string>
+    <string name="chain_b_error_get_gas">%s Gas</string>
+    <string name="chain_b_error_start_db"></string>
+    <string name="chain_b_error_init_db"></string>
+    <string name="chain_b_error_found_order"></string>
+    <string name="chain_b_error_no_privatekey"></string>
+    <string name="chain_b_error_timeout"></string>
+    <string name="chain_b_ing_order_ex1">，。</string>
+    <string name="exception_info_title"></string>
+    <string name="chain_b_over_order_ex2">，。</string>
+    <string name="rpc_node_net_error_alert">Rpc，</string>
+    <string name="rpc_node_net_error_title">Rpc</string>
+    <string name="chain_b_exchange_exception"></string>
+    <string name="starting_please_wait">，</string>
+    <string name="start_success"></string>
+    <string name="start_fail"></string>
+    <string name="chain_b_retry_start_alert">！</string>
+    <string name="chain_b_service_no_run_alert">，</string>
+    <string name="chain_b_order_has_error_alert">，</string>
+    <string name="chain_b_service_has_error_start">：\n</string>
+    <string name="chain_b_status_order_faile"></string>
+    <string name="chain_b_step_status_buyer_get_fail"></string>
+    <string name="chain_b_step_status_buyer_has_cancel"></string>
+    <string name="chain_b_step_status_buyer_cancel_fail"></string>
+    <string name="chain_b_step_status_buyer_waite_cancel"></string>
+    <string name="chain_b_step_status_seller_has_cancel"></string>
+    <string name="chain_b_step_status_seller_cancel_fail"></string>
+    <string name="chain_b_step_status_seller_waite_cancel"></string>
+    <string name="chain_b_step_status_seller_pay_fail"></string>
+    <string name="chain_b_step_status_buyer_waite_pay"></string>
+    <string name="chain_b_step_status_seller_get_fail"></string>
+    <string name="chain_b_step_status_seller_waite_get"></string>
+    <string name="chain_b_step_status_buyer_pre_fail"></string>
+    <string name="chain_b_step_status_seller_pre_ing"></string>
+    <string name="chain_bridge_main_error_tip">%s，。：</string>
+    <string name="continue_exchange"></string>
+
+    <string name="usdt_realize_one_title">Cross chain from DST chain to ETH chain</string>
+    <string name="usdt_realize_one_content">The cross chain quantity needs to be a multiple of 100, and the cross chain method is atomic exchange. Both parties need to pay a small GAS fee on both DST and ETH chains for cross chain exchange.</string>
+    <string name="usdt_realize_one_balance_title">My assets</string>
+    <string name="usdt_realize_one_bt">USDT Cross Chain</string>
+    <string name="usdt_realize_two_title">Opening a Tether account</string>
+    <string name="usdt_realize_two_content">According to Tether\'s guidance, fill in the data and open an account</string>
+    <string name="usdt_realize_two_address">Account Opening Address：</string>
+    <string name="usdt_realize_two_bt">Opening an account</string>
+    <string name="usdt_realize_three_title">USDT realization</string>
+    <string name="usdt_realize_three_content">Transfer the ETH chain USDT to the Tether account according to the guide and exchange it for US dollars</string>
+    <string name="usdt_realize_three_address">Monetization address：</string>
+    <string name="usdt_realize_three_balance">My assets</string>
+    <string name="usdt_realize_three_bt">Realization</string>
+
+
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/body"
+    android:background="@color/default_top_background_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/backs" />
+        <ImageView
+            android:id="@+id/scan_move"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="15dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_dapp_scan"/>
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/tip_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/import_create_wallet_tip"/>
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_below="@id/tip_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        tools:text="@string/app_name"
+        android:textColor="@color/default_theme_color"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/first_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_name"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/first_wallet2"
+        android:textColor="@color/default_text_three_color"
+        android:textSize="15sp" />
+
+    <Button
+        style="@style/common_button"
+        android:id="@+id/create_wallet"
+        android:layout_height="50dp"
+        android:layout_below="@+id/first_wallet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/create_wallet"
+        android:textSize="16sp" />
+
+    <Button
+        style="@style/emtpy_theme_button"
+        android:id="@+id/import_wallet"
+        android:layout_height="50dp"
+        android:layout_below="@+id/create_wallet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/import_wallet"
+        android:textSize="16sp" />
+    <Button
+        style="@style/emtpy_theme_button"
+        android:id="@+id/move_wallet"
+        android:layout_height="50dp"
+        android:layout_below="@+id/import_wallet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/nxn_move_wallet_data"
+        android:textSize="16sp" />
+</RelativeLayout>

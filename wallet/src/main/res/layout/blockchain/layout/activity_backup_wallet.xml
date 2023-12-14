@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:background="@color/default_top_background_color">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/anquanshezhi"
+            android:layout_marginTop="62dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/default_text_color"
+            android:layout_marginTop="50dp"
+            android:text="@string/last_step"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:textSize="14sp"
+            android:textColor="@color/default_text_three_color"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/backup_wallet_remind"
+            />
+
+        <Button
+            style="@style/common_button"
+            android:id="@+id/import_wallet"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="36dp"
+            android:textSize="16sp"
+            android:text="@string/backup_wallet"
+            android:gravity="center"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/what_is_mnemonic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:text="@string/backup_wallet_detail"
+            android:layout_marginTop="34dp"
+            android:textSize="14sp"
+            android:textColor="@color/default_theme_color"
+            />
+    </LinearLayout>
+
+</LinearLayout>

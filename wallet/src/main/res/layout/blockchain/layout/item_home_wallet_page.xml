@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:paddingLeft="@dimen/dp_15"
+    android:paddingRight="@dimen/dp_15">
+    <TextView
+        android:id="@+id/go_beifen"
+        android:layout_width="wrap_content"
+        android:minWidth="80dp"
+        android:layout_height="32dp"
+        android:paddingLeft="50dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="6dp"
+        android:drawableLeft="@mipmap/beifen_wallet_small_ico"
+        android:background="@mipmap/wallettop_right_bg"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:paddingRight="10dp"
+        android:drawablePadding="5dp"
+        android:textColor="#514100"
+        android:text="@string/backup_wallet"
+        android:textSize="13sp"
+        />
+    <View
+        android:id="@+id/body_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/wallet_home_bg"/>
+    <ImageView
+        android:id="@+id/wallet_logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_15"
+        android:src="@mipmap/userlogo1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/wallet_logo"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+            <TextView
+                android:id="@+id/hbfuhao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="¥"
+                android:textColor="@color/white"
+                android:layout_marginRight="@dimen/dp_5"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/wallet_sumprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="0.00"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:drawableRight="@mipmap/home_erweima"
+                android:drawablePadding="13dp"
+                android:textSize="25sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/wallet_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="3dp"
+            android:drawableRight="@mipmap/home_wallet_addresscopy"
+            android:drawablePadding="@dimen/dp_5"
+            android:text="0xdb3487638...D43u79f321Aa0"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/wallet_address2"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="6dp"
+            android:drawableRight="@mipmap/home_wallet_addresscopy"
+            android:drawablePadding="@dimen/dp_5"
+            android:text="0xdb3487638...D43u79f321Aa0"
+            android:textColor="@color/white"
+            tools:visibility="visible"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/wallet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:drawableRight="@mipmap/home_erweima"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

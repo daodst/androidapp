@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/default_top_background_color"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:textSize="12sp"
+        android:textColor="@color/default_text_three_color"
+        android:text="@string/observed_remind"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_height="55dp">
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableLeft="@mipmap/locked"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/dp_10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/default_hint_text_color"
+            android:textSize="14sp"
+            android:hint="@string/observed_remind_edit"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/default_dividing_line"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/import_wallet"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@drawable/default_btn_bg"
+        android:textSize="14sp"
+        android:textColor="@color/default_button_text_color"
+        android:text="@string/import_begin"
+        android:gravity="center"
+        android:layout_height="44dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/lin_yellow_bg2"
+        android:textSize="14sp"
+        android:textColor="@color/yellow_75540f"
+        android:text="@string/observed_remind2"
+        android:padding="@dimen/dp_20"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/what_is_mnemonic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/what_id_observed"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="14sp"
+        android:textColor="@color/default_theme_color"
+        />
+</LinearLayout>

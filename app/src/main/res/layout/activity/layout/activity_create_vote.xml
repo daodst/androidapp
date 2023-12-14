@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <common.app.ui.view.TitleBarView
+        android:id="@+id/title_bar"
+        app:titleText="@string/create_vote_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/default_top_background_color"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/create_vote_tip"
+                android:background="#F6F7FB"
+                android:textColor="#ff999999"
+                android:textSize="12sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vote_creater_title"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/addr_tv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@drawable/round_f6f7_c10"
+                tools:text="dst6994ame48tera62no51c4...82f8265c5481"
+                android:hint="@string/vote_creater_hint"
+                android:textColorHint="@color/default_hint_text_color"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/default_text_color"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="15dp"
+                android:visibility="gone"
+                android:text="@string/create_vote_type_title"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                />
+
+            <Spinner
+                android:id="@+id/vote_types_spinner"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingEnd="12dp"
+                android:entries="@array/create_vote_items"
+                android:background="@drawable/spinner_bg"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vote_biaoti_title"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                />
+            <EditText
+                android:id="@+id/title_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@drawable/round_f6f7_c10"
+                android:hint="@string/vote_biaoti_hint"
+                android:textColorHint="@color/default_hint_text_color"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/default_text_color"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vote_desc_title"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                />
+            <EditText
+                android:id="@+id/desc_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="80dp"
+                android:gravity="top|left"
+                android:padding="12dp"
+                android:background="@drawable/round_f6f7_c10"
+                android:hint="@string/vote_desc_hint"
+                android:textColorHint="@color/default_hint_text_color"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/default_text_color"
+                android:textSize="15sp"
+                />
+
+
+            <!--  -->
+            <LinearLayout
+                android:id="@+id/layout_params"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/create_vote_params"/>
+            </LinearLayout>
+
+
+            <!--  -->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layout_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/create_vote_pay"/>
+            </LinearLayout>
+
+            <!--  -->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layout_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/create_vote_update"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vote_money_title"
+                android:textColor="#ff333333"
+                android:textSize="14sp"
+                />
+            <EditText
+                android:id="@+id/money_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@drawable/round_f6f7_c10"
+                android:hint="@string/min_vote_money_hint"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/default_hint_text_color"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/default_text_color"
+                android:textSize="15sp"
+                />
+
+            <Button
+                android:id="@+id/submit_btn"
+                style="@style/common_button"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/vote_submit_text" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

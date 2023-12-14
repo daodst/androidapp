@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="49dp"
+    android:background="@drawable/icon_notice_bg2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="21dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon_notice_simple" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivLogo"
+            android:layout_toStartOf="@+id/ivGo"
+            android:layout_toEndOf="@+id/ivLogo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/default_theme_color"
+            android:textStyle="bold"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_toStartOf="@+id/ivGo"
+            android:layout_toEndOf="@+id/ivLogo"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/default_theme_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="POS" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSubTitle"
+            android:layout_toStartOf="@+id/ivGo"
+            android:layout_toEndOf="@+id/ivLogo"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#577970"
+            tools:text="POS DAOPOS" />
+
+        <ImageView
+            android:id="@+id/ivGo"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="21dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon_notice_jiantob" />
+    </RelativeLayout>
+
+</RelativeLayout>

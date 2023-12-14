@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/numTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chain_bridge_pipei_num_title"
+            tools:text="：2000"
+            android:textColor="@color/default_text_color"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:id="@+id/countTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            tools:text="2000 × 1"
+            android:textColor="#ff111111"
+            android:textSize="15sp"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chain_bridge_ex_radio_title"
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+        <TextView
+            android:id="@+id/exRadioTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1 = 0.97826866"
+            android:textColor="@color/default_theme_color"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            />
+    </LinearLayout>
+</LinearLayout>

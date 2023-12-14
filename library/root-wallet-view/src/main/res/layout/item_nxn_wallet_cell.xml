@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/walletBgIv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        tools:src="@mipmap/w_nxn_bsc_bg"/>
+    <ImageView
+        android:id="@+id/walletCellIv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        tools:src="@mipmap/w_nxn_bsc_cell"/>
+
+    <ImageView
+        android:id="@+id/walletTypeIv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        tools:src="@mipmap/w_nxn_bsc" />
+
+    <View android:id="@+id/centerV"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="20dp"
+        android:minHeight="20dp"
+        android:background="@drawable/round_c10_red"
+        android:layout_toEndOf="@id/centerV"
+        android:layout_alignTop="@id/centerV"
+        android:layout_marginTop="-10dp"
+        android:paddingBottom="1dp"
+
+        android:gravity="center">
+        <TextView
+            android:id="@+id/countTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            tools:text="3"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

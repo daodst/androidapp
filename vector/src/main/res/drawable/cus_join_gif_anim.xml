@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+
+    <!--    
+    <item
+        android:drawable="@drawable/join_room_01"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_02"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_03"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_03"
+        android:duration="62" />
+
+    <item
+        android:drawable="@drawable/join_room_04"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_05"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_06"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_07"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_08"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_09"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_10"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_11"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_12"
+        android:duration="62" />
+
+    <item
+        android:drawable="@drawable/join_room_13"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_14"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_15"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_16"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_17"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_17"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_18"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_19"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_20"
+        android:duration="62" />
+    <item
+        android:drawable="@drawable/join_room_21"
+        android:duration="62" />
+</animation-list>

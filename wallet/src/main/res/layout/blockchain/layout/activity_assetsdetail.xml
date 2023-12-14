@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include android:id="@+id/title_include" layout="@layout/title_bar" />
+    <!--  -->
+    <include android:id="@+id/typetabs_include"
+        layout="@layout/top_record_types_layout"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <common.app.ui.view.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/refresh_head" />
+            <common.app.ui.view.PullableScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--  -->
+                    <include android:id="@+id/balance_include" layout="@layout/assets_balance_info_layout" android:visibility="gone"/>
+
+                    <!-- TokenLayout -->
+                    <include android:id="@+id/tokeninfo_include" layout="@layout/assets_token_info_layout" android:visibility="gone"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.wallet.ctc.view.listview.NoScrollListView
+                            android:id="@+id/listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:divider="@color/transparent"
+                            android:dividerHeight="10dp"/>
+                        <TextView
+                            android:id="@+id/nodata"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:drawableTop="@mipmap/nodata"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            android:gravity="center"
+                            android:text="@string/nodata"
+                            android:drawablePadding="30dp"
+                            android:textColor="@color/default_theme_color"
+                            android:textSize="14sp" />
+                        <Button
+                            style="@style/common_button"
+                            android:id="@+id/go_browser"
+                            android:layout_height="44dp"
+                            android:layout_width="240dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/nodata"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            android:layout_marginTop="30dp"
+                            android:text="@string/go_block_browser_confirm" />
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </common.app.ui.view.PullableScrollView>
+
+            <include layout="@layout/load_more" />
+        </common.app.ui.view.PullToRefreshLayout>
+    </RelativeLayout>
+
+    <!-- ， -->
+    <include android:id="@+id/btns_include" layout="@layout/transfer_receive_btn_layout"/>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="login_btn_text">#4e569c</color>
+    <color name="login_btn_text2">#30ffffff</color>
+        <color name="wallet_login_hint">#A4A4F1</color>
+        <color name="wallet_login_btn_text">#303F9F</color>
+    <color name="poptitlebg">#efefef</color>
+    <color name="athem">#393a3e</color>
+    <color name="main_tb_vt">#666666</color>
+    <color name="light_blues">#3BAFDA</color>
+    <color name="invitate_un_ok">#C0C0C0</color>
+    <color name="invitate_ok">#3F8EF7</color>
+    <color name="default_login_text_color">#ffffff</color>
+    <color name="v_home_list_status_ing">#0BBD8B</color>
+    <color name="v_home_list_status_ed">#999999</color>
+    <color name="v_home_list_status_ing2">#FFB319</color>
+    <color name="item_vote_detial_select_yes">#0BBD8B</color>
+    <color name="item_vote_detial_select_no">#FF5500</color>
+</resources>

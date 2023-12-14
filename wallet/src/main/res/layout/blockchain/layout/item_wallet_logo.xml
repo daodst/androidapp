@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:background="@color/transparent">
+        <common.app.base.view.RoundImageView
+            android:id="@+id/wallet_logo"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_centerInParent="true"
+            tools:src="@mipmap/choose_logo_bnb"
+            app:type="circle"
+            />
+        <View
+            android:id="@+id/wallet_logo_choose"
+            android:layout_width="@dimen/dimen_3dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/default_theme_color"
+            android:layout_height="32dp"/>
+    </RelativeLayout>
+</LinearLayout>

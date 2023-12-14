@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyTheme" parent="AppTheme">
+        <!--&lt;!&ndash;Appbar&ndash;&gt;-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--&lt;!&ndash;&ndash;&gt;-->
+        <item name="colorPrimaryDark">@color/default_titlebar_bg_color</item>
+        <!--&lt;!&ndash;&ndash;&gt;-->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <!-- ， ，，。  true   false -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:windowAnimationStyle">@style/ActivityInOutAnimation</item>
+        <!--        <item name="windowActionBar">false</item>-->
+        <!--        <item name="windowNoTitle">true</item>-->
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <!--        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>-->
+        <item name="android:textAllCaps">false</item>
+
+        <!-- MIUI recreate() -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+    <style name="launcherLightTheme" parent="Base.Theme.Vector.Light">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+
+        <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--        <item name="colorAccent">@color/colorAccent</item>-->
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:textColorPrimary">@color/Light.TextColor</item>
+        <item name="android:textColor">@color/Light.TextColor</item>
+        <item name="android:textColorSecondary">@color/Light.TextColorSecondary</item>
+        <!-- MIUI recreate() -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>

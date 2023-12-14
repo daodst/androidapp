@@ -1,0 +1,207 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'realm-android'
+apply plugin: "org.jetbrains.dokka"
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "io.realm:realm-gradle-plugin:10.9.0"
+    }
+}
+
+android {
+    testOptions.unitTests.includeAndroidResources = true
+
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+
+        
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        
+        
+        
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+
+        buildConfigField "String", "SDK_VERSION", "\"1.4.14\""
+
+        buildConfigField "String", "GIT_SDK_REVISION", "\"${gitRevision()}\""
+        buildConfigField "String", "GIT_SDK_REVISION_UNIX_DATE", "\"${gitRevisionUnixDate()}\""
+        buildConfigField "String", "GIT_SDK_REVISION_DATE", "\"${gitRevisionDate()}\""
+
+        defaultConfig {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        
+    }
+
+    buildTypes {
+        debug {
+            
+            buildConfigField "boolean", "LOG_PRIVATE_DATA", project.property("vector.debugPrivateData")
+            
+            buildConfigField "okhttp3.logging.HttpLoggingInterceptor.Level", "OKHTTP_LOGGING_LEVEL", "okhttp3.logging.HttpLoggingInterceptor.Level." + project.property("vector.httpLogLevel")
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_PRIVATE_DATA", "false"
+            buildConfigField "okhttp3.logging.HttpLoggingInterceptor.Level", "OKHTTP_LOGGING_LEVEL", "okhttp3.logging.HttpLoggingInterceptor.Level.BASIC"
+        }
+    }
+
+    adbOptions {
+        installOptions "-g"
+    }
+
+    compileOptions {
+        sourceCompatibility versions.sourceCompat
+        targetCompatibility versions.targetCompat
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+        freeCompilerArgs += [
+                
+                
+        ]
+    }
+
+    sourceSets {
+        androidTest {
+            java.srcDirs += "src/sharedTest/java"
+        }
+        test {
+            java.srcDirs += "src/sharedTest/java"
+        }
+    }
+}
+
+static def gitRevision() {
+    def cmd = "git rev-parse --short=8 HEAD"
+    return cmd.execute().text.trim()
+}
+
+static def gitRevisionUnixDate() {
+    def cmd = "git show -s --format=%ct HEAD^{commit}"
+    return cmd.execute().text.trim()
+}
+
+static def gitRevisionDate() {
+    def cmd = "git show -s --format=%ci HEAD^{commit}"
+    return cmd.execute().text.trim()
+}
+
+dependencies {
+    implementation libs.jetbrains.coroutinesCore
+    implementation libs.jetbrains.coroutinesAndroid
+
+    implementation libs.androidx.appCompat
+    implementation libs.androidx.core
+
+    
+    implementation libs.androidx.lifecycleCommon
+    implementation libs.androidx.lifecycleProcess
+
+    
+    implementation libs.squareup.retrofit
+    implementation libs.squareup.retrofitMoshi
+
+    
+    
+    
+    
+    
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
+    implementation 'com.squareup.okhttp3:okhttp'
+    implementation 'com.squareup.okhttp3:logging-interceptor'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection'
+
+    implementation libs.squareup.moshi
+    kapt libs.squareup.moshiKotlin
+
+    implementation libs.markwon.core
+
+    
+    implementation libs.androidx.exifinterface
+
+    
+    implementation 'com.github.Zhuinden:realm-monarchy:0.7.1'
+
+    kapt 'dk.ilios:realmfieldnameshelper:2.0.0'
+
+    
+    implementation libs.androidx.preferenceKtx
+
+    
+    implementation libs.androidx.work
+
+    
+    implementation libs.arrow.core
+    implementation libs.arrow.instances
+
+    
+    implementation 'org.matrix.android:olm-sdk:3.2.10'
+
+    
+    implementation libs.dagger.dagger
+    kapt libs.dagger.daggerCompiler
+
+    
+    implementation libs.jakewharton.timber
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.6.0'
+
+    
+    implementation 'com.otaliastudios:transcoder:0.10.4'
+
+    
+    implementation libs.apache.commonsImaging
+
+    
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.12.47'
+
+    testImplementation libs.tests.junit
+    testImplementation 'org.robolectric:robolectric:4.7.3'
+    
+    
+    testImplementation libs.mockk.mockk
+    testImplementation libs.tests.kluent
+    testImplementation libs.jetbrains.coroutinesTest
+    
+    testImplementation 'net.lachlanmckee:timber-junit-rule:1.0.1'
+    
+    testImplementation libs.rx.rxKotlin
+
+    kaptAndroidTest libs.dagger.daggerCompiler
+    androidTestImplementation libs.androidx.testCore
+    androidTestImplementation libs.androidx.testRunner
+    androidTestImplementation libs.androidx.testRules
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espressoCore
+    androidTestImplementation libs.tests.kluent
+    androidTestImplementation libs.mockk.mockkAndroid
+    androidTestImplementation libs.androidx.coreTesting
+    androidTestImplementation libs.jetbrains.coroutinesAndroid
+    
+    androidTestImplementation libs.tests.timberJunitRule
+
+    androidTestUtil libs.androidx.orchestrator
+
+    
+    api 'com.tencent:mmkv-static:1.2.7'
+    implementation ('io.socket:socket.io-client:0.9.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    implementation project(":library:multipicker")
+}

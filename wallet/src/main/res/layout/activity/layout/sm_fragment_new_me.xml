@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <common.app.my.view.CircularImage
+            android:id="@+id/civ_logo"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            tools:src="@mipmap/find_zhanwei" />
+
+        <ImageView
+            android:id="@+id/sm_icon_me_edit"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignEnd="@+id/civ_logo"
+            android:layout_alignBottom="@+id/civ_logo"
+            android:layout_marginEnd="-5dp"
+            android:src="@mipmap/sm_icon_me_edit" />
+
+
+        <TextView
+            android:id="@+id/tv_did"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/civ_logo"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/civ_logo"
+            android:drawablePadding="8dp"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:paddingEnd="12dp"
+            android:textColor="@color/default_text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="DID: 1539 1024 0001" />
+
+        <TextView
+            android:id="@+id/tv_buy_did"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignTop="@+id/civ_logo"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/civ_logo"
+            android:background="@drawable/round_fe5d_c4"
+            android:drawableRight="@drawable/arrow_right_small_white"
+            android:drawablePadding="5dp"
+            android:ellipsize="middle"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingStart="5dp"
+            android:paddingEnd="10dp"
+            android:text="@string/no_did_buy_tip"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_did"
+            android:layout_alignStart="@id/tv_did"
+            android:layout_marginTop="7dp"
+            android:layout_toLeftOf="@id/tv_see_more"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:textColor="@color/default_text_three_color"
+            android:textSize="15sp"
+            tools:text="dex1r3s358934svtftfzv8zaf6n69du4t8lc4dt5m9" />
+
+
+        <TextView
+            android:id="@+id/tv_see_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_username"
+            android:layout_alignParentEnd="true"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="15dp"
+            android:text="@string/sm_string_me_see_more"
+            android:textColor="@color/default_theme_color"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/default_dividing_line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
+
+            <TextView
+                android:id="@+id/lin_assets_management"
+                style="@style/SmMeItemTv"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@mipmap/sm_icon_me_asserts_mamanger"
+                android:text="@string/lin_assets_management_tips"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sm_me_computing"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_me_computing"
+                android:text="@string/my_private_dvm" />
+
+            <TextView
+                android:id="@+id/lin_dapp"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_dapp"
+                android:text="@string/sm_string_me_dapp" />
+
+            <TextView
+                android:id="@+id/lin_choose_node"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_choose_jiedian"
+                android:text="@string/choosenode" />
+
+            <TextView
+                android:id="@+id/lin_qiao"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_qiao"
+                android:text="@string/kualianqiao" />
+
+            <TextView
+                android:id="@+id/exchange_center"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_exchange"
+                android:text="@string/exchange_center" />
+
+            <TextView
+                android:id="@+id/sm_me_issuance_coin"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_issuance_coin"
+                android:text="@string/sm_me_issuance_coin_tips" />
+
+            <TextView
+                android:id="@+id/lin_address_books"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_address"
+                android:text="@string/addressbook" />
+
+            <LinearLayout
+                android:id="@+id/lin_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@mipmap/sm_icon_me_language"
+                    android:drawablePadding="20dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/change_language"
+                    android:textColor="@color/default_text_color"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_current_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="17sp"
+                    tools:text="@string/language_zh_cn" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lin_check_update"
+                style="@style/SmMeItemTv"
+                android:drawableStart="@mipmap/sm_icon_me_update"
+                android:text="@string/new_version" />
+
+            <LinearLayout
+                android:id="@+id/im_setting_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/sm_string_me_chat_setting"
+                    android:textColor="@color/default_hint_text_color"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_chain_sync"
+                    style="@style/SmMeItemTv"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@mipmap/sm_icon_me_address"
+                    android:text="@string/title_chain_sync"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/lin_privacy_policy"
+                    style="@style/SmMeItemTv"
+                    android:drawableStart="@mipmap/sm_icon_me_yinsi"
+                    android:text="@string/sm_string_me_privacy_policy"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/lin_virtual_phone"
+                    style="@style/SmMeItemTv"
+                    android:drawableStart="@mipmap/sm_icon_me_phone_list"
+                    android:text="@string/sm_string_me_virtual_phone" />
+
+                <TextView
+                    android:id="@+id/lin_pledge_sort"
+                    style="@style/SmMeItemTv"
+                    android:drawableStart="@mipmap/sm_ico_me_sort"
+                    android:text="@string/pledge_ranking_list"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/lin_chat_setting"
+                    style="@style/SmMeItemTv"
+                    android:drawableStart="@mipmap/sm_icon_me_chat"
+                    android:text="@string/sm_string_me_chat"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btn_login_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_login_change"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg_theme_10"
+                    android:gravity="center"
+                    android:text="@string/btn_login_change"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="44dp" />
+
+                <TextView
+                    android:id="@+id/btn_login_out"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_bg_theme_10"
+                    android:gravity="center"
+                    android:text="@string/sm_string_me_logout"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

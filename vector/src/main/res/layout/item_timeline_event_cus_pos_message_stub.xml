@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:addStatesFromChildren="true"
+    android:orientation="vertical"
+    tools:viewBindingIgnore="true">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/messageCusPosIv"
+            android:layout_width="64dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="7dp"
+            tools:ignore="ContentDescription"
+            tools:src="@color/green" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/messageCusPosTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ff03b384"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText"
+                tools:text="@string/messageCusPosTitle" />
+
+            <com.text.alginlib.XQJustifyTextView
+                android:id="@+id/messageCusPosContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="10dp"
+                android:text="@string/messageCusPosContent"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+            <!--        <TextView-->
+            <!--            android:id="@+id/messageCusPosContent"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:justificationMode="inter_word"-->
+            <!--            android:layout_marginTop="6dp"-->
+            <!--            tools:text="TextView，justificationMode。" />-->
+            <!--        <com.codesgood.views.JustifiedTextView-->
+            <!--            android:id="@+id/messageCusPosContent"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="6dp"-->
+            <!--            tools:text="TextView，justificationMode。" />-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/messageCusPosBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:background="@drawable/cus_pos_message_bt"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,InefficientWeig ht,InefficientWeight"
+                    tools:text="@string/messageCusPosBt" />
+
+                <TextView
+                    android:id="@+id/messageCusPosTimeView"
+                    style="@style/Widget.Vector.TextView.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="right"
+                    android:tag="messageTimeView"
+                    android:textColor="?vctr_content_secondary"
+                    tools:ignore="RtlHardcoded"
+                    tools:text="@tools:sample/date/hhmm" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

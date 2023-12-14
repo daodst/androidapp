@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/lineLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignBottom="@id/contentLayout"
+        android:layout_alignTop="@id/contentLayout"
+        android:paddingLeft="15dp"
+        android:gravity="center_horizontal|top">
+        <View
+            android:id="@+id/lineView1"
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/default_theme_color"/>
+        <View
+            android:id="@+id/circleView"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ico_circle_theme"/>
+        <View
+            android:id="@+id/lineView2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/default_theme_color"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/lineLayout"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp">
+        <TextView
+            android:id="@+id/stepTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#ff0bbd8b"
+            android:textSize="14sp"
+            />
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="22"
+            android:textColor="#ff999999"
+            android:textSize="11sp"
+            />
+        <RelativeLayout
+            android:id="@+id/hashLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/hashTv"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                tools:text="0x49ea2716d92806d19014f2c0f3c97b938265c49ea2716d92806d19014f2c0f3c97b938265c"
+                android:textColor="#ff738c99"
+                android:layout_toLeftOf="@id/shareIv"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:drawableRight="@mipmap/ico_copy_gray"
+                android:background="@drawable/round_top_c5"
+                android:textSize="12sp"
+                />
+
+            <ImageView
+                android:id="@+id/shareIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="7dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ico_share_upload"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

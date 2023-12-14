@@ -1,0 +1,361 @@
+
+
+package org.matrix.android.sdk.internal.crypto.algorithms.megolm
+
+import dagger.Lazy
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.withLock
+import org.matrix.android.sdk.api.MatrixCoroutineDispatchers
+import org.matrix.android.sdk.api.logger.LoggerTag
+import org.matrix.android.sdk.api.session.crypto.MXCryptoError
+import org.matrix.android.sdk.api.session.crypto.NewSessionListener
+import org.matrix.android.sdk.api.session.crypto.model.ForwardedRoomKeyContent
+import org.matrix.android.sdk.api.session.crypto.model.IncomingRoomKeyRequest
+import org.matrix.android.sdk.api.session.crypto.model.MXEventDecryptionResult
+import org.matrix.android.sdk.api.session.crypto.model.MXUsersDevicesMap
+import org.matrix.android.sdk.api.session.crypto.model.RoomKeyRequestBody
+import org.matrix.android.sdk.api.session.events.model.Event
+import org.matrix.android.sdk.api.session.events.model.EventType
+import org.matrix.android.sdk.api.session.events.model.content.EncryptedEventContent
+import org.matrix.android.sdk.api.session.events.model.content.RoomKeyContent
+import org.matrix.android.sdk.api.session.events.model.content.RoomKeyWithHeldContent
+import org.matrix.android.sdk.api.session.events.model.toModel
+import org.matrix.android.sdk.internal.crypto.DeviceListManager
+import org.matrix.android.sdk.internal.crypto.MXOlmDevice
+import org.matrix.android.sdk.internal.crypto.OutgoingGossipingRequestManager
+import org.matrix.android.sdk.internal.crypto.actions.EnsureOlmSessionsForDevicesAction
+import org.matrix.android.sdk.internal.crypto.actions.MessageEncrypter
+import org.matrix.android.sdk.internal.crypto.algorithms.IMXDecrypting
+import org.matrix.android.sdk.internal.crypto.algorithms.IMXWithHeldExtension
+import org.matrix.android.sdk.internal.crypto.keysbackup.DefaultKeysBackupService
+import org.matrix.android.sdk.internal.crypto.store.IMXCryptoStore
+import org.matrix.android.sdk.internal.crypto.tasks.SendToDeviceTask
+import org.matrix.android.sdk.internal.session.StreamEventsManager
+import timber.log.Timber
+
+private val loggerTag = LoggerTag("MXMegolmDecryption", LoggerTag.CRYPTO)
+
+internal class MXMegolmDecryption(private val userId: String,
+                                  private val olmDevice: MXOlmDevice,
+                                  private val deviceListManager: DeviceListManager,
+                                  private val outgoingGossipingRequestManager: OutgoingGossipingRequestManager,
+                                  private val messageEncrypter: MessageEncrypter,
+                                  private val ensureOlmSessionsForDevicesAction: EnsureOlmSessionsForDevicesAction,
+                                  private val cryptoStore: IMXCryptoStore,
+                                  private val sendToDeviceTask: SendToDeviceTask,
+                                  private val coroutineDispatchers: MatrixCoroutineDispatchers,
+                                  private val cryptoCoroutineScope: CoroutineScope,
+                                  private val liveEventManager: Lazy<StreamEventsManager>
+) : IMXDecrypting, IMXWithHeldExtension {
+
+    var newSessionListener: NewSessionListener? = null
+
+    
+
+    @Throws(MXCryptoError::class)
+    override suspend fun decryptEvent(event: Event, timeline: String): MXEventDecryptionResult {
+        
+        
+        val requestOnFail = cryptoStore.getMyCrossSigningInfo()?.isTrusted() == true
+        return decryptEvent(event, timeline, requestOnFail)
+    }
+
+    @Throws(MXCryptoError::class)
+    private suspend fun decryptEvent(event: Event, timeline: String, requestKeysOnFail: Boolean): MXEventDecryptionResult {
+        Timber.tag(loggerTag.value).v("decryptEvent ${event.eventId}, requestKeysOnFail:$requestKeysOnFail")
+        if (event.roomId.isNullOrBlank()) {
+            throw MXCryptoError.Base(MXCryptoError.ErrorType.MISSING_FIELDS, MXCryptoError.MISSING_FIELDS_REASON)
+        }
+
+        val encryptedEventContent = event.content.toModel<EncryptedEventContent>()
+                ?: throw MXCryptoError.Base(MXCryptoError.ErrorType.MISSING_FIELDS, MXCryptoError.MISSING_FIELDS_REASON)
+
+        if (encryptedEventContent.senderKey.isNullOrBlank() ||
+                encryptedEventContent.sessionId.isNullOrBlank() ||
+                encryptedEventContent.ciphertext.isNullOrBlank()) {
+            throw MXCryptoError.Base(MXCryptoError.ErrorType.MISSING_FIELDS, MXCryptoError.MISSING_FIELDS_REASON)
+        }
+
+        return runCatching {
+            olmDevice.decryptGroupMessage(encryptedEventContent.ciphertext,
+                    event.roomId,
+                    timeline,
+                    encryptedEventContent.sessionId,
+                    encryptedEventContent.senderKey)
+        }
+                .fold(
+                        { olmDecryptionResult ->
+                            
+                            if (olmDecryptionResult.payload != null) {
+                                MXEventDecryptionResult(
+                                        clearEvent = olmDecryptionResult.payload,
+                                        senderCurve25519Key = olmDecryptionResult.senderKey,
+                                        claimedEd25519Key = olmDecryptionResult.keysClaimed?.get("ed25519"),
+                                        forwardingCurve25519KeyChain = olmDecryptionResult.forwardingCurve25519KeyChain
+                                                .orEmpty()
+                                ).also {
+                                    liveEventManager.get().dispatchLiveEventDecrypted(event, it)
+                                }
+                            } else {
+                                throw MXCryptoError.Base(MXCryptoError.ErrorType.MISSING_FIELDS, MXCryptoError.MISSING_FIELDS_REASON)
+                            }
+                        },
+                        { throwable ->
+                            liveEventManager.get().dispatchLiveEventDecryptionFailed(event, throwable)
+                            if (throwable is MXCryptoError.OlmError) {
+                                
+                                if (throwable.olmException.message == "UNKNOWN_MESSAGE_INDEX") {
+                                    
+                                    
+                                    val withHeldInfo = cryptoStore.getWithHeldMegolmSession(event.roomId, encryptedEventContent.sessionId)
+                                    if (withHeldInfo != null) {
+                                        if (requestKeysOnFail) {
+                                            requestKeysForEvent(event, true)
+                                        }
+                                        
+                                        throw MXCryptoError.Base(MXCryptoError.ErrorType.KEYS_WITHHELD,
+                                                withHeldInfo.code?.value ?: "",
+                                                withHeldInfo.reason)
+                                    }
+
+                                    if (requestKeysOnFail) {
+                                        requestKeysForEvent(event, false)
+                                    }
+
+                                    throw MXCryptoError.Base(
+                                            MXCryptoError.ErrorType.UNKNOWN_MESSAGE_INDEX,
+                                            "UNKNOWN_MESSAGE_INDEX",
+                                            null)
+                                }
+
+                                val reason = String.format(MXCryptoError.OLM_REASON, throwable.olmException.message)
+                                val detailedReason = String.format(MXCryptoError.DETAILED_OLM_REASON, encryptedEventContent.ciphertext, reason)
+
+                                throw MXCryptoError.Base(
+                                        MXCryptoError.ErrorType.OLM,
+                                        reason,
+                                        detailedReason)
+                            }
+                            if (throwable is MXCryptoError.Base) {
+                                if (
+                                
+                                        throwable.errorType == MXCryptoError.ErrorType.UNKNOWN_INBOUND_SESSION_ID
+                                ) {
+                                    val withHeldInfo = cryptoStore.getWithHeldMegolmSession(event.roomId, encryptedEventContent.sessionId)
+                                    if (withHeldInfo != null) {
+                                        if (requestKeysOnFail) {
+                                            requestKeysForEvent(event, true)
+                                        }
+                                        
+                                        throw MXCryptoError.Base(MXCryptoError.ErrorType.KEYS_WITHHELD,
+                                                withHeldInfo.code?.value ?: "",
+                                                withHeldInfo.reason)
+                                    } else {
+                                        
+                                        
+                                        if (requestKeysOnFail) {
+                                            requestKeysForEvent(event, false)
+                                        }
+                                    }
+                                }
+                            }
+                            throw throwable
+                        }
+                )
+    }
+
+    
+    override fun requestKeysForEvent(event: Event, withHeld: Boolean) {
+        val sender = event.senderId ?: return
+        val encryptedEventContent = event.content.toModel<EncryptedEventContent>()
+        val senderDevice = encryptedEventContent?.deviceId ?: return
+
+        val recipients = if (event.senderId == userId || withHeld) {
+            mapOf(
+                    userId to listOf("*")
+            )
+        } else {
+            
+            
+            
+            mapOf(
+                    userId to listOf("*"),
+                    sender to listOf(senderDevice)
+            )
+        }
+
+        val requestBody = RoomKeyRequestBody(
+                roomId = event.roomId,
+                algorithm = encryptedEventContent.algorithm,
+                senderKey = encryptedEventContent.senderKey,
+                sessionId = encryptedEventContent.sessionId
+        )
+
+        outgoingGossipingRequestManager.sendRoomKeyRequest(requestBody, recipients)
+    }
+
+
+
+
+
+
+
+    
+    override fun onRoomKeyEvent(event: Event, defaultKeysBackupService: DefaultKeysBackupService) {
+        Timber.tag(loggerTag.value).v("onRoomKeyEvent()")
+        var exportFormat = false
+        val roomKeyContent = event.getClearContent().toModel<RoomKeyContent>() ?: return
+
+        var senderKey: String? = event.getSenderKey()
+        var keysClaimed: MutableMap<String, String> = HashMap()
+        val forwardingCurve25519KeyChain: MutableList<String> = ArrayList()
+
+        if (roomKeyContent.roomId.isNullOrEmpty() || roomKeyContent.sessionId.isNullOrEmpty() || roomKeyContent.sessionKey.isNullOrEmpty()) {
+            Timber.tag(loggerTag.value).e("onRoomKeyEvent() :  Key event is missing fields")
+            return
+        }
+        if (event.getClearType() == EventType.FORWARDED_ROOM_KEY) {
+            Timber.tag(loggerTag.value).i("onRoomKeyEvent(), forward adding key : ${roomKeyContent.roomId}|${roomKeyContent.sessionId}")
+            val forwardedRoomKeyContent = event.getClearContent().toModel<ForwardedRoomKeyContent>()
+                    ?: return
+
+            forwardedRoomKeyContent.forwardingCurve25519KeyChain?.let {
+                forwardingCurve25519KeyChain.addAll(it)
+            }
+
+            if (senderKey == null) {
+                Timber.tag(loggerTag.value).e("onRoomKeyEvent() : event is missing sender_key field")
+                return
+            }
+
+            forwardingCurve25519KeyChain.add(senderKey)
+
+            exportFormat = true
+            senderKey = forwardedRoomKeyContent.senderKey
+            if (null == senderKey) {
+                Timber.tag(loggerTag.value).e("onRoomKeyEvent() : forwarded_room_key event is missing sender_key field")
+                return
+            }
+
+            if (null == forwardedRoomKeyContent.senderClaimedEd25519Key) {
+                Timber.tag(loggerTag.value).e("forwarded_room_key_event is missing sender_claimed_ed25519_key field")
+                return
+            }
+
+            keysClaimed["ed25519"] = forwardedRoomKeyContent.senderClaimedEd25519Key
+        } else {
+            Timber.tag(loggerTag.value).i("onRoomKeyEvent(), Adding key : ${roomKeyContent.roomId}|${roomKeyContent.sessionId}")
+            if (null == senderKey) {
+                Timber.tag(loggerTag.value).e("## onRoomKeyEvent() : key event has no sender key (not encrypted?)")
+                return
+            }
+
+            
+            keysClaimed = event.getKeysClaimed().toMutableMap()
+        }
+
+        Timber.tag(loggerTag.value).i("onRoomKeyEvent addInboundGroupSession ${roomKeyContent.sessionId}")
+        val added = olmDevice.addInboundGroupSession(roomKeyContent.sessionId,
+                roomKeyContent.sessionKey,
+                roomKeyContent.roomId,
+                senderKey,
+                forwardingCurve25519KeyChain,
+                keysClaimed,
+                exportFormat)
+
+        if (added) {
+            defaultKeysBackupService.maybeBackupKeys()
+
+            val content = RoomKeyRequestBody(
+                    algorithm = roomKeyContent.algorithm,
+                    roomId = roomKeyContent.roomId,
+                    sessionId = roomKeyContent.sessionId,
+                    senderKey = senderKey
+            )
+
+            outgoingGossipingRequestManager.cancelRoomKeyRequest(content)
+
+            onNewSession(roomKeyContent.roomId, senderKey, roomKeyContent.sessionId)
+        }
+    }
+
+    
+    fun onNewSession(roomId: String?, senderKey: String, sessionId: String) {
+        Timber.tag(loggerTag.value).v("ON NEW SESSION $sessionId - $senderKey")
+        newSessionListener?.onNewSession(roomId, senderKey, sessionId)
+    }
+
+    override fun hasKeysForKeyRequest(request: IncomingRoomKeyRequest): Boolean {
+        val roomId = request.requestBody?.roomId ?: return false
+        val senderKey = request.requestBody.senderKey ?: return false
+        val sessionId = request.requestBody.sessionId ?: return false
+        return olmDevice.hasInboundSessionKeys(roomId, senderKey, sessionId)
+    }
+
+    override fun shareKeysWithDevice(request: IncomingRoomKeyRequest) {
+        
+        if (request.requestBody == null) {
+            return
+        }
+        val userId = request.userId ?: return
+
+        cryptoCoroutineScope.launch(coroutineDispatchers.crypto) {
+            val body = request.requestBody
+            val sessionHolder = try {
+                olmDevice.getInboundGroupSession(body.sessionId, body.senderKey, body.roomId)
+            } catch (failure: Throwable) {
+                Timber.tag(loggerTag.value).e(failure, "shareKeysWithDevice: failed to get session for request $body")
+                return@launch
+            }
+
+            val export = sessionHolder.mutex.withLock {
+                sessionHolder.wrapper.exportKeys()
+            } ?: return@launch Unit.also {
+                Timber.tag(loggerTag.value).e("shareKeysWithDevice: failed to export group session ${body.sessionId}")
+            }
+
+            runCatching { deviceListManager.downloadKeys(listOf(userId), false) }
+                    .mapCatching {
+                        val deviceId = request.deviceId
+                        val deviceInfo = cryptoStore.getUserDevice(userId, deviceId ?: "")
+                        if (deviceInfo == null) {
+                            throw RuntimeException()
+                        } else {
+                            val devicesByUser = mapOf(userId to listOf(deviceInfo))
+                            val usersDeviceMap = ensureOlmSessionsForDevicesAction.handle(devicesByUser)
+                            val olmSessionResult = usersDeviceMap.getObject(userId, deviceId)
+                            if (olmSessionResult?.sessionId == null) {
+                                
+                                
+                                Timber.tag(loggerTag.value).e("no session with this device $deviceId, probably because there were no one-time keys.")
+                                return@mapCatching
+                            }
+                            Timber.tag(loggerTag.value).i("shareKeysWithDevice() : sharing session ${body.sessionId} with device $userId:$deviceId")
+
+                            val payloadJson = mapOf(
+                                    "type" to EventType.FORWARDED_ROOM_KEY,
+                                    "content" to export
+                            )
+
+                            val encodedPayload = messageEncrypter.encryptMessage(payloadJson, listOf(deviceInfo))
+                            val sendToDeviceMap = MXUsersDevicesMap<Any>()
+                            sendToDeviceMap.setObject(userId, deviceId, encodedPayload)
+                            Timber.tag(loggerTag.value).i("shareKeysWithDevice() : sending ${body.sessionId} to $userId:$deviceId")
+                            val sendToDeviceParams = SendToDeviceTask.Params(EventType.ENCRYPTED, sendToDeviceMap)
+                            try {
+                                sendToDeviceTask.execute(sendToDeviceParams)
+                            } catch (failure: Throwable) {
+                                Timber.tag(loggerTag.value).e(failure, "shareKeysWithDevice() : Failed to send ${body.sessionId} to $userId:$deviceId")
+                            }
+                        }
+                    }
+        }
+    }
+
+    override fun onRoomKeyWithHeldEvent(withHeldInfo: RoomKeyWithHeldContent) {
+        cryptoCoroutineScope.launch(coroutineDispatchers.crypto) {
+            cryptoStore.addWithHeldMegolmSession(withHeldInfo)
+        }
+    }
+}

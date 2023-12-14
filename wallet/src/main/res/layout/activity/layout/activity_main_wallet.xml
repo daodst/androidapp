@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <common.app.my.abstracts.LazyViewPager
+            android:id="@+id/vp_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></common.app.my.abstracts.LazyViewPager>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:visibility="gone"
+            android:background="@color/default_titlebar_dividing_line_color" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/vp_main"
+            android:background="@color/default_tab_bg_color"
+            app:tabSelectedTextColor="@color/default_tab_text_selected_color"
+            app:tabTextColor="@color/default_tab_text_color"
+            app:tabIndicatorHeight="0dp"
+            app:tabPaddingBottom="5dp"
+            app:tabPaddingTop="5dp">
+        </com.google.android.material.tabs.TabLayout>
+</LinearLayout>

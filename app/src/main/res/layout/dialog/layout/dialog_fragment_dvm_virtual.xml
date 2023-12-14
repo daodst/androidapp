@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constTop"
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_devices_award"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/imageLogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/anim_dvm_reward_string_3"
+            android:textColor="#88B09B"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/logo" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/anim_reward_string_11"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imageLogo"
+            app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+
+        <LinearLayout
+            android:id="@+id/llRoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+            <TextView
+                android:id="@+id/tvValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#0BBD8B"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="8.1258" />
+
+            <TextView
+                android:id="@+id/tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Dst"
+                android:textColor="#0BBD8B"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvValue"
+                app:layout_constraintStart_toEndOf="@+id/tvValue" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageWallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:srcCompat="@mipmap/anmi_icon_wallet"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/walletInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="65dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llRoot">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:drawableStart="@mipmap/anmi_icon_receiver_1"
+                android:drawablePadding="6dp"
+                android:text="@string/anim_reward_string_2"
+                android:textColor="#0BBD8B"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvInAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="32dp"
+                android:maxLines="2"
+                android:textColor="#88B09B"
+                android:textSize="13sp"
+                tools:text="dst13jj495n7v827x77atnrdkugax5v3z8q8expkmj" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@mipmap/anmi_icon_receiver_2"
+                android:drawablePadding="6dp"
+                android:text="@string/anim_reward_string_3"
+                android:textColor="#0BBD8B"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvOutAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="32dp"
+                android:maxLines="2"
+                android:textColor="#88B09B"
+                android:textSize="13sp"
+                tools:text="dst13jj495n7v827x77atnrdkugax5v3z8q8expkmj" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@mipmap/anmi_icon_receiver_3"
+                android:drawablePadding="6dp"
+                android:text="@string/anim_reward_string_4"
+                android:textColor="#0BBD8B"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvGasTax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="16dp"
+                android:maxLines="2"
+                android:textColor="#88B09B"
+                android:textSize="13sp"
+                tools:text="0.0001253 DST（Gas）" />
+
+            <TextView
+                android:id="@+id/tvShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_share_theme"
+                android:text="@string/anim_reward_string_5"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/walletInfo"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/receiverTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/anim_reward_string_6"
+            android:textColor="#0BBD8B"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+
+        <FrameLayout
+            android:id="@+id/wallerDetail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/receiverTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlWalletDetail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/round_top_c18"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:translationY="55dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/walletLogo"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/walletName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/walletLogo"
+                    android:textColor="#333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/walletNameAddress"
+                    app:layout_constraintStart_toEndOf="@+id/walletLogo"
+                    app:layout_constraintTop_toTopOf="@+id/walletLogo"
+                    tools:text="DST" />
+
+                <TextView
+                    android:id="@+id/walletNameAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@+id/walletLogo"
+                    android:ellipsize="middle"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#333333"
+                    android:textSize="13sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/walletLogo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/walletLogo"
+                    app:layout_constraintTop_toBottomOf="@+id/walletName"
+                    tools:text="DST" />
+
+                <TextView
+                    android:id="@+id/walletYuE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/walletYuE2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1888.88" />
+
+                <!---->
+                <TextView
+                    android:id="@+id/walletYuE2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="#666666"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/walletYuE"
+                    tools:text="≈ $32.60" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <!--1000 * 1200 ≈0.83 -->
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/ivDvm"
+            android:layout_width="250dp"
+            android:layout_height="301dp"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            android:translationX="100dp"
+            android:translationY="-10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/flCoin"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:translationX="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/coin"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:alpha="0"
+                android:src="@mipmap/anmi_icon_coin_new"
+                android:translationY="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/receiverInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wallerDetail">
+
+            <TextView
+                android:id="@+id/receiverDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#88B09B"
+                android:textSize="13sp"
+                tools:text="GAS ，DAO DST " />
+
+            <TextView
+                android:id="@+id/addHashPower"
+                android:layout_width="170dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_share"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="@string/anim_reward_string_7"
+                android:textColor="#0BBD8B"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/thanks"
+                    android:layout_width="130dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="start"
+                    android:text="@string/anim_reward_string_9"
+                    android:textColor="#0BBD8B"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/leave"
+                    android:layout_width="130dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="end"
+                    android:text="@string/anim_reward_string_8"
+                    android:textColor="#0BBD8B"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constBottom"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_devices_award_2"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constTop">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="24dp"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

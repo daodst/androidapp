@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/item_issuance_coin_name"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textColor="#ff2d3a5e"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="TRX" />
+
+            <TextView
+                android:id="@+id/item_issuance_coin_num"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textColor="#ff2d3a5e"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="1.20000000000000000000000" />
+
+
+            <TextView
+                android:id="@+id/item_issuance_coin_time"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:textColor="#8C98A4"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="03/23 15:08" />
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:gravity="right|center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="46dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/item_issuance_coin_success"
+                    android:gravity="center"
+                    android:text="@string/item_issuance_coin_status_success"
+                    android:textColor="#ffffffff"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:id="@+id/item_issuance_coin_exchange"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#ff8c98a4"
+                android:textSize="11sp"
+                tools:text="/ DST" />
+
+            <TextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="@string/item_issuance_coin_num_tips"
+                android:textColor="#ff8c98a4"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:text="@string/item_issuance_coin_time_tips"
+                android:textColor="#ff8c98a4"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="right|center_vertical"
+                android:text="@string/item_issuance_coin_status"
+                android:textColor="#ff8c98a4"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_issuance_coin_address"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            android:paddingTop="6dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="6dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_issuance_coin_address"
+                    android:textColor="#ff8c98a4"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/item_issuance_coin_add_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="@string/item_issuance_coin_add_wallet"
+                    android:textColor="#ff8c98a4"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_issuance_coin_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:textColor="#ff8c98a4"
+                    android:textSize="12sp"
+                    tools:text="0x2882A625Fb0f2e92300CA71B56EAf9aeC48f7118" />
+
+                <ImageView
+                    android:id="@+id/item_issuance_coin_copy"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/item_issuance_coin_address_copy" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

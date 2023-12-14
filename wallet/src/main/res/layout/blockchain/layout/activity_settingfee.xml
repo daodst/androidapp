@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_bar"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12"
+        android:background="@color/default_top_background_color"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/fee_moshi"
+            android:textColor="@color/default_text_two_color"
+            />
+        <ImageView
+            android:id="@+id/fee_status"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/anniu"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sp_12"
+        android:textColor="@color/default_text_three_color"
+        android:textSize="@dimen/sp_12"
+        android:lineSpacingExtra="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dimen_12dp"
+        android:layout_marginRight="@dimen/dimen_12dp"
+        android:text="@string/eip_remark"/>
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="@dimen/dp_12"
+        android:drawableRight="@mipmap/candy_right"
+        android:textColor="#00A0E9"
+        android:text="@string/about_eip"
+        android:drawablePadding="@dimen/dp_5"
+        />
+</LinearLayout>

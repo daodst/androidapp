@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_my_level_ranking"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+
+    <TextView
+        android:id="@+id/tv_level"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/default_text_three_color"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="1" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_weight="10">
+
+        <common.app.my.view.CircularImage
+            android:id="@+id/civ_logo"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            tools:src="@mipmap/find_zhanwei" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/civ_logo"
+            android:layout_toEndOf="@+id/civ_logo"
+            android:ellipsize="middle"
+            android:maxLines="1"
+            android:textColor="@color/default_text_color"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/tv_user_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@+id/civ_logo"
+            android:background="@drawable/bg_level_text"
+            android:gravity="center"
+            android:paddingStart="6dp"
+            android:paddingTop="1.5dp"
+            android:paddingEnd="6dp"
+            android:paddingBottom="1.5dp"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            tools:text="LV.4" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_idi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:textColor="@color/default_text_color"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        tools:text="IDI: 18565473321" />
+</LinearLayout>
